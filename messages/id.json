@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "siteName": "Trishanti",
+    "siteDescription": "PT. Trishanti Sinergi Indocorp — Perusahaan Indonesia yang terdiversifikasi, membangun masa depan yang lebih cerah di bidang properti, sumber daya, pertanian, teknologi, konsumer, dan usaha baru.",
+    "tagline": "Masa Depan yang Lebih Cerah, Bersama."
+  },
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "businesses": "Bisnis Kami",
+    "sustainability": "Keberlanjutan",
+    "news": "Berita & Wawasan",
+    "careers": "Karir",
+    "contact": "Hubungi Kami",
+    "openMenu": "Buka menu navigasi",
+    "closeMenu": "Tutup menu navigasi"
+  },
+  "footer": {
+    "tagline": "Masa Depan yang Lebih Cerah, Bersama.",
+    "corporate": "Korporat",
+    "businesses": "Bisnis Kami",
+    "company": "Perusahaan",
+    "legal": "Hukum",
+    "links": {
+      "home": "Beranda",
+      "about": "Tentang Kami",
+      "leadership": "Kepemimpinan",
+      "energyResources": "Energi & Sumber Daya",
+      "propertyInfrastructure": "Properti & Infrastruktur",
+      "technologyInnovation": "Teknologi & Inovasi",
+      "consumerLifestyle": "Konsumer & Gaya Hidup",
+      "healthcareWellness": "Kesehatan & Kebugaran",
+      "sustainableVentures": "Usaha Berkelanjutan",
+      "sustainability": "Keberlanjutan",
+      "newsInsights": "Berita & Wawasan",
+      "careers": "Karir",
+      "contact": "Hubungi Kami",
+      "privacyPolicy": "Kebijakan Privasi",
+      "termsOfService": "Syarat & Ketentuan",
+      "cookiePolicy": "Kebijakan Cookie"
+    },
+    "social": {
+      "linkedin": "Ikuti Trishanti di LinkedIn",
+      "instagram": "Ikuti Trishanti di Instagram",
+      "youtube": "Tonton Trishanti di YouTube"
+    },
+    "copyright": "© {year} PT. Trishanti Sinergi Indocorp. Seluruh hak dilindungi."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "A BRIGHTER TOMORROW, TOGETHER",
+      "headline": "Membangun Kemajuan Berkelanjutan.",
+      "headline1": "Membangun",
+      "headline2": "Kemajuan",
+      "headline3": "Berkelanjutan",
+      "headlineHighlight": ".",
+      "subheadline": "Kami menciptakan nilai jangka panjang lintas industri, komunitas, dan generasi - dengan pandangan jangka panjang menuju masa depan yang lebih cerah.",
+      "ctaPrimary": "Jelajahi Bisnis Kami",
+      "ctaSecondary": "Putar Video",
+      "scrollHint": "Gulir untuk menjelajahi",
+      "sideText1": "Masyarakat",
+      "sideText2": "Industri",
+      "sideText3": "Masa Depan",
+      "sideText4": "Cerah."
+    },
+    "pillars": {
+      "eyebrow": "PILAR BISNIS KAMI",
+      "headline": "Industri Beragam. Peluang Lebih Luas.",
+      "headlinePart1": "Industri Beragam.",
+      "headlinePart2": "Peluang Lebih Luas.",
+      "description": "Di enam pilar bisnis, Trishanti menjelajahi dan mengembangkan peluang yang menciptakan nilai jangka panjang bagi masyarakat, komunitas, dan masa depan yang lebih berkelanjutan.",
+      "cta": "Jelajahi Bisnis Kami",
+      "learnMore": "Pelajari Lebih Lanjut"
+    },
+    "purpose": {
+      "eyebrow": "TUJUAN KAMI",
+      "headline": "Membangun Bisnis demi Hari Esok yang Lebih Baik.",
+      "headlinePart1": "Membangun Bisnis",
+      "headlinePart2": "demi Hari Esok yang Lebih Baik.",
+      "body": "Kami membangun dan mengembangkan bisnis hingga mampu berkiprah secara global — menciptakan nilai jangka panjang, peluang yang lebih luas, dan masa depan yang lebih baik bagi masyarakat.",
+      "cta": "Komitmen Kami",
+      "stat1Value": "6",
+      "stat1Label": "Pilar Bisnis",
+      "stat1Sub": "Pertumbuhan terdiversifikasi",
+      "stat2Value": "10+",
+      "stat2Label": "Tahun Kemajuan",
+      "stat2Sub": "Menciptakan nilai jangka panjang",
+      "stat3Value": "1.000+",
+      "stat3Label": "Insan",
+      "stat3Sub": "Di seluruh ekosistem",
+      "stat4Value": "Masa Depan Cerah",
+      "stat4Sub": "Untuk generasi mendatang"
+    },
+    "about": {
+      "eyebrow": "Kisah Kami",
+      "headline": "Perusahaan jangka panjang yang dibangun untuk dampak yang berkelanjutan.",
+      "body": "PT. Trishanti Sinergi Indocorp didirikan dengan keyakinan bahwa perusahaan yang terdiversifikasi, dibangun dengan tujuan dan disiplin, dapat menciptakan nilai jangka panjang bagi manusia, komunitas, dan bangsa. Kami bukan perusahaan satu produk — kami adalah keluarga bisnis yang bersatu dalam satu visi: masa depan yang lebih cerah, bersama.",
+      "stat1Value": "29",
+      "stat1Label": "Kegiatan Usaha KBLI",
+      "stat2Value": "6",
+      "stat2Label": "Pilar Bisnis Strategis",
+      "stat3Value": "2024",
+      "stat3Label": "Tahun Berdiri",
+      "cta": "Pelajari Tentang Trishanti"
+    },
+    "businesses": {
+      "eyebrow": "Bisnis Kami",
+      "headline": "Industri Beragam. Peluang Lebih Luas.",
+      "cta": "Jelajahi Bisnis Kami"
+    },
+    "stats": {
+      "eyebrow": "Dampak Kami",
+      "headline": "Angka yang bercerita.",
+      "stat1Value": "29",
+      "stat1Label": "Kegiatan Usaha",
+      "stat2Value": "6",
+      "stat2Label": "Sektor Strategis",
+      "stat3Value": "100%",
+      "stat3Label": "Komitmen untuk Bertumbuh"
+    },
+    "news": {
+      "eyebrow": "BERITA TERBARU",
+      "headline": "Cerita yang Membawa Kita Maju.",
+      "cta": "Lihat Semua Berita"
+    },
+    "insights": {
+      "eyebrow": "BERITA TERBARU",
+      "headline": "Cerita yang Membawa Kita Maju.",
+      "cta": "Lihat Semua Berita"
+    },
+    "careers": {
+      "eyebrow": "Karir",
+      "headline": "Bangun Masa Depan yang Lebih Cerah Bersama Kami.",
+      "body": "Kami mencari orang-orang yang percaya bahwa bisnis bisa menjadi kekuatan kebaikan. Bergabunglah dengan tim yang membangun sesuatu yang bermakna — untuk Indonesia, dan untuk dunia.",
+      "cta": "Jelajahi Karir"
+    },
+    "contactCta": {
+      "headline": "Mari Bangun Masa Depan, Bersama.",
+      "subheadline": "Hubungi kami untuk mengetahui lebih lanjut tentang bisnis, kemitraan, dan peluang kami.",
+      "cta": "Hubungi Kami"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Tentang Trishanti",
+      "description": "Pelajari tentang PT. Trishanti Sinergi Indocorp — kisah kami, orang-orang kami, nilai-nilai kami, dan visi kami untuk masa depan yang lebih cerah."
+    },
+    "hero": {
+      "eyebrow": "Tentang Trishanti",
+      "headline": "Masa depan yang lebih cerah dimulai dari fondasi yang tepat.",
+      "body": "PT. Trishanti Sinergi Indocorp adalah perusahaan Indonesia yang terdiversifikasi dengan pandangan jangka panjang. Kami membangun bisnis yang menciptakan nilai nyata bagi manusia nyata."
+    }
+  },
+  "businesses": {
+    "meta": {
+      "title": "Bisnis Kami",
+      "description": "Jelajahi enam pilar bisnis strategis PT. Trishanti Sinergi Indocorp — dari energi dan properti hingga teknologi, kesehatan, dan usaha berkelanjutan."
+    },
+    "hero": {
+      "eyebrow": "Bisnis Kami",
+      "headline": "Satu perusahaan. Banyak kemungkinan.",
+      "body": "Enam pilar strategis, 29 kegiatan usaha, dan satu visi panduan — membangun pertumbuhan berkelanjutan di sektor-sektor yang paling penting."
+    }
+  },
+  "news": {
+    "meta": {
+      "title": "Berita & Wawasan",
+      "description": "Berita, wawasan, dan kisah terbaru dari PT. Trishanti Sinergi Indocorp."
+    },
+    "hero": {
+      "eyebrow": "Wawasan & Berita",
+      "headline": "Ide. Pembaruan. Kemajuan.",
+      "body": "Perspektif dari bisnis, orang-orang, dan sektor yang kami pedulikan."
+    },
+    "readMore": "Baca selengkapnya",
+    "readingTime": "{minutes} menit membaca",
+    "noArticles": "Tidak ada artikel yang ditemukan.",
+    "categories": {
+      "all": "Semua",
+      "business": "Bisnis",
+      "sustainability": "Keberlanjutan",
+      "technology": "Teknologi",
+      "community": "Komunitas"
+    }
+  },
+  "careers": {
+    "meta": {
+      "title": "Karir di Trishanti",
+      "description": "Bergabunglah dengan PT. Trishanti Sinergi Indocorp dan bantu kami membangun masa depan yang lebih cerah. Jelajahi posisi yang tersedia di berbagai pilar bisnis kami."
+    },
+    "hero": {
+      "eyebrow": "Karir",
+      "headline": "Bangun Masa Depan yang Lebih Cerah Bersama Kami.",
+      "body": "Kami mencari orang-orang yang penasaran, disiplin, dan berorientasi pada tujuan yang ingin membangun sesuatu yang bermakna. Bertumbuhlah bersama kami."
+    },
+    "openPositions": "Posisi Tersedia",
+    "noPositions": "Belum ada posisi yang tersedia saat ini. Periksa kembali nanti.",
+    "apply": "Lamar Sekarang",
+    "filters": {
+      "allDepartments": "Semua Departemen",
+      "allLocations": "Semua Lokasi"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Hubungi Trishanti",
+      "description": "Hubungi PT. Trishanti Sinergi Indocorp. Kami menyambut pertanyaan tentang bisnis, kemitraan, dan peluang kami."
+    },
+    "hero": {
+      "eyebrow": "Hubungi Kami",
+      "headline": "Kami senang mendengar dari Anda.",
+      "body": "Baik Anda memiliki pertanyaan tentang bisnis kami, ide kemitraan, atau sekadar ingin menyapa — jangan ragu untuk menghubungi kami."
+    },
+    "form": {
+      "name": "Nama Lengkap",
+      "namePlaceholder": "Nama lengkap Anda",
+      "email": "Alamat Email",
+      "emailPlaceholder": "email@anda.com",
+      "subject": "Subjek",
+      "subjectPlaceholder": "Bagaimana kami bisa membantu?",
+      "message": "Pesan",
+      "messagePlaceholder": "Ceritakan lebih lanjut...",
+      "submit": "Kirim Pesan",
+      "sending": "Mengirim...",
+      "successTitle": "Pesan terkirim!",
+      "successBody": "Terima kasih telah menghubungi kami. Kami akan segera menghubungi Anda kembali.",
+      "errorTitle": "Terjadi kesalahan.",
+      "errorBody": "Silakan coba lagi atau email kami langsung.",
+      "validation": {
+        "nameRequired": "Silakan masukkan nama lengkap Anda.",
+        "emailRequired": "Silakan masukkan alamat email Anda.",
+        "emailInvalid": "Silakan masukkan alamat email yang valid.",
+        "subjectRequired": "Silakan masukkan subjek.",
+        "messageRequired": "Silakan masukkan pesan Anda.",
+        "messageMinLength": "Pesan harus minimal 10 karakter."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Halaman tidak ditemukan",
+    "headline": "Sepertinya halaman ini tidak ada.",
+    "body": "Halaman yang Anda cari mungkin telah dipindahkan atau dihapus. Mari kembali ke jalur yang benar.",
+    "cta": "Kembali ke Beranda"
+  },
+  "common": {
+    "learnMore": "Pelajari lebih lanjut",
+    "exploreMore": "Jelajahi lebih lanjut",
+    "viewAll": "Lihat semua",
+    "backTo": "Kembali ke {page}",
+    "loading": "Memuat...",
+    "skipToContent": "Lewati ke konten utama",
+    "toggleTheme": "Ganti tema",
+    "lightMode": "Mode terang",
+    "darkMode": "Mode gelap",
+    "switchLanguage": "Ganti bahasa",
+    "english": "English",
+    "bahasa": "Bahasa Indonesia"
+  }
+}

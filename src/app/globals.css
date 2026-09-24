@@ -1,0 +1,630 @@
+/**
+ * Trishanti Design System — Global CSS
+ * Based on A.5.1–A.5.23 (LOCKED) and B.3 visual board.
+ *
+ * Token naming convention:
+ *   --trishanti-{category}-{variant}
+ *
+ * SonarQube note: CSS custom properties used exclusively —
+ * no magic values in components.
+ */
+/* ============================================================
+   GOOGLE FONTS — A.5.3 Typography
+   Inter (corporate clarity) + Playfair Display (editorial authority)
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES — A.5.1–A.5.11 Design Tokens
+   Exact values confirmed from B.3 visual board CSS Variables panel.
+   ============================================================ */
+:root {
+  /* --- Primary Colors (Design System Boards) --- */
+  --trishanti-color-primary: #00A6A6;       /* Cyan-Teal — Brand identity */
+  --trishanti-color-primary-dark: #008f8f;  /* Deeper cyan for hover/active */
+  --trishanti-color-primary-light: #20b8b8; /* Light cyan for accents */
+  --trishanti-color-bg-dark: #071A22;       /* Deep Midnight — Authority */
+  --trishanti-color-surface-dark: #0d222c;  /* Elevated surface on dark */
+  --trishanti-color-surface-charcoal: #292F2D; /* Neutral 800 Surface */
+  --trishanti-color-surface-charcoal-2: #353D3A; /* Neutral 800 Elevated */
+  --trishanti-color-text-dark: #FFFFFF;     /* Primary text on dark */
+  --trishanti-color-text-dark-muted: #94a3b8;/* Muted text on dark */
+  --trishanti-color-border-dark: rgba(255, 255, 255, 0.1);
+
+  /* --- Secondary Colors (Image 3 Board) --- */
+  --trishanti-color-ocean: #2F5F73;         /* Infrastructure */
+  --trishanti-color-forest: #4B6B57;        /* Agriculture */
+  --trishanti-color-copper: #A66A3F;        /* Industry */
+  --trishanti-color-sand: #D6CB85;          /* People */
+
+  /* --- Neutral Color System (Image 3 Board: Neutral 50 to 900) --- */
+  --trishanti-neutral-50: #F2F4F3;          /* Page background */
+  --trishanti-neutral-100: #E8E8E9;         /* Section background */
+  --trishanti-neutral-200: #D9DDDA;         /* Borders / Dividers */
+  --trishanti-neutral-300: #C8CDCA;         /* Subtle borders */
+  --trishanti-neutral-400: #A6ADAA;         /* Disabled / Muted */
+  --trishanti-neutral-500: #7C8581;         /* Metadata */
+  --trishanti-neutral-600: #5E6663;         /* Secondary text */
+  --trishanti-neutral-700: #414946;         /* Body text */
+  --trishanti-neutral-800: #292F2D;         /* Headings */
+  --trishanti-neutral-900: #171C1B;         /* Maximum contrast */
+
+  /* --- Brand Light / Cards --- */
+  --trishanti-color-bg-light: #F2F4F3;
+  --trishanti-color-surface-light: #FFFFFF; /* Architectural White — Cards */
+  --trishanti-color-text-light: #171C1B;
+  --trishanti-color-text-light-muted: #5E6663;
+  --trishanti-color-border-light: #D9DDDA;
+
+  /* --- Color: Semantic UI Colors --- */
+  --trishanti-color-success: #16A34A;
+  --trishanti-color-warning: #F58E08;
+  --trishanti-color-error: #DC2626;
+  --trishanti-color-info: #2563EB;
+
+
+  /* --- Typography: Font Families --- */
+  --trishanti-font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --trishanti-font-serif: "Playfair Display", Georgia, serif;
+
+  /* --- Typography: Scale (A.5.3) --- */
+  --trishanti-text-xs: 0.75rem;     /* 12px */
+  --trishanti-text-sm: 0.875rem;    /* 14px */
+  --trishanti-text-base: 1rem;      /* 16px */
+  --trishanti-text-lg: 1.125rem;    /* 18px */
+  --trishanti-text-xl: 1.25rem;     /* 20px */
+  --trishanti-text-2xl: 1.5rem;     /* 24px */
+  --trishanti-text-3xl: 1.875rem;   /* 30px */
+  --trishanti-text-4xl: 2.25rem;    /* 36px */
+  --trishanti-text-5xl: 3rem;       /* 48px */
+  --trishanti-text-6xl: 3.75rem;    /* 60px */
+  --trishanti-text-7xl: 4.5rem;     /* 72px */
+
+  /* --- Typography: Line Heights --- */
+  --trishanti-leading-tight: 1.2;
+  --trishanti-leading-snug: 1.375;
+  --trishanti-leading-normal: 1.5;
+  --trishanti-leading-relaxed: 1.625;
+  --trishanti-leading-loose: 2;
+
+  /* --- Spacing: A.5.4 --- */
+  --trishanti-space-1: 0.25rem;   /* 4px */
+  --trishanti-space-2: 0.5rem;    /* 8px */
+  --trishanti-space-3: 0.75rem;   /* 12px */
+  --trishanti-space-4: 1rem;      /* 16px */
+  --trishanti-space-5: 1.25rem;   /* 20px */
+  --trishanti-space-6: 1.5rem;    /* 24px */
+  --trishanti-space-8: 2rem;      /* 32px */
+  --trishanti-space-10: 2.5rem;   /* 40px */
+  --trishanti-space-12: 3rem;     /* 48px */
+  --trishanti-space-16: 4rem;     /* 64px */
+  --trishanti-space-20: 5rem;     /* 80px */
+  --trishanti-space-24: 6rem;     /* 96px */
+  --trishanti-space-32: 8rem;     /* 128px */
+
+  /* --- Border Radius Scale (Image 5 — Radius System) --- */
+  --trishanti-radius-none: 0px;       /* 0px — Structural / Flush (Text button) */
+  --trishanti-radius-xs: 4px;         /* 4px — Micro / Precise (Square image) */
+  --trishanti-radius-sm: 8px;         /* 8px — Small components / Inputs / Tooltips / Compact card */
+  --trishanti-radius-md: 12px;        /* 12px — Standard UI / Cards Primary / Alert banner */
+  --trishanti-radius-lg: 16px;        /* 16px — Premium / Featured card / Glass panel / Modal */
+  --trishanti-radius-xl: 24px;        /* 24px — Editorial / Visual card & hero images */
+  --trishanti-radius-full: 9999px;    /* 9999px — Full (Pills / Buttons / Badges / Avatars) */
+
+  /* Backward compatibility aliases */
+  --trishanti-radius-2xl: 24px;
+
+  /* --- Glass & Transparency Options (Board B.2 / B.3) --- */
+  --trishanti-glass-subtle: rgba(255, 255, 255, 0.6);
+  --trishanti-glass-frosted: rgba(255, 255, 255, 0.4);
+  --trishanti-glass-tinted: rgba(7, 26, 34, 0.65);
+  --trishanti-glass-tinted-deep: rgba(7, 26, 34, 0.85);
+
+  /* --- Gradients (Board B.2 / B.3) --- */
+  --trishanti-gradient-signature: linear-gradient(135deg, #2288C7 0%, #00A6A6 50%, #087C8C 100%);
+  --trishanti-gradient-midnight: linear-gradient(180deg, #071A22 0%, #102B35 50%, #1B3E46 100%);
+  --trishanti-gradient-teal: linear-gradient(135deg, #00A6A6 0%, #2F5F73 100%);
+
+  /* --- Elevation / Shadows (Board 4 — Shadow & Elevation System) --- */
+  --trishanti-elevation-0: none;
+  --trishanti-elevation-1: 0 4px 16px rgba(23, 28, 27, 0.06);     /* Standard card */
+  --trishanti-elevation-2: 0 8px 24px rgba(23, 28, 27, 0.08);     /* Hover / interactive */
+  --trishanti-elevation-3: 0 16px 48px rgba(23, 28, 27, 0.12);    /* Overlay / modal / dropdown */
+
+  /* Dark Mode Elevation (Tonal & Glow) */
+  --trishanti-elevation-dark-1: 0 4px 20px rgba(0, 0, 0, 0.35);
+  --trishanti-elevation-dark-2: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 166, 166, 0.2);
+  --trishanti-elevation-dark-3: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 35px rgba(0, 166, 166, 0.25);
+
+  /* Legacy aliases */
+  --trishanti-shadow-sm: var(--trishanti-elevation-1);
+  --trishanti-shadow-md: var(--trishanti-elevation-2);
+  --trishanti-shadow-lg: var(--trishanti-elevation-3);
+  --trishanti-shadow-glow: 0 0 30px rgba(0, 166, 166, 0.35);
+
+  /* --- Motion: Board 5 (Motion & Interaction System) --- */
+  --trishanti-duration-fast: 150ms;
+  --trishanti-duration-normal: 300ms;
+  --trishanti-duration-slow: 500ms;
+  --trishanti-ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --trishanti-ease-emphasized: cubic-bezier(0.2, 0.0, 0, 1);
+  --trishanti-ease-entrance: cubic-bezier(0, 0, 0.2, 1);
+  --trishanti-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Legacy motion aliases */
+  --trishanti-ease-out: var(--trishanti-ease-entrance);
+  --trishanti-ease-in-out: var(--trishanti-ease-standard);
+
+  /* --- Breakpoints: A.5.4 --- */
+  --trishanti-bp-sm: 640px;
+  --trishanti-bp-md: 768px;
+  --trishanti-bp-lg: 1024px;
+  --trishanti-bp-xl: 1280px;
+  --trishanti-bp-2xl: 1536px;
+
+  /* --- Container: max-width --- */
+  --trishanti-container-max: 1280px;
+  --trishanti-container-padding: var(--trishanti-space-6);
+
+  /* --- Z-index layer stack (Modal & Overlay System Item 11) --- */
+  --trishanti-z-critical: 80;
+  --trishanti-z-toast: 70;
+  --trishanti-z-modal: 60;
+  --trishanti-z-drawer: 50;
+  --trishanti-z-tooltip: 40;
+  --trishanti-z-popover: 30;
+  --trishanti-z-dropdown: 20;
+  --trishanti-z-navigation: 10;
+  --trishanti-z-base: 0;
+  --trishanti-z-below: -1;
+
+  /* Backward compatibility aliases */
+  --trishanti-z-raised: var(--trishanti-z-navigation);
+  --trishanti-z-sticky: var(--trishanti-z-navigation);
+  --trishanti-z-modal-backdrop: 55;
+}
+
+/* ============================================================
+   BASE RESETS & GLOBAL STYLES
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--trishanti-font-sans);
+  font-size: var(--trishanti-text-base);
+  line-height: var(--trishanti-leading-relaxed);
+  color: var(--trishanti-color-text-light);
+  background-color: var(--trishanti-color-bg-light);
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* Focus visible — WCAG 2.2 AA compliance */
+:focus-visible {
+  outline: 2px solid var(--trishanti-color-primary);
+  outline-offset: 3px;
+  border-radius: var(--trishanti-radius-sm);
+}
+
+/* Skip-to-content link — accessibility */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: var(--trishanti-space-4);
+  z-index: var(--trishanti-z-toast);
+  padding: var(--trishanti-space-2) var(--trishanti-space-4);
+  background: var(--trishanti-color-primary);
+  color: var(--trishanti-color-bg-dark);
+  font-weight: 700;
+  border-radius: var(--trishanti-radius-md);
+  text-decoration: none;
+  transition: top var(--trishanti-duration-fast) var(--trishanti-ease-out);
+}
+
+.skip-to-content:focus-visible {
+  top: var(--trishanti-space-4);
+  outline: 2px solid var(--trishanti-color-bg-dark);
+}
+
+/* Smooth reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+
+.font-sans {
+  font-family: var(--trishanti-font-sans);
+}
+
+.font-serif {
+  font-family: var(--trishanti-font-serif);
+}
+
+/* Eyebrow label — small uppercase tracked label */
+.text-eyebrow {
+  font-family: var(--trishanti-font-sans);
+  font-size: var(--trishanti-text-sm);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--trishanti-color-primary);
+}
+
+/* Display headline — large serif */
+.text-display {
+  font-family: var(--trishanti-font-serif);
+  font-size: clamp(var(--trishanti-text-4xl), 6vw, var(--trishanti-text-7xl));
+  font-weight: 700;
+  line-height: var(--trishanti-leading-tight);
+  letter-spacing: -0.02em;
+}
+
+/* Section headline */
+.text-headline {
+  font-family: var(--trishanti-font-serif);
+  font-size: clamp(var(--trishanti-text-3xl), 4vw, var(--trishanti-text-5xl));
+  font-weight: 600;
+  line-height: var(--trishanti-leading-tight);
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+
+.container-trishanti {
+  width: 100%;
+  max-width: var(--trishanti-container-max);
+  margin-inline: auto;
+  padding-inline: var(--trishanti-container-padding);
+}
+
+.section-padding {
+  padding-block: var(--trishanti-space-24);
+}
+
+.section-padding-sm {
+  padding-block: var(--trishanti-space-16);
+}
+
+/* ============================================================
+   DARK SURFACE UTILITY (Deep Midnight band)
+   ============================================================ */
+
+.surface-dark {
+  background-color: var(--trishanti-color-bg-dark);
+  color: var(--trishanti-color-text-dark);
+}
+
+.surface-dark .text-eyebrow {
+  color: var(--trishanti-color-primary-light);
+}
+
+/* ============================================================
+   NEUTRAL 600 SURFACE UTILITY (Design System Board — Image 1 & 4)
+   Using neutral 600 (#5E6663) as main page background
+   ============================================================ */
+
+.surface-neutral-600 {
+  background-color: var(--trishanti-neutral-600);
+  color: #FFFFFF;
+}
+
+.surface-neutral-600 .text-eyebrow {
+  color: #DEE3E1;
+}
+
+/* ============================================================
+   GLASS & TRANSPARENCY UTILITIES (Board B.2 / B.3)
+   ============================================================ */
+
+.glass-panel {
+  background: rgba(7, 26, 34, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--trishanti-radius-lg);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--trishanti-radius-lg);
+}
+
+.glass-nav-floating {
+  background: rgba(7, 26, 34, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ============================================================
+   EXPLICIT RADIUS SCALE UTILITIES (Image 5 — Radius System)
+   ============================================================ */
+
+.radius-none { border-radius: var(--trishanti-radius-none); }
+.radius-xs   { border-radius: var(--trishanti-radius-xs); }
+.radius-sm   { border-radius: var(--trishanti-radius-sm); }
+.radius-md   { border-radius: var(--trishanti-radius-md); }
+.radius-lg   { border-radius: var(--trishanti-radius-lg); }
+.radius-xl   { border-radius: var(--trishanti-radius-xl); }
+.radius-full { border-radius: var(--trishanti-radius-full); }
+
+/* ============================================================
+   BREAKPOINT SYSTEM — FLUID TYPOGRAPHY & SPACING (Image 1)
+   ============================================================ */
+
+.text-fluid-hero {
+  font-size: clamp(2rem, 6vw, 4.5rem); /* clamp(32px, 6vw, 72px) */
+  line-height: 1.15;
+}
+
+.text-fluid-section {
+  font-size: clamp(1.5rem, 4vw, 3rem); /* clamp(24px, 4vw, 48px) */
+  line-height: 1.25;
+}
+
+.text-fluid-body {
+  font-size: clamp(1rem, 2vw, 1.25rem); /* clamp(16px, 2vw, 20px) */
+  line-height: 1.6;
+}
+
+.text-fluid-caption {
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* clamp(12px, 1.5vw, 14px) */
+  line-height: 1.5;
+}
+
+/* Section Spacing Scale (Mobile: 56px, Tablet: 72px, Desktop: 96px, Large: 160px) */
+.section-spacing-standard {
+  padding-block: 3.5rem; /* 56px on mobile */
+}
+
+@media (min-width: 768px) {
+  .section-spacing-standard {
+    padding-block: 4.5rem; /* 72px on tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-spacing-standard {
+    padding-block: 6rem; /* 96px on desktop */
+  }
+}
+
+@media (min-width: 1536px) {
+  .section-spacing-large {
+    padding-block: 10rem; /* 160px on ultra-wide */
+  }
+}
+
+/* ============================================================
+   BACKDROP OVERLAYS (Modal & Overlay System Item 12)
+   ============================================================ */
+
+.backdrop-overlay-light {
+  background-color: rgba(20, 30, 28, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.backdrop-overlay-dark {
+  background-color: rgba(4, 14, 18, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ============================================================
+   A.5.17 RESPONSIVE & ADAPTIVE COMPONENT SPACING (Item 10)
+   Desktop: Section 120px (7.5rem), Container 32px (2rem), Element 24px (1.5rem)
+   Tablet:  Section 80px  (5rem),   Container 24px (1.5rem), Element 20px (1.25rem)
+   Mobile:  Section 56px  (3.5rem), Container 20px (1.25rem), Element 16px (1rem)
+   ============================================================ */
+
+.section-adaptive {
+  padding-block: 3.5rem; /* 56px mobile */
+}
+
+@media (min-width: 768px) {
+  .section-adaptive {
+    padding-block: 5rem; /* 80px tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-adaptive {
+    padding-block: 7.5rem; /* 120px desktop */
+  }
+}
+
+.container-adaptive {
+  padding-inline: 1.25rem; /* 20px mobile */
+}
+
+@media (min-width: 768px) {
+  .container-adaptive {
+    padding-inline: 1.5rem; /* 24px tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-adaptive {
+    padding-inline: 2rem; /* 32px desktop */
+  }
+}
+
+.gap-element-adaptive {
+  gap: 1rem; /* 16px mobile */
+}
+
+@media (min-width: 768px) {
+  .gap-element-adaptive {
+    gap: 1.25rem; /* 20px tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .gap-element-adaptive {
+    gap: 1.5rem; /* 24px desktop */
+  }
+}
+
+/* ============================================================
+   A.5.17 & A.5.19 IMAGES & MEDIA ADAPTIVE RATIOS (Item 08)
+   Enforces fixed aspect ratios to eliminate layout shift (CLS < 0.1)
+   ============================================================ */
+
+.aspect-wide {
+  aspect-ratio: 16 / 9; /* Desktop wide composition */
+}
+
+.aspect-balanced {
+  aspect-ratio: 4 / 3; /* Tablet balanced crop */
+}
+
+.aspect-focused {
+  aspect-ratio: 3 / 4; /* Mobile focused crop */
+}
+
+.aspect-card {
+  aspect-ratio: 16 / 10; /* Standard card image */
+}
+
+.aspect-hero-cinematic {
+  aspect-ratio: 21 / 9; /* Ultra-wide hero display */
+}
+
+/* Touch target minimum (A.5.17 Item 06 Forms Adaptive) */
+.touch-target-min {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* ============================================================
+   BORDER SYSTEM TOKENS (Design System — Image 3 Board)
+   ============================================================ */
+
+/* Light Mode Borders */
+.border-token-subtle  { border-color: #E7E9EC; } /* Quiet separation & dividers */
+.border-token-default { border-color: #D1D5DB; } /* Standard UI components */
+.border-token-strong  { border-color: #A3A8B3; } /* Hover states & selected surfaces */
+.border-token-accent  { border-color: #06B6D4; } /* Active / important interactive elements */
+.border-token-glass   { border-color: rgba(255, 255, 255, 0.2); }
+
+.border-token-focus {
+  outline: 2px solid #06B6D4;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.25);
+}
+
+/* Dark Mode Borders */
+.border-token-dark-subtle  { border-color: rgba(255, 255, 255, 0.08); }
+.border-token-dark-default { border-color: rgba(255, 255, 255, 0.12); }
+.border-token-dark-strong  { border-color: rgba(255, 255, 255, 0.24); }
+.border-token-dark-accent  { border-color: #06B6D4; }
+.border-token-dark-glass   { border-color: rgba(255, 255, 255, 0.2); }
+
+/* ============================================================
+   GRADIENT & GLASS SYSTEM (Design System — Image 4 Board)
+   ============================================================ */
+
+/* 01 Signature & Atmospheric Gradients */
+.gradient-signature {
+  background: linear-gradient(135deg, #22B8C7 0%, #00A6A6 50%, #087C8C 100%);
+}
+
+.gradient-midnight {
+  background: linear-gradient(180deg, #071A22 0%, #102B35 50%, #183E46 100%);
+}
+
+/* Contextual Pillar Gradients */
+.gradient-infrastructure {
+  background: linear-gradient(135deg, #071A22 0%, #2F5F73 100%);
+}
+
+.gradient-industrial {
+  background: linear-gradient(135deg, #292F2D 0%, #A66A3F 100%);
+}
+
+.gradient-agriculture {
+  background: linear-gradient(135deg, #486B57 0%, #2E5E43 100%);
+}
+
+.gradient-technology {
+  background: linear-gradient(135deg, #071A22 0%, #00A6A6 100%);
+}
+
+.gradient-consumer {
+  background: linear-gradient(135deg, #5E6663 0%, #DBC8B5 100%);
+}
+
+.gradient-experiences {
+  background: linear-gradient(135deg, #2F5F73 0%, #DBC8B5 100%);
+}
+
+/* 02 Architectural Transparency / Glass Options */
+.glass-frosted-light {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-frosted-dark {
+  background: rgba(7, 26, 34, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-tinted-brand {
+  background: rgba(34, 184, 199, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-solid-translucent {
+  background: rgba(241, 243, 242, 0.85);
+  border: 1px solid #D7DBD9;
+}
+
+

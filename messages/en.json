@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "siteName": "Trishanti",
+    "siteDescription": "PT. Trishanti Sinergi Indocorp — A diversified Indonesian enterprise building a brighter tomorrow across property, resources, agriculture, technology, consumer, and emerging ventures.",
+    "tagline": "A Brighter Tomorrow, Together."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "businesses": "Businesses",
+    "sustainability": "Sustainability",
+    "news": "News & Insights",
+    "careers": "Careers",
+    "contact": "Contact Us",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
+  },
+  "footer": {
+    "tagline": "A Brighter Tomorrow, Together.",
+    "corporate": "Corporate",
+    "businesses": "Our Businesses",
+    "company": "Company",
+    "legal": "Legal",
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "leadership": "Leadership",
+      "energyResources": "Energy & Resources",
+      "propertyInfrastructure": "Property & Infrastructure",
+      "technologyInnovation": "Technology & Innovation",
+      "consumerLifestyle": "Consumer & Lifestyle",
+      "healthcareWellness": "Healthcare & Wellness",
+      "sustainableVentures": "Sustainable Ventures",
+      "sustainability": "Sustainability",
+      "newsInsights": "News & Insights",
+      "careers": "Careers",
+      "contact": "Contact Us",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "cookiePolicy": "Cookie Policy"
+    },
+    "social": {
+      "linkedin": "Follow Trishanti on LinkedIn",
+      "instagram": "Follow Trishanti on Instagram",
+      "youtube": "Watch Trishanti on YouTube"
+    },
+    "copyright": "© {year} PT. Trishanti Sinergi Indocorp. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "A BRIGHTER TOMORROW, TOGETHER",
+      "headline": "Building Sustainable Progress.",
+      "headline1": "Building",
+      "headline2": "Sustainable",
+      "headline3": "Progress",
+      "headlineHighlight": ".",
+      "subheadline": "We create lasting value across industries, communities, and generations - with a long-term view of a brighter tomorrow.",
+      "ctaPrimary": "Explore Our Businesses",
+      "ctaSecondary": "Play Video",
+      "scrollHint": "Scroll to explore",
+      "sideText1": "People",
+      "sideText2": "Industries",
+      "sideText3": "A Brighter",
+      "sideText4": "Tomorrow."
+    },
+    "pillars": {
+      "eyebrow": "OUR BUSINESS PILLARS",
+      "headline": "Diverse Industries. Greater Possibilities.",
+      "headlinePart1": "Diverse Industries.",
+      "headlinePart2": "Greater Possibilities.",
+      "description": "Across six business pillars, Trishanti explores and develops opportunities that create long-term value for people, communities, and a more sustainable future.",
+      "cta": "Explore Our Businesses",
+      "learnMore": "Learn More"
+    },
+    "purpose": {
+      "eyebrow": "OUR PURPOSE",
+      "headline": "Building Businesses for a Better Tomorrow.",
+      "headlinePart1": "Building Businesses",
+      "headlinePart2": "for a Better Tomorrow.",
+      "body": "We build and develop businesses until they can go global — creating long-term value, broader opportunities, and a better future for people.",
+      "cta": "Our Commitment",
+      "stat1Value": "6",
+      "stat1Label": "Business Pillars",
+      "stat1Sub": "Diversified growth",
+      "stat2Value": "10+",
+      "stat2Label": "Years of Progress",
+      "stat2Sub": "Creating long-term value",
+      "stat3Value": "1,000+",
+      "stat3Label": "People",
+      "stat3Sub": "Across our ecosystem",
+      "stat4Value": "A Brighter Tomorrow",
+      "stat4Sub": "For generations ahead"
+    },
+    "about": {
+      "eyebrow": "Our Story",
+      "headline": "A long-term enterprise built for lasting impact.",
+      "body": "PT. Trishanti Sinergi Indocorp was founded on the belief that a diversified enterprise, built with purpose and discipline, can create lasting value for people, communities, and the nation. We are not a single-product company — we are a family of businesses united by one vision: a brighter tomorrow, together.",
+      "stat1Value": "29",
+      "stat1Label": "KBLI Business Activities",
+      "stat2Value": "6",
+      "stat2Label": "Strategic Business Pillars",
+      "stat3Value": "2024",
+      "stat3Label": "Established",
+      "cta": "Learn About Trishanti"
+    },
+    "businesses": {
+      "eyebrow": "Our Businesses",
+      "headline": "Diverse Industries. Greater Possibilities.",
+      "cta": "Explore Our Businesses"
+    },
+    "stats": {
+      "eyebrow": "Our Impact",
+      "headline": "Numbers that tell a story.",
+      "stat1Value": "29",
+      "stat1Label": "Business Activities",
+      "stat2Value": "6",
+      "stat2Label": "Strategic Sectors",
+      "stat3Value": "100%",
+      "stat3Label": "Commitment to Growth"
+    },
+    "news": {
+      "eyebrow": "LATEST NEWS",
+      "headline": "Stories That Move Us Forward.",
+      "cta": "View All News"
+    },
+    "insights": {
+      "eyebrow": "LATEST NEWS",
+      "headline": "Stories That Move Us Forward.",
+      "cta": "View All News"
+    },
+    "careers": {
+      "eyebrow": "Careers",
+      "headline": "Build a Brighter Future With Us.",
+      "body": "We are looking for people who believe that business can be a force for good. Join a team that is building something meaningful — for Indonesia, and for the world.",
+      "cta": "Explore Careers"
+    },
+    "contactCta": {
+      "headline": "Let's Build Tomorrow, Together.",
+      "subheadline": "Reach out to learn more about our businesses, partnerships, and opportunities.",
+      "cta": "Get in Touch"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About Trishanti",
+      "description": "Learn about PT. Trishanti Sinergi Indocorp — our story, our people, our values, and our vision for a brighter tomorrow."
+    },
+    "hero": {
+      "eyebrow": "About Trishanti",
+      "headline": "A brighter tomorrow starts with the right foundation.",
+      "body": "PT. Trishanti Sinergi Indocorp is a diversified Indonesian enterprise with a long-term view. We build businesses that create real value for real people."
+    }
+  },
+  "businesses": {
+    "meta": {
+      "title": "Our Businesses",
+      "description": "Explore the six strategic business pillars of PT. Trishanti Sinergi Indocorp — from energy and property to technology, healthcare, and sustainable ventures."
+    },
+    "hero": {
+      "eyebrow": "Our Businesses",
+      "headline": "One enterprise. Many possibilities.",
+      "body": "Six strategic pillars, 29 business activities, and one guiding vision — to build sustainable growth across the sectors that matter most."
+    }
+  },
+  "news": {
+    "meta": {
+      "title": "News & Insights",
+      "description": "The latest news, insights, and stories from PT. Trishanti Sinergi Indocorp."
+    },
+    "hero": {
+      "eyebrow": "Insights & News",
+      "headline": "Ideas. Updates. Progress.",
+      "body": "Perspectives from our businesses, our people, and the sectors we care about."
+    },
+    "readMore": "Read more",
+    "readingTime": "{minutes} min read",
+    "noArticles": "No articles found.",
+    "categories": {
+      "all": "All",
+      "business": "Business",
+      "sustainability": "Sustainability",
+      "technology": "Technology",
+      "community": "Community"
+    }
+  },
+  "careers": {
+    "meta": {
+      "title": "Careers at Trishanti",
+      "description": "Join PT. Trishanti Sinergi Indocorp and help us build a brighter tomorrow. Explore open positions across our business pillars."
+    },
+    "hero": {
+      "eyebrow": "Careers",
+      "headline": "Build a Brighter Future With Us.",
+      "body": "We are looking for curious, disciplined, and purpose-driven people who want to build something meaningful. Come grow with us."
+    },
+    "openPositions": "Open Positions",
+    "noPositions": "No open positions at this time. Check back soon.",
+    "apply": "Apply Now",
+    "filters": {
+      "allDepartments": "All Departments",
+      "allLocations": "All Locations"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact Trishanti",
+      "description": "Get in touch with PT. Trishanti Sinergi Indocorp. We welcome inquiries about our businesses, partnerships, and opportunities."
+    },
+    "hero": {
+      "eyebrow": "Contact Us",
+      "headline": "We'd love to hear from you.",
+      "body": "Whether you have a question about our businesses, a partnership idea, or just want to say hello — reach out."
+    },
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us more...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "successTitle": "Message sent!",
+      "successBody": "Thank you for reaching out. We'll get back to you shortly.",
+      "errorTitle": "Something went wrong.",
+      "errorBody": "Please try again or email us directly.",
+      "validation": {
+        "nameRequired": "Please enter your full name.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "subjectRequired": "Please enter a subject.",
+        "messageRequired": "Please enter your message.",
+        "messageMinLength": "Message must be at least 10 characters."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "headline": "Looks like this page doesn't exist.",
+    "body": "The page you're looking for may have moved or been removed. Let's get you back on track.",
+    "cta": "Return to Home"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "exploreMore": "Explore more",
+    "viewAll": "View all",
+    "backTo": "Back to {page}",
+    "loading": "Loading...",
+    "skipToContent": "Skip to main content",
+    "toggleTheme": "Toggle theme",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "switchLanguage": "Switch language",
+    "english": "English",
+    "bahasa": "Bahasa Indonesia"
+  }
+}
