@@ -75,10 +75,10 @@ export function HeroStatistics({
 
   return (
     <div
-      className={`grid grid-cols-2 lg:grid-cols-4 gap-6 p-6 sm:p-8 rounded-2xl border transition-all duration-300 ${
+      className={`grid grid-cols-2 lg:grid-cols-4 gap-6 p-6 sm:p-8 rounded-2xl border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1 ${
         isDark
-          ? "bg-[#071A22] border-white/10 text-white"
-          : "bg-white border-[#DEE3E1] text-[#171C1B] shadow-sm"
+          ? "bg-[#071A22] border-white/10 text-white hover:border-[#00A6A6]/30 hover:shadow-[var(--trishanti-elevation-dark-2)]"
+          : "bg-white border-[#DEE3E1] text-[#171C1B] shadow-[var(--trishanti-elevation-1)] hover:border-[#00A6A6]/30 hover:shadow-[var(--trishanti-elevation-2)]"
       } ${className}`}
     >
       {STATS.map((stat) => {
@@ -89,7 +89,7 @@ export function HeroStatistics({
               <Icon className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-3xl sm:text-4xl font-serif font-bold text-[#00A6A6]">
+              <div className="text-3xl sm:text-4xl font-heading font-bold text-[#00A6A6]">
                 {stat.value}
               </div>
               <div
@@ -142,15 +142,15 @@ export function CapacityBarChart({
 
   return (
     <div
-      className={`rounded-2xl p-6 sm:p-7 border transition-all duration-300 ${
+      className={`rounded-2xl p-6 sm:p-7 border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1 ${
         isDark
-          ? "bg-[#071A22] border-white/10 text-white"
-          : "bg-white border-[#DEE3E1] text-[#171C1B] shadow-md"
+          ? "bg-[#071A22] border-white/10 text-white hover:border-[#00A6A6]/30 hover:shadow-[var(--trishanti-elevation-dark-2)]"
+          : "bg-white border-[#DEE3E1] text-[#171C1B] shadow-[var(--trishanti-elevation-1)] hover:border-[#00A6A6]/30 hover:shadow-[var(--trishanti-elevation-2)]"
       } ${className}`}
     >
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
         <div>
-          <h4 className="text-xl font-serif font-bold">
+          <h4 className="text-xl font-heading font-bold">
             {isId ? "Kapasitas Energi Terbarukan" : "Growth in Renewable Energy Capacity"}
           </h4>
           <p className={`text-xs mt-0.5 ${isDark ? "text-[#A6ADAA]" : "text-[#7C8581]"}`}>
@@ -260,9 +260,9 @@ export function ComparisonBlock({
     <div className={`space-y-6 ${className}`}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Today Column */}
-        <div className="p-6 rounded-2xl bg-[#F7F8F7] border border-[#DEE3E1] space-y-4">
+        <div className="p-6 rounded-2xl bg-[#F7F8F7] border border-[#DEE3E1] space-y-4 transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1 hover:shadow-[var(--trishanti-elevation-2)]">
           <div className="flex items-center justify-between">
-            <h4 className="text-xl font-serif font-bold text-[#171C1B]">
+            <h4 className="text-xl font-heading font-bold text-[#171C1B]">
               {isId ? "Hari Ini" : "Today"}
             </h4>
             <span className="text-xs uppercase tracking-wider text-[#7C8581] font-semibold">
@@ -280,9 +280,9 @@ export function ComparisonBlock({
         </div>
 
         {/* Tomorrow Column */}
-        <div className="p-6 rounded-2xl bg-[#071A22] text-white border border-[#00A6A6]/30 space-y-4 shadow-xl">
+        <div className="p-6 rounded-2xl bg-[#071A22] text-white border border-[#00A6A6]/30 space-y-4 transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1 shadow-[var(--trishanti-elevation-dark-1)] hover:shadow-[var(--trishanti-elevation-dark-2)]">
           <div className="flex items-center justify-between">
-            <h4 className="text-xl font-serif font-bold text-white">
+            <h4 className="text-xl font-heading font-bold text-white">
               {isId ? "Hari Esok" : "Tomorrow"}
             </h4>
             <span className="text-xs uppercase tracking-wider text-[#00A6A6] font-semibold">
@@ -303,7 +303,7 @@ export function ComparisonBlock({
       {/* Highlight Quote */}
       <div className="p-5 rounded-xl bg-white border border-[#DEE3E1] flex items-start gap-4">
         <Quote className="w-6 h-6 text-[#00A6A6] flex-shrink-0 mt-0.5" />
-        <p className="text-sm font-serif italic text-[#414946] leading-relaxed">
+        <p className="text-sm font-heading italic text-[#414946] leading-relaxed">
           {isId
             ? "“Dari awal yang bersahaja menuju dampak yang lebih luas, perjalanan kami senantiasa didefinisikan oleh manusia, tujuan luhur, dan komitmen jangka panjang.”"
             : "“From local beginnings to a broader impact, our journey is defined by people, purpose, and long-term commitment.”"}
@@ -359,10 +359,10 @@ export function RadialProgressIndicators({
 
   return (
     <div
-      className={`grid grid-cols-1 md:grid-cols-3 gap-6 p-6 sm:p-8 rounded-2xl border transition-all duration-300 ${
+      className={`grid grid-cols-1 md:grid-cols-3 gap-6 p-6 sm:p-8 rounded-2xl border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1 ${
         isDark
-          ? "bg-[#071A22] border-white/10 text-white"
-          : "bg-white border-[#DEE3E1] text-[#171C1B] shadow-sm"
+          ? "bg-[#071A22] border-white/10 text-white hover:border-[#00A6A6]/30 hover:shadow-[var(--trishanti-elevation-dark-2)]"
+          : "bg-white border-[#DEE3E1] text-[#171C1B] shadow-[var(--trishanti-elevation-1)] hover:border-[#00A6A6]/30 hover:shadow-[var(--trishanti-elevation-2)]"
       } ${className}`}
     >
       {METRICS.map((metric) => {
@@ -394,13 +394,13 @@ export function RadialProgressIndicators({
                   className="transition-all duration-1000 ease-out"
                 />
               </svg>
-              <div className="absolute inset-0 flex items-center justify-center font-serif text-2xl font-bold">
+              <div className="absolute inset-0 flex items-center justify-center font-heading text-2xl font-bold">
                 {metric.percentage}%
               </div>
             </div>
 
             <div>
-              <h5 className="text-sm font-serif font-bold">
+              <h5 className="text-sm font-heading font-bold">
                 {isId ? metric.titleId : metric.titleEn}
               </h5>
               <p className={`text-xs mt-0.5 ${isDark ? "text-[#A6ADAA]" : "text-[#7C8581]"}`}>
@@ -476,7 +476,7 @@ export function MilestoneTimeline({
             <span className="text-xs font-mono font-bold text-[#00A6A6] tracking-wider">
               {item.year}
             </span>
-            <h4 className="text-lg font-serif font-bold text-[#171C1B]">
+            <h4 className="text-lg font-heading font-bold text-[#171C1B]">
               {isId ? item.titleId : item.titleEn}
             </h4>
             <p className="text-xs text-[#5E6663] max-w-xl leading-relaxed">
@@ -511,7 +511,7 @@ export function FinancialDataTable({
   ];
 
   return (
-    <div className={`p-6 sm:p-7 rounded-2xl bg-white border border-[#DEE3E1] shadow-sm ${className}`}>
+    <div className={`p-6 sm:p-7 rounded-2xl bg-white border border-[#DEE3E1] shadow-[var(--trishanti-elevation-1)] transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1 hover:shadow-[var(--trishanti-elevation-2)] ${className}`}>
       {/* Tabs */}
       <div className="flex flex-wrap items-center gap-2 pb-4 border-b border-[#DEE3E1] mb-4">
         {[

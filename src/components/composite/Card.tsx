@@ -27,17 +27,17 @@ export function Card({
 
   const variantStyles = {
     default:
-      "bg-white border border-[#DEE3E1] text-[#171C1B] shadow-sm",
+      "bg-white dark:bg-white/5 border border-[var(--trishanti-neutral-200)] dark:border-white/10 text-[var(--trishanti-neutral-900)] dark:text-white shadow-[var(--trishanti-elevation-1)] dark:shadow-[var(--trishanti-elevation-dark-1)] dark:glass-panel",
     dark:
-      "bg-[#071A22] border border-white/10 text-white shadow-lg",
+      "bg-[var(--trishanti-color-bg-dark)] border border-white/10 text-white shadow-[var(--trishanti-elevation-dark-2)] glass-panel",
     charcoal:
-      "bg-[#292F2D] border border-white/10 text-white shadow-lg",
+      "bg-[#292F2D] border border-white/10 text-white shadow-[var(--trishanti-elevation-dark-1)]",
     glass:
-      "bg-[#071A22]/80 backdrop-blur-md border border-white/15 text-white shadow-xl",
+      "bg-[var(--trishanti-color-bg-dark)]/80 backdrop-blur-md border border-white/15 text-white shadow-[var(--trishanti-elevation-dark-3)]",
     "glass-light":
-      "bg-white/70 backdrop-blur-md border border-white/40 text-[#171C1B] shadow-md",
+      "bg-white/70 backdrop-blur-md border border-white/40 text-[var(--trishanti-neutral-900)] shadow-[var(--trishanti-elevation-2)]",
     interactive:
-      "bg-white border border-[#DEE3E1] text-[#171C1B] hover:border-[#00A6A6] hover:shadow-[0_10px_30px_rgba(0,166,166,0.15)] transition-all duration-300 group cursor-pointer",
+      "bg-white dark:bg-white/5 border border-[var(--trishanti-neutral-200)] dark:border-white/10 text-[var(--trishanti-neutral-900)] dark:text-white shadow-[var(--trishanti-elevation-1)] dark:shadow-[var(--trishanti-elevation-dark-1)] hover:border-[var(--trishanti-color-primary)] hover:shadow-[var(--trishanti-elevation-2)] hover:shadow-[var(--trishanti-shadow-glow)] dark:hover:shadow-[var(--trishanti-elevation-dark-2)] transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] group cursor-pointer dark:glass-panel hover:-translate-y-1",
   }[variant];
 
   return (
@@ -56,7 +56,7 @@ export function CardHeader({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("p-6 pb-3", className)} {...props}>
+    <div className={cn("p-8 pb-4", className)} {...props}>
       {children}
     </div>
   );
@@ -70,7 +70,7 @@ export function CardTitle({
   return (
     <h3
       className={cn(
-        "text-xl font-bold font-serif tracking-tight leading-snug",
+        "text-xl font-bold font-heading tracking-tight leading-snug",
         className,
       )}
       {...props}
@@ -87,7 +87,7 @@ export function CardDescription({
 }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className={cn("text-sm text-[#5E6663] mt-2 leading-relaxed", className)}
+      className={cn("text-base text-[var(--trishanti-neutral-600)] dark:text-[var(--trishanti-neutral-400)] mt-3 leading-relaxed", className)}
       {...props}
     >
       {children}
@@ -101,7 +101,7 @@ export function CardContent({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("p-6 pt-3", className)} {...props}>
+    <div className={cn("p-8 pt-4", className)} {...props}>
       {children}
     </div>
   );
@@ -115,7 +115,7 @@ export function CardFooter({
   return (
     <div
       className={cn(
-        "p-6 pt-0 flex items-center justify-between border-t border-white/5 mt-4",
+        "p-8 pt-0 flex items-center justify-between border-t border-[var(--trishanti-neutral-200)] dark:border-white/10 mt-6",
         className,
       )}
       {...props}

@@ -6,7 +6,6 @@ import { PurposeSection } from "@/components/home/PurposeSection";
 import { NewsSection } from "@/components/home/NewsSection";
 import { RealImpactSection } from "@/components/home/RealImpactSection";
 import { CareersSection } from "@/components/home/CareersSection";
-import { CTASection } from "@/components/home/CTASection";
 import { BUSINESS_PILLARS, INSIGHT_ARTICLES } from "@/lib/data";
 
 interface HomePageProps {
@@ -39,7 +38,7 @@ export default async function HomePage({ params }: HomePageProps) {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#F2F4F3] text-[#171C1B]">
+    <div className="flex flex-col w-full">
       {/* ============================================================
           §1 — HERO SECTION (Matching Visual Example 07 & 35)
           Metropolis bridge skyline at sunset, display typography with
@@ -134,33 +133,6 @@ export default async function HomePage({ params }: HomePageProps) {
         isId={isId}
       />
 
-      {/* ============================================================
-          §7 — CALL TO ACTION (Board B.5 Item 03 Section 07)
-          Direct users to explore, connect, or learn more.
-          ============================================================ */}
-      <CTASection
-        locale={locale}
-        isId={isId}
-      />
-
-      {/* ============================================================
-          §8 — FOUNDATIONAL QUOTE (from B.4 Board Page 99)
-          Seamless transition into the Deep Midnight Footer.
-          ============================================================ */}
-      <section className="bg-[var(--trishanti-color-bg-dark)] text-white py-14 sm:py-20 border-t border-white/10 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,166,166,0.12),transparent_70%)] pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <span className="w-8 h-1 bg-[var(--trishanti-color-primary)] mx-auto block mb-6 rounded-[var(--trishanti-radius-full)]" />
-          <blockquote className="font-serif italic text-xl sm:text-2xl lg:text-3xl text-white/95 leading-relaxed mb-4">
-            {isId
-              ? "“Fondasi yang kokoh menciptakan pengalaman yang mulus. Pengalaman yang konsisten membangun keterhubungan yang lebih kuat.”"
-              : "“A strong foundation creates seamless experiences. Consistent experiences create stronger connections.”"}
-          </blockquote>
-          <cite className="not-italic text-xs font-semibold uppercase tracking-[0.25em] text-[var(--trishanti-color-primary)]">
-            — PT. Trishanti Sinergi Indocorp
-          </cite>
-        </div>
-      </section>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Layers } from "lucide-react";
 import { BusinessPillar } from "@/lib/data";
+import { FadeIn } from "@/components/composite/FadeIn";
 
 interface PillarsSectionProps {
   locale: string;
@@ -102,16 +103,19 @@ export function PillarsSection({
   const getPath = (path: string) => `/${locale}${path === "/" ? "" : path}`;
 
   return (
-    <section className="py-20 sm:py-28 bg-[var(--trishanti-neutral-50)] text-[var(--trishanti-neutral-900)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 sm:py-28 bg-[var(--trishanti-neutral-50)] dark:bg-[var(--trishanti-color-bg-dark)] text-[var(--trishanti-neutral-900)] dark:text-white transition-colors duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] overflow-hidden">
+      {/* Ambient background glow for dark mode to prevent a "depressing" flat look */}
+      <div className="hidden dark:block absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,166,166,0.15),transparent_60%)] pointer-events-none" />
+      <div className="hidden dark:block absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-[#00A6A6]/5 to-transparent pointer-events-none" />
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-24">
         {/* Top Header Row from Visual Board Image 3 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12">
+        <FadeIn className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12">
           {/* Left: Eyebrow + Serif Headline */}
           <div className="lg:col-span-6">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--trishanti-neutral-500)] block mb-3">
               {eyebrow}
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[var(--trishanti-neutral-900)] font-normal leading-[1.12]">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-[var(--trishanti-neutral-900)] dark:text-white font-normal leading-[1.12] transition-colors duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]">
               {headlinePart1}
               <br />
               {headlinePart2}
@@ -120,7 +124,7 @@ export function PillarsSection({
 
           {/* Right: Explanatory paragraph + Explore Link */}
           <div className="lg:col-span-6 flex flex-col justify-between items-start lg:items-end">
-            <p className="text-[var(--trishanti-neutral-600)] text-sm sm:text-base leading-relaxed max-w-lg mb-4 lg:text-right font-light">
+            <p className="text-[var(--trishanti-neutral-600)] dark:text-white/70 text-sm sm:text-base leading-relaxed max-w-lg mb-4 lg:text-right font-light transition-colors duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]">
               {description}
             </p>
             <Link
@@ -132,60 +136,60 @@ export function PillarsSection({
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1" style={{ transition: `transform var(--trishanti-duration-fast) var(--trishanti-ease-emphasized)` }} />
             </Link>
           </div>
-        </div>
+        </FadeIn>
 
-        {/* Six concise editorial cards: image-led, easy to scan, and never dashboard-like. */}
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4">
-          {pillars.map((pillar) => {
+        {/* Editorial cards: 3 per row to ensure premium size and visual impact. */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          {pillars.map((pillar, index) => {
             const Icon = PILLAR_ICON_MAP[pillar.id] ?? Layers;
             const title = isId ? pillar.titleId : pillar.titleEn;
             const tagline = isId ? (pillar.taglineId ?? "") : (pillar.taglineEn ?? "");
 
             return (
-              <Link
-                key={pillar.id}
-                href={getPath(`/businesses#${pillar.slug}`)}
-                className="bg-white rounded-[var(--trishanti-radius-md)] overflow-hidden border border-[var(--trishanti-neutral-200)] hover:border-[var(--trishanti-color-primary)] hover:-translate-y-1 flex flex-col group transition-all duration-300"
-                style={{ boxShadow: `var(--trishanti-elevation-1)` }}
-              >
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-100">
-                  <Image
-                    src={pillar.image}
-                    alt={title}
-                    fill
-                    className="object-cover object-center group-hover:scale-105"
-                    style={{ transition: `transform var(--trishanti-duration-slow) var(--trishanti-ease-emphasized)` }}
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                  />
-                </div>
+              <FadeIn key={pillar.id} delay={index * 100} duration={800} direction="up" className="flex">
+                <Link
+                  href={getPath(`/businesses#${pillar.slug}`)}
+                  className="w-full relative z-10 bg-white dark:bg-white/5 dark:backdrop-blur-xl rounded-[var(--trishanti-radius-lg)] overflow-hidden border border-[var(--trishanti-neutral-200)] dark:border-white/10 hover:border-[var(--trishanti-color-primary)] dark:hover:border-white/30 dark:hover:bg-white/10 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#00A6A6]/20 flex flex-col group transition-all duration-500 dark:glass-panel"
+                >
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-black/20">
+                    <Image
+                      src={pillar.image}
+                      alt={title}
+                      fill
+                      className="object-cover object-center group-hover:scale-105"
+                      style={{ transition: `transform var(--trishanti-duration-slow) var(--trishanti-ease-emphasized)` }}
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                    />
+                  </div>
 
-                {/* Card Body Bottom */}
-                <div className="p-4 flex flex-col flex-1 justify-between bg-white">
-                  <div>
-                    {/* Cyan Outlined Icon */}
-                    <div className="text-[var(--trishanti-color-primary)] mb-3">
-                      <Icon className="w-4 h-4 stroke-[2]" />
+                  {/* Card Body Bottom */}
+                  <div className="p-8 flex flex-col flex-1 justify-between bg-white dark:bg-transparent">
+                    <div>
+                      {/* Cyan Outlined Icon */}
+                      <div className="text-[var(--trishanti-color-primary)] mb-5">
+                        <Icon className="w-8 h-8 stroke-[1.5]" />
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="font-sans font-bold text-lg text-[var(--trishanti-color-bg-dark)] dark:text-white group-hover:text-[var(--trishanti-color-primary)] mb-2 leading-snug transition-colors">
+                        {title}
+                      </h3>
+
+                      {/* One-line descriptor */}
+                      <p className="text-sm text-[var(--trishanti-neutral-600)] dark:text-[var(--trishanti-neutral-400)] leading-relaxed line-clamp-2">
+                        {tagline}
+                      </p>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="font-sans font-bold text-xs text-[var(--trishanti-color-bg-dark)] group-hover:text-[var(--trishanti-color-primary)] mb-1.5 leading-snug transition-colors">
-                      {title}
-                    </h3>
-
-                    {/* One-line descriptor */}
-                    <p className="text-[11px] text-[var(--trishanti-neutral-600)] leading-relaxed line-clamp-2">
-                      {tagline}
-                    </p>
+                    {/* Circular Icon Button from Visual Board 1 (03) */}
+                    <div className="mt-6">
+                      <span className="w-10 h-10 rounded-full border border-[var(--trishanti-neutral-300)] dark:border-white/20 text-[var(--trishanti-color-primary)] flex items-center justify-center group-hover:bg-[var(--trishanti-color-primary)] group-hover:text-white group-hover:border-[var(--trishanti-color-primary)] transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]">
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+                      </span>
+                    </div>
                   </div>
-
-                  {/* Circular Cyan Arrow Button from Visual Board */}
-                  <div className="mt-4">
-                    <span className="w-7 h-7 rounded-full bg-[var(--trishanti-color-primary)] text-white flex items-center justify-center group-hover:bg-[var(--trishanti-color-primary-dark)] group-hover:translate-x-1 transition-all">
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </FadeIn>
             );
           })}
         </div>

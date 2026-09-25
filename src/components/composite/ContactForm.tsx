@@ -158,7 +158,7 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <h3 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-2">
+            <h3 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-2">
               {isId ? "Terima Kasih!" : "Thank you!"}
             </h3>
             <p className="text-base text-white/90 font-medium">

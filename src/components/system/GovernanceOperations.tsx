@@ -193,7 +193,7 @@ export function GovernanceOperations({
         <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00A6A6] block">
           {isId ? "A.12 TATA KELOLA, OPERASI & NILAI BERKELANJUTAN" : "A.12 GOVERNANCE, OPERATIONS & CONTINUOUS VALUE"}
         </span>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171C1B] leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[#171C1B] leading-tight">
           {isId
             ? "Keunggulan Berkelanjutan untuk Hari Esok yang Lebih Cerah."
             : "Sustained Excellence for a Brighter Tomorrow."}
@@ -230,7 +230,7 @@ export function GovernanceOperations({
                     {item.tag}
                   </span>
                 </div>
-                <h4 className="font-serif font-bold text-lg text-[#171C1B] mb-1">
+                <h4 className="font-heading font-bold text-lg text-[#171C1B] mb-1">
                   {isId ? item.roleId : item.roleEn}
                 </h4>
                 <div className="text-xs font-mono text-[#5E6663] mb-4">
@@ -266,7 +266,7 @@ export function GovernanceOperations({
                 <span className="w-2 h-2 rounded-full bg-[#16A34A]" />
               </div>
               <div>
-                <h4 className="font-serif font-bold text-base text-[#171C1B]">
+                <h4 className="font-heading font-bold text-base text-[#171C1B]">
                   {isId ? p.nameId : p.nameEn}
                 </h4>
                 <p className="text-xs text-[#5E6663] mt-1 leading-relaxed">
@@ -302,7 +302,7 @@ export function GovernanceOperations({
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2 text-[#00A6A6]">
                       <IconComp className="w-5 h-5 stroke-[2]" />
-                      <h4 className="font-serif font-bold text-base text-[#171C1B]">
+                      <h4 className="font-heading font-bold text-base text-[#171C1B]">
                         {isId ? rm.riskId : rm.riskEn}
                       </h4>
                     </div>
@@ -377,7 +377,7 @@ export function GovernanceOperations({
             <Sparkles className="w-3.5 h-3.5" />
             <span>{isId ? "KOMITMEN TATA KELOLA KAMI" : "GOVERNANCE COMMITMENT"}</span>
           </div>
-          <h3 className="text-2xl font-serif font-bold text-white">
+          <h3 className="text-2xl font-heading font-bold text-white">
             “We will continue to build, improve, and explore — together, for a brighter tomorrow.”
           </h3>
           <p className="text-xs text-white/70 font-light">

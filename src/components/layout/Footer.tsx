@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getLocale } from "next-intl/server";
 import { BUSINESS_PILLARS } from "@/lib/data";
+import { CTASection } from "@/components/home/CTASection";
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -45,26 +47,53 @@ export default async function Footer() {
 
   return (
     <footer
-      className="bg-[var(--trishanti-color-bg-dark)] border-t border-white/10 text-white"
+      className="bg-[var(--trishanti-color-bg-dark)] text-white relative"
       role="contentinfo"
       aria-label="Site footer"
     >
+      {/* ============================================================
+          GLOBAL CTA SECTION (Curtain Reveal Starts Here)
+          ============================================================ */}
+      <CTASection locale={locale} isId={isId} />
+
+      {/* ============================================================
+          FOUNDATIONAL QUOTE
+          Seamless transition into the Deep Midnight Footer.
+          ============================================================ */}
+      <div className="w-full relative overflow-hidden py-10 sm:py-12 border-t border-b border-white/10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,166,166,0.12),transparent_70%)] pointer-events-none" />
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <span className="w-8 h-1 bg-[var(--trishanti-color-primary)] mx-auto block mb-6 rounded-[var(--trishanti-radius-full)]" />
+          <blockquote className="font-heading italic text-xl sm:text-2xl lg:text-3xl text-white/95 leading-relaxed mb-4">
+            {isId
+              ? "“Fondasi yang kokoh menciptakan pengalaman yang mulus. Pengalaman yang konsisten membangun keterhubungan yang lebih kuat.”"
+              : "“A strong foundation creates seamless experiences. Consistent experiences create stronger connections.”"}
+          </blockquote>
+          <cite className="not-italic text-xs font-semibold uppercase tracking-[0.25em] text-[var(--trishanti-color-primary)]">
+            — PT. Trishanti Sinergi Indocorp
+          </cite>
+        </div>
+      </div>
+
       {/* Main footer grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 py-12 sm:py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           {/* Column 1 — Brand (4 cols) */}
           <div className="lg:col-span-4">
             <Link
               href={localePath("/")}
-              className="inline-flex flex-col group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--trishanti-color-primary)] rounded-sm"
+              className="inline-flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--trishanti-color-primary)] rounded-sm"
               aria-label="Trishanti — Go to homepage"
             >
-              <span className="text-white font-sans font-black tracking-[0.18em] text-2xl leading-none">
-                TRISHANTI
-              </span>
-              <span className="text-[var(--trishanti-color-primary)] font-sans text-[9px] font-semibold tracking-[0.25em] uppercase leading-none mt-1.5">
-                PT. TRISHANTI SINERGI INDOCORP
-              </span>
+              <Image src="/logo.png" alt="Trishanti Logo" width={48} height={48} className="w-12 h-12 object-contain" />
+              <div className="flex flex-col justify-center">
+                <span className="text-white font-sans font-black tracking-[0.18em] text-2xl leading-none">
+                  TRISHANTI
+                </span>
+                <span className="text-[var(--trishanti-color-primary)] font-sans text-[9px] font-semibold tracking-[0.25em] uppercase leading-none mt-1.5">
+                  PT. TRISHANTI SINERGI INDOCORP
+                </span>
+              </div>
             </Link>
 
             <p className="mt-5 text-[var(--trishanti-color-text-dark-muted)] text-sm leading-relaxed max-w-sm font-light">

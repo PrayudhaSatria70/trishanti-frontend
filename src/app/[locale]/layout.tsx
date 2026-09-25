@@ -7,6 +7,7 @@ import "@/app/globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Providers from "@/components/layout/Providers";
+import { FooterReveal } from "@/components/layout/FooterReveal";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -35,6 +36,10 @@ export async function generateMetadata({
       siteName: t("siteName"),
       locale: locale === "id" ? "id_ID" : "en_US",
       type: "website",
+    },
+    icons: {
+      icon: "/logo.png",
+      apple: "/logo.png",
     },
   };
 }
@@ -68,7 +73,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body>
+      <body className="antialiased font-sans text-[var(--trishanti-neutral-900)] bg-[var(--trishanti-neutral-50)] dark:text-white dark:bg-[var(--trishanti-color-bg-dark)] transition-colors duration-300" suppressHydrationWarning>
         <Providers locale={locale} messages={messages}>
           {/* Skip-to-content — WCAG 2.2 AA keyboard accessibility */}
           <a href="#main-content" className="skip-to-content">
@@ -77,13 +82,13 @@ export default async function LocaleLayout({
 
           <Navbar />
 
+        <FooterReveal footer={<Footer />}>
           <main id="main-content">
             <NextIntlClientProvider messages={messages}>
               {children}
             </NextIntlClientProvider>
           </main>
-
-          <Footer />
+        </FooterReveal>
         </Providers>
       </body>
     </html>

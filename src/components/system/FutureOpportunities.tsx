@@ -212,7 +212,7 @@ export function FutureOpportunities({
         <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00A6A6] block">
           {isId ? "A.10 MELAMPAUI BATAS: PELUANG MASA DEPAN" : "A.10 BEYOND: FUTURE OPPORTUNITIES"}
         </span>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171C1B] leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[#171C1B] leading-tight">
           {isId
             ? "Fondasi Hari Ini. Kemungkinan Lebih Besar Esok Hari."
             : "Today's Foundation. Tomorrow's Greater Possibilities."}
@@ -239,13 +239,13 @@ export function FutureOpportunities({
             return (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-white border border-[#D9DDDA] hover:border-[#00A6A6] transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between group"
+                className="p-6 rounded-2xl bg-white border border-[#D9DDDA] hover:border-[#00A6A6] transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] shadow-sm hover:shadow-md flex flex-col justify-between group"
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-[#F2F4F3] group-hover:bg-[#00A6A6]/10 text-[#00A6A6] flex items-center justify-center mb-5 transition-colors">
                     <IconComp className="w-6 h-6 stroke-[1.75]" />
                   </div>
-                  <h4 className="text-lg font-serif font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors mb-4">
+                  <h4 className="text-lg font-heading font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors mb-4">
                     {isId ? area.titleId : area.titleEn}
                   </h4>
                   <ul className="space-y-2.5 text-xs text-[#5E6663]">
@@ -269,7 +269,7 @@ export function FutureOpportunities({
           <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00A6A6] block mb-2">
             {isId ? "CAKRAWALA TEKNOLOGI MASA DEPAN" : "FUTURE TECHNOLOGY HORIZON"}
           </span>
-          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+          <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white">
             {isId ? "Mengevaluasi Adopsi Teknologi Masa Depan" : "Evaluating Emerging Technologies for Future Adoption"}
           </h3>
         </div>
@@ -284,7 +284,7 @@ export function FutureOpportunities({
                 type="button"
                 onClick={() => setActiveHorizon(h.id as "now" | "near" | "mid" | "long")}
                 className={cn(
-                  "p-4 rounded-xl text-left border transition-all duration-200",
+                  "p-4 rounded-xl text-left border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
                   isSelected
                     ? "bg-[#00A6A6]/20 border-[#00A6A6] text-white shadow-lg"
                     : "bg-white/5 border-white/10 text-white/70 hover:bg-white/10 hover:text-white"
@@ -330,7 +330,7 @@ export function FutureOpportunities({
               </span>
               <Sparkles className="w-4 h-4 text-[#00A6A6]" />
             </div>
-            <h4 className="text-base font-serif font-bold text-[#171C1B] mb-2">
+            <h4 className="text-base font-heading font-bold text-[#171C1B] mb-2">
               Strategic Initiatives
             </h4>
             <p className="text-xs text-[#5E6663] leading-relaxed">
@@ -346,7 +346,7 @@ export function FutureOpportunities({
               </span>
               <Layers className="w-4 h-4 text-[#22B8C7]" />
             </div>
-            <h4 className="text-base font-serif font-bold text-white mb-2">
+            <h4 className="text-base font-heading font-bold text-white mb-2">
               Transformational Opportunities
             </h4>
             <p className="text-xs text-white/80 leading-relaxed font-light">
@@ -362,7 +362,7 @@ export function FutureOpportunities({
               </span>
               <CheckCircle2 className="w-4 h-4 text-[#16A34A]" />
             </div>
-            <h4 className="text-base font-serif font-bold text-[#171C1B] mb-2">
+            <h4 className="text-base font-heading font-bold text-[#171C1B] mb-2">
               Quick Wins
             </h4>
             <p className="text-xs text-[#5E6663] leading-relaxed">
@@ -378,7 +378,7 @@ export function FutureOpportunities({
               </span>
               <Globe className="w-4 h-4 text-[#7C8581]" />
             </div>
-            <h4 className="text-base font-serif font-bold text-[#171C1B] mb-2">
+            <h4 className="text-base font-heading font-bold text-[#171C1B] mb-2">
               Future Exploration
             </h4>
             <p className="text-xs text-[#5E6663] leading-relaxed">
@@ -409,7 +409,7 @@ export function FutureOpportunities({
                 >
                   {item.category}
                 </span>
-                <h4 className="font-serif font-bold text-base text-[#171C1B] mb-2">
+                <h4 className="font-heading font-bold text-base text-[#171C1B] mb-2">
                   {item.title}
                 </h4>
                 <p className="text-xs text-[#5E6663] leading-relaxed">
@@ -428,7 +428,7 @@ export function FutureOpportunities({
           <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00A6A6] block">
             {isId ? "KOMITMEN INOVASI KAMI" : "OUR COMMITMENT"}
           </span>
-          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+          <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white">
             {isId ? "Inovasi Hari Ini untuk Hari Esok yang Lebih Cerah." : "Innovation today for a brighter tomorrow."}
           </h3>
           <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">

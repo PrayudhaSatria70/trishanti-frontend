@@ -77,7 +77,7 @@ export default async function SustainabilityPage({
   ];
 
   return (
-    <div className="flex flex-col w-full bg-white text-[#171C1B]">
+    <div className="flex flex-col w-full transition-colors duration-300">
       {/* 1. HERO: Panoramic Emerald River & Forest (Board A.3.4 Item 7) */}
       <section className="relative pt-32 pb-24 sm:pt-44 sm:pb-36 overflow-hidden bg-[#071A22] text-white">
         <div className="absolute inset-0 z-0">
@@ -98,7 +98,7 @@ export default async function SustainabilityPage({
               <span className="w-2 h-2 rounded-full bg-[#00A6A6]" />
               {isId ? "KOMITMEN ESG TRISHANTI" : "TRISHANTI ESG COMMITMENT"}
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.15] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.15] tracking-tight">
               {isId ? "Hari Esok yang Lebih Berkelanjutan." : "A More Sustainable Tomorrow."}
             </h1>
             <p className="text-lg sm:text-xl text-[#DEE3E1] leading-relaxed font-light">
@@ -118,13 +118,13 @@ export default async function SustainabilityPage({
       </section>
 
       {/* 3. SECTION: 3 Pillar Cards (Environment, Social, Governance) */}
-      <section className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E1E4E2]">
+      <section className="py-20 lg:py-28 bg-[var(--trishanti-color-surface-light)] dark:bg-[var(--trishanti-color-bg-dark)] border-b border-[var(--trishanti-neutral-200)] dark:border-white/10 transition-colors duration-300">
         <PageContainer>
           <div className="mb-12">
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B]">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white">
               {isId ? "Pilar Keberlanjutan Kami" : "Our Sustainability Pillars"}
             </h2>
-            <p className="text-sm text-[#7C8581] mt-2">
+            <p className="text-sm text-[var(--trishanti-neutral-600)] dark:text-white/70 mt-2">
               {isId
                 ? "Tiga fondasi terpadu dalam setiap keputusan investasi dan operasional."
                 : "Three unified foundations governing every investment and operational mandate."}
@@ -135,10 +135,10 @@ export default async function SustainabilityPage({
             {SUSTAINABILITY_PILLARS.map((pillar) => (
               <div
                 key={pillar.titleEn}
-                className="group flex flex-col bg-white rounded-xl border border-[#DEE3E1] overflow-hidden hover:border-[#00A6A6] transition-all duration-300 shadow-sm hover:shadow-md justify-between"
+                className="group flex flex-col bg-white dark:bg-[var(--trishanti-color-bg-dark)] rounded-xl border border-[var(--trishanti-neutral-200)] dark:border-white/10 overflow-hidden hover:border-[#00A6A6] dark:hover:border-[#00A6A6] transition-all duration-300 shadow-sm hover:shadow-md justify-between dark:glass-panel"
               >
                 <div>
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EFF1F0]">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[var(--trishanti-neutral-100)] dark:bg-slate-800">
                     <Image
                       src={pillar.image}
                       alt={isId ? pillar.titleId : pillar.titleEn}
@@ -147,23 +147,23 @@ export default async function SustainabilityPage({
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-xl font-serif font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors">
+                  <div className="p-8">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-2xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white group-hover:text-[#00A6A6] transition-colors">
                         {isId ? pillar.titleId : pillar.titleEn}
                       </h3>
                       <div className="text-[#00A6A6] group-hover:translate-x-1 transition-transform">
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-6 h-6" />
                       </div>
                     </div>
-                    <p className="text-sm text-[#5E6663] leading-relaxed mt-2">
+                    <p className="text-sm text-[var(--trishanti-neutral-600)] dark:text-white/70 leading-relaxed mt-3">
                       {isId ? pillar.descId : pillar.descEn}
                     </p>
                   </div>
                 </div>
-                <div className="p-6 pt-0">
-                  <div className="pt-4 border-t border-[#DEE3E1] text-xs font-semibold text-[#00A6A6] flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#00A6A6]" />
+                <div className="p-8 pt-0">
+                  <div className="pt-6 border-t border-[var(--trishanti-neutral-200)] dark:border-white/10 text-xs font-semibold text-[#00A6A6] flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-[#00A6A6]" />
                     <span>{isId ? pillar.metricsId : pillar.metricsEn}</span>
                   </div>
                 </div>
@@ -181,7 +181,7 @@ export default async function SustainabilityPage({
               <span className="w-2 h-2 rounded-full bg-[#00A6A6]" />
               {isId ? "DATA & AKUNTABILITAS ESG" : "ESG DATA & ACCOUNTABILITY"}
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white">
               {isId ? "Kemajuan Nyata yang Terverifikasi" : "Measurable Progress, Verified by Data"}
             </h2>
             <p className="text-sm text-[#DEE3E1] mt-2">
@@ -209,17 +209,17 @@ export default async function SustainabilityPage({
       </section>
 
       {/* 6. SECTION: DOCUMENT SEARCH & FILTER (Board A.5.22 Item 11) */}
-      <section className="py-20 lg:py-28 bg-white border-b border-[#E1E4E2]">
+      <section className="py-20 lg:py-28 bg-[var(--trishanti-color-surface-light)] dark:bg-[var(--trishanti-color-bg-dark)] border-b border-[var(--trishanti-neutral-200)] dark:border-white/10 transition-colors duration-300">
         <PageContainer>
           <div className="max-w-3xl mb-10">
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-[#00A6A6] uppercase mb-2">
               <span className="w-2 h-2 rounded-full bg-[#00A6A6]" />
               {isId ? "TRANSPARANSI & DOKUMEN" : "TRANSPARENCY & DISCLOSURES"}
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B]">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white">
               {isId ? "Laporan & Kebijakan Tata Kelola" : "Reports & Governance Disclosures"}
             </h2>
-            <p className="text-sm text-[#5E6663] mt-2">
+            <p className="text-sm text-[var(--trishanti-neutral-600)] dark:text-white/70 mt-2">
               {isId
                 ? "Akses dan unduh laporan keberlanjutan tahunan, kebijakan lingkungan, dan piagam kepatuhan kami."
                 : "Access and download our annual sustainability disclosures, environmental standards, and compliance charters."}
@@ -231,13 +231,13 @@ export default async function SustainabilityPage({
       </section>
 
       {/* 7. SECTION: Call to Action (Standardized CTA per Image 4) */}
-      <section className="py-20 lg:py-28 bg-[#F7F8F7]">
+      <section className="py-20 lg:py-28 bg-white dark:bg-[var(--trishanti-color-bg-dark)] transition-colors duration-300">
         <PageContainer>
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B]">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white">
               {isId ? "Komitmen Bersama untuk Hari Esok" : "Building a Brighter Tomorrow, Together"}
             </h2>
-            <p className="text-base text-[#5E6663] leading-relaxed">
+            <p className="text-base text-[var(--trishanti-neutral-600)] dark:text-white/70 leading-relaxed">
               {isId
                 ? "Keberlanjutan di Trishanti bukan sekadar inisiatif sampingan, melainkan prinsip inti yang mengarahkan alokasi kapital, pemilihan mitra, dan tata kelola di seluruh unit usaha."
                 : "Sustainability at Trishanti is not a peripheral mandate — it is the core operating discipline that guides our capital deployment, partnership standards, and everyday corporate governance."}

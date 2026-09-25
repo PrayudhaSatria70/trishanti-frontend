@@ -65,7 +65,7 @@ export default async function BusinessDetailPage({
   ).padStart(2, "0")}`;
 
   return (
-    <div className="flex flex-col w-full bg-[#F2F4F3] text-[#171C1B]">
+    <div className="flex flex-col w-full transition-colors duration-300">
       {/* 1. CINEMATIC HERO (Matching Level 03 Board) */}
       <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-32 overflow-hidden bg-[#071A22] text-white">
         <div className="absolute inset-0 z-0">
@@ -102,7 +102,7 @@ export default async function BusinessDetailPage({
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.12] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.12] tracking-tight">
               {isId ? pillar.titleId : pillar.titleEn}
             </h1>
 
@@ -147,7 +147,7 @@ export default async function BusinessDetailPage({
                 {isId ? "FONDASI ESENSIAL" : "AN ESSENTIAL FOUNDATION"}
               </span>
 
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B] leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[#171C1B] leading-tight">
                 {isId
                   ? "Fondasi Esensial untuk Hari Esok yang Lebih Cerah."
                   : "An Essential Foundation for a Brighter Tomorrow."}
@@ -195,7 +195,7 @@ export default async function BusinessDetailPage({
               </div>
 
               <div className="p-6 rounded-2xl bg-[#071A22] text-white border border-[#071A22]">
-                <span className="font-serif italic text-2xl text-[#00A6A6] block mb-1">
+                <span className="font-heading italic text-2xl text-[#00A6A6] block mb-1">
                   {isId ? "Jangka Panjang" : "Long-Term"}
                 </span>
                 <span className="font-semibold text-sm text-white block">
@@ -219,7 +219,7 @@ export default async function BusinessDetailPage({
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A6A6] block mb-1">
                   {isId ? "PETA BIDANG USAHA" : "BUSINESS FIELDS DIRECTORY"}
                 </span>
-                <h2 className="text-3xl font-serif font-bold text-[#171C1B]">
+                <h2 className="text-3xl font-heading font-bold text-[#171C1B]">
                   {isId
                     ? `Bidang Bisnis ${pillar.titleId}`
                     : `${pillar.titleEn} Business Fields`}
@@ -258,7 +258,7 @@ export default async function BusinessDetailPage({
                         </span>
                       </div>
 
-                      <h3 className="text-xl font-serif font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors mb-2">
+                      <h3 className="text-xl font-heading font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors mb-2">
                         {isId ? field.titleId : field.titleEn}
                       </h3>
 
@@ -284,7 +284,7 @@ export default async function BusinessDetailPage({
                       <span className="px-2.5 py-1 rounded-full bg-[#E8E8E9] text-[11px] font-semibold text-[#5E6663] inline-block mb-3">
                         {isId ? "Dalam Perencanaan" : "Strategic Scope"}
                       </span>
-                      <h3 className="text-lg font-serif font-bold text-[#171C1B] mb-2">
+                      <h3 className="text-lg font-heading font-bold text-[#171C1B] mb-2">
                         {isId ? (pillar.subsectorsId?.[idx] ?? sub) : sub}
                       </h3>
                       <p className="text-xs text-[#5E6663] leading-relaxed">
@@ -321,7 +321,7 @@ export default async function BusinessDetailPage({
                 {isId ? "PENDEKATAN STRATEGIS" : "STRATEGIC APPROACH"}
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B] leading-snug">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[#171C1B] leading-snug">
                 {isId ? "Pendekatan Operasional Kami" : "Our Operational Approach"}
               </h2>
 
@@ -350,7 +350,7 @@ export default async function BusinessDetailPage({
       <section id="related" className="py-20 lg:py-28 bg-[#F2F4F3]">
         <PageContainer>
           <div className="mb-10">
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B]">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[#171C1B]">
               {isId ? "Bisnis Terkait" : "Related Businesses"}
             </h2>
             <p className="text-sm text-[#7C8581] mt-2">
@@ -378,7 +378,7 @@ export default async function BusinessDetailPage({
                 </div>
                 <div className="p-6 flex-1 flex items-center justify-between">
                   <div>
-                    <h3 className="text-lg font-serif font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors">
+                    <h3 className="text-lg font-heading font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors">
                       {isId ? rel.titleId : rel.titleEn}
                     </h3>
                     <p className="text-xs uppercase tracking-wider text-[#7C8581] font-semibold mt-1">

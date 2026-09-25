@@ -67,7 +67,7 @@ export default async function TechnologyPage({
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#F2F4F3] text-[#171C1B]">
+    <div className="flex flex-col w-full transition-colors duration-300">
       {/* 1. CINEMATIC HERO (Matching Board A.5 Design System) */}
       <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden bg-[#071A22] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,166,166,0.2),transparent_70%)] pointer-events-none" />
@@ -92,7 +92,7 @@ export default async function TechnologyPage({
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.12] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.12] tracking-tight">
               {isId
                 ? "Kehadiran Digital yang Kuat Dibangun Bersama-sama."
                 : "A Stronger Digital Presence Is Built by All of Us, Together."}
@@ -152,7 +152,7 @@ export default async function TechnologyPage({
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00A6A6] block">
               {isId ? "OPERASI & PEMANTAUAN LANGSUNG" : "OPERATIONS & LIVE MONITORING"}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white">
               {isId ? "Peluncuran Mulus. Masa Depan Kokoh." : "A Smooth Launch. A Strong Future."}
             </h2>
             <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed">
@@ -194,7 +194,7 @@ export default async function TechnologyPage({
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00A6A6] block">
               {isId ? "PAKET SERAH TERIMA LENGKAP" : "HANDOVER DELIVERABLES"}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B]">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[#171C1B]">
               {isId ? "Dokumentasi Lengkap Memberdayakan Masa Depan." : "Empowering People for What's Next."}
             </h2>
             <p className="text-sm text-[#5E6663] font-light leading-relaxed">
@@ -214,7 +214,7 @@ export default async function TechnologyPage({
                     <div className="w-10 h-10 rounded-xl bg-[#00A6A6]/10 text-[#00A6A6] flex items-center justify-center mb-4">
                       <IconComp className="w-5 h-5 stroke-[1.75]" />
                     </div>
-                    <h4 className="font-serif font-bold text-base text-[#171C1B] mb-2">
+                    <h4 className="font-heading font-bold text-base text-[#171C1B] mb-2">
                       {item.title}
                     </h4>
                     <p className="text-xs text-[#5E6663] leading-relaxed">

@@ -37,7 +37,7 @@ const SIZE_MAP: Record<IconSize, { size: number; strokeWidth: number; className:
 
 const STATE_CLASSES: Record<IconState, string> = {
   default: "text-[#7C8581] dark:text-[#94a3b8]",
-  hover: "text-[#00A6A6] transition-colors duration-200",
+  hover: "text-[#00A6A6] transition-colors duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
   active: "text-[#00A6A6] drop-shadow-[0_0_8px_rgba(0,166,166,0.5)]",
   disabled: "text-[#A6ADAA] dark:text-white/30 cursor-not-allowed",
 };
@@ -208,7 +208,7 @@ export function SocialIconLink({
       rel="noopener noreferrer"
       aria-label={`Trishanti on ${platform}`}
       className={cn(
-        "p-2 rounded-full text-[#7C8581] hover:text-[#00A6A6] hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-200",
+        "p-2 rounded-full text-[#7C8581] hover:text-[#00A6A6] hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
         className,
       )}
     >

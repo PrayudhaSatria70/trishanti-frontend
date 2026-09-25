@@ -301,7 +301,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 <Search className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="text-lg font-serif font-semibold text-white">
+                <h4 className="text-lg font-heading font-semibold text-white">
                   {isId ? "Tidak Ada Hasil Ditemukan" : "No results found"}
                 </h4>
                 <p className="text-xs text-[#A6ADAA] mt-1">

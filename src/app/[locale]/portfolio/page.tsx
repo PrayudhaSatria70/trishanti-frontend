@@ -33,9 +33,9 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
   const getPath = (path: string) => `/${locale}${path === "/" ? "" : path}`;
 
   return (
-    <div className="flex flex-col w-full bg-[#F2F4F3] text-[#171C1B]">
+    <div className="flex flex-col w-full transition-colors duration-300">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden bg-[#071A22] text-white">
+      <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden bg-[var(--trishanti-color-bg-dark)] text-white">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/businesses/focus-urban.jpg"
@@ -45,7 +45,7 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
             className="object-cover object-center opacity-30 mix-blend-luminosity"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#071A22] via-[#071A22]/85 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--trishanti-color-bg-dark)] via-[var(--trishanti-color-bg-dark)]/85 to-transparent" />
         </div>
 
         <PageContainer className="relative z-10">
@@ -63,7 +63,7 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
               <span>{isId ? "VENTURA & PORTOFOLIO AKTIF" : "ACTIVE VENTURES & PORTFOLIO"}</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.12] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.12] tracking-tight">
               {isId ? "Mewujudkan Visi Menjadi Usaha Nyata." : "From Strategic Vision to Operating Reality."}
             </h1>
 
@@ -77,19 +77,19 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
       </section>
 
       {/* 2. PORTFOLIO SHOWCASE GRID (Level 05 Discovery) */}
-      <section className="py-20 sm:py-28 bg-[#F2F4F3]">
+      <section className="py-20 sm:py-28 bg-[var(--trishanti-color-surface-light)] dark:bg-[var(--trishanti-color-bg-dark)] transition-colors duration-300">
         <PageContainer>
           <div className="space-y-12">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#D9DDDA] pb-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[var(--trishanti-neutral-200)] dark:border-white/10 pb-6">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#00A6A6] block mb-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-[var(--trishanti-color-primary)] block mb-1">
                   {isId ? "DAFTAR PORTOFOLIO" : "PORTFOLIO INDEX"}
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#171C1B]">
+                <h2 className="text-2xl sm:text-3xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white">
                   {isId ? "Jenama & Perusahaan Operasional" : "Operating Companies & Consumer Brands"}
                 </h2>
               </div>
-              <p className="text-sm text-[#5E6663] max-w-md">
+              <p className="text-sm text-[var(--trishanti-neutral-600)] dark:text-white/70 max-w-md">
                 {isId
                   ? "Setiap portofolio diinkubasi dengan standar keandalan tinggi dan komitmen mutu berkelanjutan."
                   : "Each portfolio company operates with rigorous quality control, modern execution, and responsible stewardship."}
@@ -103,10 +103,10 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
                 return (
                   <div
                     key={item.id}
-                    className="bg-white rounded-2xl border border-[#D9DDDA] overflow-hidden shadow-sm hover:shadow-xl hover:border-[#00A6A6] transition-all duration-300 flex flex-col group"
+                    className="bg-white dark:bg-[var(--trishanti-color-bg-dark)] rounded-2xl border border-[var(--trishanti-neutral-200)] dark:border-white/10 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#00A6A6] dark:hover:border-[#00A6A6] transition-all duration-300 flex flex-col group dark:glass-panel"
                   >
                     {/* Image Top */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[var(--trishanti-neutral-100)] dark:bg-slate-800">
                       <Image
                         src={item.image}
                         alt={item.name}
@@ -122,28 +122,28 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
                     </div>
 
                     {/* Body */}
-                    <div className="p-6 flex flex-col flex-1 justify-between">
+                    <div className="p-8 flex flex-col flex-1 justify-between">
                       <div>
                         {pillar && (
-                          <span className="text-xs uppercase tracking-wider font-semibold text-[#7C8581] block mb-2">
+                          <span className="text-xs uppercase tracking-wider font-semibold text-[#7C8581] dark:text-[#94a3b8] block mb-3">
                             {isId ? pillar.titleId : pillar.titleEn}
                           </span>
                         )}
 
-                        <h3 className="text-2xl font-serif font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors mb-2">
+                        <h3 className="text-3xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white group-hover:text-[var(--trishanti-color-primary)] transition-colors mb-3">
                           {item.name}
                         </h3>
 
-                        <p className="text-sm font-medium text-[#00A6A6] mb-3 italic">
+                        <p className="text-base font-medium text-[#00A6A6] mb-4 italic">
                           &ldquo;{isId ? item.taglineId : item.taglineEn}&rdquo;
                         </p>
 
-                        <p className="text-sm text-[#5E6663] leading-relaxed line-clamp-3">
+                        <p className="text-base text-[var(--trishanti-neutral-600)] dark:text-white/70 leading-relaxed line-clamp-3">
                           {isId ? item.descriptionId : item.descriptionEn}
                         </p>
                       </div>
 
-                      <div className="pt-6 mt-6 border-t border-[#D9DDDA] flex items-center justify-between">
+                      <div className="pt-6 mt-8 border-t border-[var(--trishanti-neutral-200)] dark:border-white/10 flex items-center justify-between">
                         <Link
                           href={getPath(`/portfolio/${item.slug}`)}
                           className="inline-flex items-center gap-2 text-sm font-semibold text-[#00A6A6] hover:text-[#008f8f] transition-colors"
@@ -157,7 +157,7 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
                             href={item.websiteUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#7C8581] hover:text-[#00A6A6] transition-colors"
+                            className="text-[#7C8581] dark:text-white/40 hover:text-[#00A6A6] dark:hover:text-white transition-colors"
                             aria-label={`Visit ${item.name} website`}
                           >
                             <ExternalLink className="w-4 h-4" />
@@ -184,7 +184,7 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
                 <Building2 className="w-4 h-4" />
                 <span>{isId ? "Jelajahi Ekosistem" : "Explore Ecosystem"}</span>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-white">
+              <h3 className="text-2xl font-heading font-bold text-white">
                 {isId ? "Pelajari 6 Pilar Bisnis Kami" : "Discover Our 6 Business Pillars"}
               </h3>
               <p className="text-sm text-[#DEE3E1] max-w-xl">

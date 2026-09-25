@@ -121,7 +121,7 @@ export function ProjectConclusion({
             <span>PROJECT COMPLETE: PHASE 0 TO A.12</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight">
             {isId
               ? "Lebih dari Sekadar Situs Web. Fondasi untuk Masa Depan."
               : "More Than a Website. A Foundation for What's Next."}
@@ -146,7 +146,7 @@ export function ProjectConclusion({
                 <div className="w-10 h-10 rounded-full bg-[#00A6A6]/20 text-[#00A6A6] flex items-center justify-center">
                   <IconComp className="w-5 h-5 stroke-[2]" />
                 </div>
-                <div className="font-serif font-bold text-sm text-white">
+                <div className="font-heading font-bold text-sm text-white">
                   {isId ? t.nameId : t.nameEn}
                 </div>
                 <div className="text-[11px] text-[#94a3b8] leading-tight font-light">
@@ -208,13 +208,13 @@ export function ProjectConclusion({
           {roadAheadSteps.map((step) => (
             <div
               key={step.num}
-              className="p-6 rounded-2xl bg-white border border-[#D9DDDA] hover:border-[#00A6A6] transition-all duration-300 shadow-xs flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-white border border-[#D9DDDA] hover:border-[#00A6A6] transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] shadow-xs flex flex-col justify-between"
             >
               <div>
                 <span className="text-xs font-mono font-bold text-[#00A6A6] block mb-2">
                   {step.num}
                 </span>
-                <h4 className="font-serif font-bold text-base text-[#171C1B] mb-2">
+                <h4 className="font-heading font-bold text-base text-[#171C1B] mb-2">
                   {isId ? step.titleId : step.titleEn}
                 </h4>
                 <p className="text-xs text-[#5E6663] leading-relaxed">

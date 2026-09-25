@@ -149,7 +149,7 @@ export function GrowthEvolution({
         <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00A6A6] block">
           {isId ? "A.9 PERTUMBUHAN & EVOLUSI" : "A.9 GROWTH & EVOLUTION"}
         </span>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171C1B] leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[#171C1B] leading-tight">
           {isId
             ? "Kehadiran Digital yang Hidup untuk Hari Esok yang Lebih Cerah."
             : "A Living Digital Presence for a Brighter Tomorrow."}
@@ -315,7 +315,7 @@ export function GrowthEvolution({
                 type="button"
                 onClick={() => setActivePhase(p.phase)}
                 className={cn(
-                  "p-5 rounded-2xl border text-left transition-all duration-200",
+                  "p-5 rounded-2xl border text-left transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
                   isSelected
                     ? "bg-[#071A22] text-white border-[#00A6A6] shadow-lg"
                     : "bg-white text-[#171C1B] border-[#D9DDDA] hover:border-[#A3A8B3]"
@@ -324,7 +324,7 @@ export function GrowthEvolution({
                 <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#00A6A6]">
                   Phase 0{p.phase}
                 </div>
-                <h4 className="text-base font-serif font-bold mt-1">
+                <h4 className="text-base font-heading font-bold mt-1">
                   {isId ? p.nameId : p.nameEn}
                 </h4>
                 <div
@@ -348,7 +348,7 @@ export function GrowthEvolution({
               <div key={p.phase} className="space-y-4">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#00A6A6]" />
-                  <h4 className="font-serif font-bold text-lg text-[#171C1B]">
+                  <h4 className="font-heading font-bold text-lg text-[#171C1B]">
                     {isId ? `Fokus Phase 0${p.phase}: ${p.nameId}` : `Phase 0${p.phase} Deliverables: ${p.nameEn}`}
                   </h4>
                 </div>
@@ -405,7 +405,7 @@ export function GrowthEvolution({
           <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00A6A6] block">
             {isId ? "SIKLUS PERBAIKAN BERKELANJUTAN" : "CONTINUOUS IMPROVEMENT LOOP"}
           </span>
-          <h3 className="text-2xl font-serif font-bold text-[#171C1B]">
+          <h3 className="text-2xl font-heading font-bold text-[#171C1B]">
             {isId ? "Mendengarkan. Mempelajari. Mengiterasi." : "Listening. Learning. Iterating."}
           </h3>
           <p className="text-sm text-[#5E6663] font-light">
@@ -441,7 +441,7 @@ export function GrowthEvolution({
           <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00A6A6] block">
             {isId ? "VISI JANGKA PANJANG" : "LONG-TERM VISION"}
           </span>
-          <h3 className="text-2xl font-serif font-bold text-white">
+          <h3 className="text-2xl font-heading font-bold text-white">
             {isId
               ? "Peluang Lebih Luas. Dampak Lebih Besar. Masa Depan Lebih Cerah."
               : "More Possibilities. Greater Impact. A Brighter Tomorrow."}

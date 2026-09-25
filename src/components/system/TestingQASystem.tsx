@@ -112,7 +112,7 @@ export function TestingQASystem({
           <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00A6A6] block mb-2">
             {isId ? "JAMINAN KUALITAS & PENGUJIAN" : "TESTING & QUALITY ASSURANCE"}
           </span>
-          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#171C1B]">
+          <h3 className="text-2xl sm:text-3xl font-heading font-bold text-[#171C1B]">
             {isId ? "Kepercayaan Dibangun Melalui Pengalaman Konsisten." : "Trust is Built Through Consistent Experiences."}
           </h3>
           <p className="text-sm text-[#5E6663] mt-2 max-w-2xl font-light">

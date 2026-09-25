@@ -85,7 +85,7 @@ export function RevenueGrowthChart({
 
   return (
     <div
-      className={`relative rounded-2xl p-6 sm:p-8 transition-all duration-300 ${
+      className={`relative rounded-2xl p-6 sm:p-8 transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] ${
         isDark
           ? "bg-gradient-to-br from-[#071A22] via-[#0E2833] to-[#071A22] border border-white/10 text-white shadow-2xl"
           : "bg-white/80 backdrop-blur-xl border border-[#DEE3E1] text-[#171C1B] shadow-lg shadow-[#171C1B]/5"
@@ -99,7 +99,7 @@ export function RevenueGrowthChart({
             <span className="text-white/30">•</span>
             <span>{isDark ? "Gradient surface + subtle grid" : "Glass surface + subtle grid"}</span>
           </div>
-          <h3 className="text-2xl font-serif font-bold mt-1">Revenue Growth</h3>
+          <h3 className="text-2xl font-heading font-bold mt-1">Revenue Growth</h3>
           <p className={`text-xs sm:text-sm mt-0.5 ${isDark ? "text-[#A6ADAA]" : "text-[#7C8581]"}`}>
             Steady progress across our ecosystem.
           </p>
@@ -199,7 +199,7 @@ export function RevenueGrowthChart({
             return (
               <g
                 key={pt.year}
-                className="cursor-pointer transition-transform duration-200"
+                className="cursor-pointer transition-transform duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]"
                 onMouseEnter={() => setHoveredIdx(i)}
               >
                 {/* Outer ring on hover / focus */}
@@ -221,7 +221,7 @@ export function RevenueGrowthChart({
                   fill={isHovered ? "#FFFFFF" : "#00A6A6"}
                   stroke="#00A6A6"
                   strokeWidth="2"
-                  className="transition-all duration-150"
+                  className="transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]"
                 />
                 {/* X-axis label */}
                 <text
@@ -305,14 +305,14 @@ export function BusinessContributionChart({
 
   return (
     <div
-      className={`rounded-2xl p-6 sm:p-7 transition-all duration-300 ${
+      className={`rounded-2xl p-6 sm:p-7 transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] ${
         isDark
           ? "bg-[#071A22] border border-white/10 text-white"
           : "bg-white border border-[#DEE3E1] text-[#171C1B]"
       } shadow-md ${className}`}
     >
       <div className="mb-5">
-        <h4 className="text-xl font-serif font-bold">
+        <h4 className="text-xl font-heading font-bold">
           {isId ? "Kontribusi Bisnis" : "Business Contribution"}
         </h4>
         <p className={`text-xs mt-0.5 ${isDark ? "text-[#A6ADAA]" : "text-[#7C8581]"}`}>
@@ -350,7 +350,7 @@ export function BusinessContributionChart({
                     strokeWidth={isCurrent ? strokeWidth + 4 : strokeWidth}
                     strokeDasharray={pillar.strokeDasharray}
                     strokeDashoffset={pillar.strokeDashoffset}
-                    className="cursor-pointer transition-all duration-200"
+                    className="cursor-pointer transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]"
                     onMouseEnter={() => setActivePillar(pillar)}
                     onMouseLeave={() => setActivePillar(null)}
                   />
@@ -360,7 +360,7 @@ export function BusinessContributionChart({
 
             {/* Donut Center Display */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-              <span className="text-xl font-serif font-bold">
+              <span className="text-xl font-heading font-bold">
                 {activePillar ? `${activePillar.percentage}%` : "$2.4B"}
               </span>
               <span className={`text-[10px] uppercase tracking-wider font-medium ${isDark ? "text-white/60" : "text-[#7C8581]"}`}>
@@ -457,7 +457,7 @@ export function SustainabilityProgressWidget({
 
   return (
     <div
-      className={`rounded-2xl p-6 sm:p-7 transition-all duration-300 ${
+      className={`rounded-2xl p-6 sm:p-7 transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] ${
         isDark
           ? "bg-[#071A22] border border-white/10 text-white"
           : "bg-white border border-[#DEE3E1] text-[#171C1B]"
@@ -465,7 +465,7 @@ export function SustainabilityProgressWidget({
     >
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h4 className="text-xl font-serif font-bold">
+          <h4 className="text-xl font-heading font-bold">
             {isId ? "Kemajuan Keberlanjutan" : "Sustainability Progress"}
           </h4>
           <p className={`text-xs mt-0.5 ${isDark ? "text-[#A6ADAA]" : "text-[#7C8581]"}`}>
@@ -507,7 +507,7 @@ export function SustainabilityProgressWidget({
                     {isId ? metric.labelId : metric.labelEn}
                   </span>
                 </div>
-                <span className="text-base font-serif font-bold text-[#00A6A6]">
+                <span className="text-base font-heading font-bold text-[#00A6A6]">
                   {metric.percentage}%
                 </span>
               </div>
@@ -561,7 +561,7 @@ export function RegionalGrowthWidget({
 
   return (
     <div
-      className={`rounded-2xl p-6 sm:p-7 transition-all duration-300 ${
+      className={`rounded-2xl p-6 sm:p-7 transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] ${
         isDark
           ? "bg-[#071A22] border border-white/10 text-white"
           : "bg-white border border-[#DEE3E1] text-[#171C1B]"
@@ -569,7 +569,7 @@ export function RegionalGrowthWidget({
     >
       <div className="flex items-center justify-between mb-5">
         <div>
-          <h4 className="text-xl font-serif font-bold">
+          <h4 className="text-xl font-heading font-bold">
             {isId ? "Pertumbuhan Regional" : "Regional Growth"}
           </h4>
           <p className={`text-xs mt-0.5 ${isDark ? "text-[#A6ADAA]" : "text-[#7C8581]"}`}>

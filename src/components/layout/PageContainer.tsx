@@ -6,8 +6,8 @@ import { cn } from "@/lib/cn";
  * Specs:
  * - XS (< 480px) & SM (≥ 480px): Fluid, Padding 20px (px-5)
  * - MD (≥ 768px): Fluid, Padding 24px (px-6)
- * - LG (≥ 1024px) & XL (≥ 1280px): Container max-w-[1280px], Padding 32px (px-8)
- * - 2XL (≥ 1536px): Container max-w-[1440px], Padding 48px (px-12)
+ * - LG (>= 1024px) & XL (>= 1280px): Container max-w-[1920px], Padding 48px (px-12)
+ * - 2XL (>= 1536px): Padding 96px (px-24)
  * ------------------------------------------------------------------------- */
 
 export interface PageContainerProps
@@ -23,14 +23,14 @@ export function PageContainer({
 }: PageContainerProps) {
   const sizeStyles = {
     narrow: "max-w-5xl",
-    default: "max-w-[1280px]",
-    wide: "max-w-[1440px]",
+    default: "max-w-[1920px]",
+    wide: "max-w-none",
   }[size];
 
   return (
     <div
       className={cn(
-        "mx-auto w-full px-5 md:px-6 lg:px-8 2xl:px-12",
+        "mx-auto w-full px-5 md:px-6 lg:px-12 xl:px-24",
         sizeStyles,
         className,
       )}

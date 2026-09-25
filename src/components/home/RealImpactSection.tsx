@@ -47,7 +47,7 @@ export function RealImpactSection({
   ];
 
   return (
-    <section className={cn("py-20 sm:py-28 bg-[var(--trishanti-neutral-50)] border-b border-[var(--trishanti-neutral-200)]", className)}>
+    <section className={cn("py-20 sm:py-28 bg-[var(--trishanti-neutral-50)] dark:bg-[var(--trishanti-color-bg-dark)] border-b border-[var(--trishanti-neutral-200)] dark:border-white/10 transition-colors duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]", className)}>
       <PageContainer>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Narrative & CTA */}
@@ -56,11 +56,11 @@ export function RealImpactSection({
               {isId ? "DAMPAK NYATA" : "REAL IMPACT"}
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[var(--trishanti-neutral-900)] leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white leading-tight transition-colors duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]">
               {isId ? "Manusia di Pusat Setiap Kemajuan." : "People at the Heart of Progress."}
             </h2>
 
-            <p className="text-base text-[var(--trishanti-neutral-600)] leading-relaxed font-light">
+            <p className="text-base text-[var(--trishanti-neutral-600)] dark:text-white/70 leading-relaxed font-light transition-colors duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]">
               {isId
                 ? "Kami percaya kemajuan bermakna ketika menciptakan peluang yang lebih baik bagi manusia — hari ini dan untuk generasi mendatang."
                 : "We believe progress is meaningful when it creates better opportunities for people — today and for generations to come."}
@@ -83,7 +83,7 @@ export function RealImpactSection({
             {impactCards.map((card, idx) => (
               <div
                 key={idx}
-                className="group relative aspect-[3/4] rounded-[var(--trishanti-radius-lg)] overflow-hidden border border-[var(--trishanti-neutral-200)] bg-slate-900 flex flex-col justify-end p-5"
+                className="group relative aspect-[3/4] rounded-[var(--trishanti-radius-lg)] overflow-hidden border border-[var(--trishanti-neutral-200)] dark:border-white/10 bg-slate-900 flex flex-col justify-end p-6"
                 style={{ boxShadow: `var(--trishanti-elevation-1)` }}
               >
                 <Image
@@ -97,7 +97,7 @@ export function RealImpactSection({
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--trishanti-color-bg-dark)] via-[var(--trishanti-color-bg-dark)]/50 to-transparent" />
 
                 <div className="relative z-10">
-                  <h3 className="text-lg font-serif font-bold text-white leading-snug drop-shadow-sm group-hover:text-[var(--trishanti-color-primary)]" style={{ transition: `color var(--trishanti-duration-fast) var(--trishanti-ease-standard)` }}>
+                  <h3 className="text-lg font-heading font-bold text-white leading-snug drop-shadow-sm group-hover:text-[var(--trishanti-color-primary)]" style={{ transition: `color var(--trishanti-duration-fast) var(--trishanti-ease-standard)` }}>
                     {isId ? card.titleId : card.titleEn}
                   </h3>
                 </div>

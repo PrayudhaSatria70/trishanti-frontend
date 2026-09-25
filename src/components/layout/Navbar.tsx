@@ -25,6 +25,7 @@ import {
 import { cn } from "@/lib/cn";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { SearchModal } from "./SearchModal";
+import { ThemeToggle } from "./ThemeToggle";
 import { BUSINESS_PILLARS, BusinessPillar } from "@/lib/data";
 
 interface NavLink {
@@ -205,18 +206,18 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-[200] transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-[200] pointer-events-none transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
           isHeroState
-            ? "bg-gradient-to-b from-[#071A22]/90 via-[#071A22]/40 to-transparent py-4 sm:py-5"
+            ? "bg-gradient-to-b from-white/90 via-white/40 to-transparent dark:from-[#071A22]/90 dark:via-[#071A22]/40 py-4 sm:py-5"
             : "py-3 px-3 sm:px-6",
         )}
         role="banner"
       >
         {/* Top Slogan Banner in Hero State (Board 3 Item 1) */}
         {isHeroState && (
-          <div className="hidden lg:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-2">
+          <div className="hidden lg:block w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 mb-2">
             <div className="flex justify-end items-center">
-              <span className="text-[10px] tracking-[0.2em] uppercase text-white/70 font-light select-none">
+              <span className="text-[10px] tracking-[0.2em] uppercase text-[var(--trishanti-neutral-700)] dark:text-white/70 font-light select-none">
                 Greater Possibilities for a Better Tomorrow
               </span>
             </div>
@@ -226,25 +227,31 @@ export default function Navbar() {
         {/* Navigation Bar / Floating Capsule (Board 3 Items 2 & 3) */}
         <div
           className={cn(
-            "transition-all duration-300",
+            "transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] pointer-events-auto",
             isHeroState
-              ? "max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-8"
-              : "max-w-[1280px] mx-auto rounded-full bg-[#071A22]/90 backdrop-blur-xl border border-white/15 px-5 sm:px-6 py-2 shadow-[0_12px_40px_rgba(0,0,0,0.5)]",
+              ? "w-full max-w-[1920px] mx-auto px-5 sm:px-6 lg:px-12 xl:px-24 border border-transparent"
+              : "w-full max-w-[1920px] mx-auto rounded-full glass-nav-floating px-5 sm:px-6 lg:px-12 xl:px-24 py-2",
           )}
         >
           <nav className="flex items-center justify-between h-10 sm:h-12" aria-label="Main navigation">
             {/* Brand Logo */}
             <Link
               href={getPath("/")}
-              className="flex flex-col group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A6A6] rounded-sm"
+              className="flex items-center gap-2 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A6A6] rounded-sm"
               aria-label="Trishanti — Go to homepage"
             >
-              <span className="text-white font-sans font-extrabold tracking-[0.2em] text-lg sm:text-xl leading-none">
-                TRISHANTI
-              </span>
-              <span className="text-[#00A6A6] font-sans text-[7.5px] sm:text-[8px] font-semibold tracking-[0.28em] uppercase leading-none mt-1">
-                PT. TRISHANTI SINERGI INDOCORP
-              </span>
+              <Image src="/logo.png" alt="Trishanti Logo" width={40} height={40} className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
+              <div className="flex flex-col justify-center">
+                <span className={cn(
+                  "font-sans font-extrabold tracking-[0.2em] text-lg sm:text-xl leading-none transition-colors",
+                  isScrolled ? "text-white" : "text-[var(--trishanti-neutral-900)] dark:text-white"
+                )}>
+                  TRISHANTI
+                </span>
+                <span className="text-[#00A6A6] font-sans text-[7.5px] sm:text-[8px] font-semibold tracking-[0.28em] uppercase leading-none mt-1">
+                  PT. TRISHANTI SINERGI INDOCORP
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation Links (Board 3) */}
@@ -259,10 +266,12 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={cn(
-                      "relative text-[13px] font-medium tracking-wide transition-all duration-200 py-1 inline-flex items-center gap-1 group",
+                      "relative text-[13px] font-medium tracking-wide transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] py-1 inline-flex items-center gap-1 group",
                       isActiveLink(link.href)
                         ? "text-[#00A6A6] drop-shadow-[0_0_10px_rgba(0,166,166,0.6)]"
-                        : "text-white/80 hover:text-white",
+                        : isScrolled
+                          ? "text-white/80 hover:text-white"
+                          : "text-[var(--trishanti-neutral-800)] hover:text-[var(--trishanti-neutral-900)] dark:text-white/80 dark:hover:text-white",
                     )}
                     aria-current={isActiveLink(link.href) ? "page" : undefined}
                     aria-expanded={link.hasDropdown ? desktopDropdown === link.hasDropdown : undefined}
@@ -271,7 +280,8 @@ export default function Navbar() {
                     {link.hasDropdown && (
                       <ChevronDown
                         className={cn(
-                          "w-3.5 h-3.5 transition-transform duration-200 text-white/50",
+                          "w-3.5 h-3.5 transition-transform duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
+                          isScrolled ? "text-white/50" : "text-[var(--trishanti-neutral-600)] dark:text-white/50",
                           desktopDropdown === link.hasDropdown && "rotate-180 text-[#00A6A6]",
                         )}
                       />
@@ -328,7 +338,12 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setIsSearchOpen(true)}
-                  className="p-1.5 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#00A6A6]"
+                  className={cn(
+                    "p-1.5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#00A6A6]",
+                    isScrolled
+                      ? "text-white/70 hover:text-white hover:bg-white/10"
+                      : "text-[var(--trishanti-neutral-700)] hover:text-[var(--trishanti-neutral-900)] hover:bg-black/5 dark:text-white/70 dark:hover:text-white dark:hover:bg-white/10"
+                  )}
                   aria-label="Search site"
                 >
                   <Search className="w-4 h-4" />
@@ -337,22 +352,30 @@ export default function Navbar() {
             </ul>
 
             {/* Desktop Right: language utility and one prominent public CTA. */}
-            <div className="hidden lg:flex items-center gap-3">
-              <LanguageSwitcher />
+            <div className="hidden lg:flex items-center gap-2 xl:gap-3">
+              <ThemeToggle isScrolled={isScrolled} />
+              <LanguageSwitcher isScrolled={isScrolled} />
               <Link
                 href={getPath("/contact")}
-                className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#00A6A6] hover:bg-[#008f8f] text-white font-semibold text-xs tracking-wider transition-all duration-200 shadow-[0_2px_14px_rgba(0,166,166,0.35)] hover:shadow-[0_4px_22px_rgba(0,166,166,0.55)] focus:outline-none focus:ring-2 focus:ring-[#00A6A6]"
+                className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[var(--trishanti-color-primary)] hover:bg-[var(--trishanti-color-primary-dark)] text-white font-semibold text-xs tracking-wider hover:-translate-y-0.5 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[var(--trishanti-color-primary)]"
+                style={{ transition: `all var(--trishanti-duration-normal) var(--trishanti-ease-standard)` }}
               >
                 {isId ? "Hubungi Kami" : "Contact Us"}
               </Link>
             </div>
 
-            {/* Mobile: Search + Hamburger */}
-            <div className="flex items-center gap-2 lg:hidden">
+            {/* Mobile: Search + Theme + Hamburger */}
+            <div className="flex items-center gap-1 lg:hidden">
+              <ThemeToggle isScrolled={isScrolled} />
               <button
                 type="button"
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2 rounded-md text-white/80 hover:text-white"
+                className={cn(
+                  "p-2 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--trishanti-color-primary)] active:scale-95",
+                  isScrolled
+                    ? "text-white/80 hover:text-white hover:bg-white/10"
+                    : "text-[var(--trishanti-neutral-800)] hover:text-[var(--trishanti-neutral-900)] hover:bg-black/5 dark:text-white/80 dark:hover:text-white dark:hover:bg-white/10"
+                )}
                 aria-label="Search site"
               >
                 <Search className="w-5 h-5" />
@@ -362,7 +385,12 @@ export default function Navbar() {
                 ref={menuButtonRef}
                 type="button"
                 onClick={() => setIsMobileOpen((prev) => !prev)}
-                className="p-2 rounded-md text-white hover:text-[#00A6A6] hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#00A6A6]"
+                className={cn(
+                  "p-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#00A6A6]",
+                  isScrolled
+                    ? "text-white hover:text-[#00A6A6] hover:bg-white/10"
+                    : "text-[var(--trishanti-neutral-900)] hover:text-[#00A6A6] hover:bg-black/5 dark:text-white dark:hover:text-[#00A6A6] dark:hover:bg-white/10"
+                )}
                 aria-expanded={isMobileOpen}
                 aria-label={isMobileOpen ? "Close menu" : "Open menu"}
               >
@@ -375,7 +403,7 @@ export default function Navbar() {
         {/* Desktop Business Mega Menu (Board 3 Item 4) */}
         {desktopDropdown === "business" && (
           <div
-            className="hidden lg:block max-w-[1280px] mx-auto px-4 mt-3"
+            className="hidden lg:block w-full max-w-[1920px] mx-auto px-4 lg:px-12 xl:px-24 mt-3 pointer-events-auto"
             onMouseEnter={() => handleMouseEnter("business")}
             onMouseLeave={handleMouseLeave}
           >
@@ -383,7 +411,7 @@ export default function Navbar() {
               {/* Col 1: Ecosystem Introduction */}
               <div className="col-span-3 flex flex-col justify-between border-r border-white/10 pr-6">
                 <div>
-                  <h3 className="font-serif text-xl font-bold text-white mb-2 leading-tight">
+                  <h3 className="font-heading text-xl font-bold text-white mb-2 leading-tight">
                     {isId ? "Ekosistem Bisnis Kami" : "Our Business Ecosystem"}
                   </h3>
                   <p className="text-xs text-[#94a3b8] leading-relaxed">
@@ -413,7 +441,7 @@ export default function Navbar() {
                       onMouseEnter={() => setActiveDesktopPillarSlug(pillar.slug)}
                       onClick={() => setActiveDesktopPillarSlug(pillar.slug)}
                       className={cn(
-                        "w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all duration-150 flex items-center justify-between",
+                        "w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] flex items-center justify-between",
                         isSelected
                           ? "bg-[#00A6A6]/20 border border-[#00A6A6]/40 text-[#00A6A6]"
                           : "text-white/80 hover:text-white hover:bg-white/5 border border-transparent",
@@ -464,7 +492,7 @@ export default function Navbar() {
                       </span>
                     </div>
 
-                    <h4 className="font-serif text-base font-semibold text-white leading-snug">
+                    <h4 className="font-heading text-base font-semibold text-white leading-snug">
                       {isId
                         ? activeDesktopPillar.headlineId || activeDesktopPillar.summaryId
                         : activeDesktopPillar.headlineEn || activeDesktopPillar.summaryEn}
@@ -548,14 +576,17 @@ export default function Navbar() {
             <Link
               href={getPath("/")}
               onClick={() => setIsMobileOpen(false)}
-              className="flex flex-col"
+              className="flex items-center gap-2"
             >
-              <span className="text-white font-sans font-extrabold tracking-[0.2em] text-lg leading-none">
-                TRISHANTI
-              </span>
-              <span className="text-[#00A6A6] font-sans text-[7.5px] font-semibold tracking-[0.25em] uppercase leading-none mt-1">
-                PT. TRISHANTI SINERGI INDOCORP
-              </span>
+              <Image src="/logo.png" alt="Trishanti Logo" width={32} height={32} className="w-8 h-8 object-contain" />
+              <div className="flex flex-col justify-center">
+                <span className="text-white font-sans font-extrabold tracking-[0.2em] text-lg leading-none">
+                  TRISHANTI
+                </span>
+                <span className="text-[#00A6A6] font-sans text-[7.5px] font-semibold tracking-[0.25em] uppercase leading-none mt-1">
+                  PT. TRISHANTI SINERGI INDOCORP
+                </span>
+              </div>
             </Link>
 
             <button
@@ -788,7 +819,7 @@ export default function Navbar() {
           {/* Bottom Card: Contact CTA & Language & Socials (Board 0 Item 7) */}
           <div className="px-6 pt-4 pb-6 space-y-5 bg-gradient-to-t from-black via-[#071A22] to-transparent">
             <div className="p-5 rounded-2xl bg-white/5 border border-white/10 text-center">
-              <h4 className="text-white font-serif font-semibold text-lg mb-1">
+              <h4 className="text-white font-heading font-semibold text-lg mb-1">
                 {isId ? "Mari Bangun Bersama." : "Let's Build What's Next."}
               </h4>
               <p className="text-xs text-[#94a3b8] mb-4 max-w-xs mx-auto leading-relaxed">
@@ -799,7 +830,8 @@ export default function Navbar() {
               <Link
                 href={getPath("/contact")}
                 onClick={() => setIsMobileOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-[#00A6A6] hover:bg-[#008f8f] text-white font-semibold text-xs uppercase tracking-wider transition-all shadow-[0_4px_16px_rgba(0,166,166,0.35)]"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-[var(--trishanti-color-primary)] hover:bg-[var(--trishanti-color-primary-dark)] text-white font-semibold text-xs uppercase tracking-wider hover:-translate-y-0.5 active:scale-95"
+                style={{ transition: `all var(--trishanti-duration-normal) var(--trishanti-ease-standard)` }}
               >
                 <span>{isId ? "Hubungi Kami" : "Contact Us"}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -854,7 +886,10 @@ export default function Navbar() {
               </div>
 
               <div className="flex items-center justify-between w-full border-t border-white/5 pt-3">
-                <LanguageSwitcher />
+                <div className="flex items-center gap-2">
+                  <ThemeToggle />
+                  <LanguageSwitcher />
+                </div>
                 <div className="flex items-center gap-3 text-[11px] text-[#94a3b8]">
                   <span>Privacy Policy</span>
                   <span>•</span>

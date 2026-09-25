@@ -43,7 +43,7 @@ export function InteractiveList({
         const content = (
           <div
             className={cn(
-              "flex items-center justify-between p-4 rounded-xl transition-all duration-200 cursor-pointer",
+              "flex items-center justify-between p-4 rounded-xl transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] cursor-pointer",
               isSelected
                 ? "border-2 border-[#06B6D4] bg-[#00A6A6]/10 text-[#00A6A6] shadow-sm font-semibold"
                 : "border border-[#D1D5DB] bg-white hover:border-[#A3A8B3] text-[#171C1B] hover:bg-[#F2F4F3]/50 font-medium"

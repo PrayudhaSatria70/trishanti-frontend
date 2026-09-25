@@ -58,10 +58,8 @@ export function ContentCard({
   return (
     <article
       className={cn(
-        "group flex flex-col rounded-2xl overflow-hidden border transition-all duration-300 hover:-translate-y-1",
-        isLight
-          ? "bg-white border-[#E1E4E2] shadow-[0_4px_16px_rgba(23,28,27,0.06)] hover:shadow-[0_8px_24px_rgba(23,28,27,0.12)] text-[#071A22]"
-          : "bg-[#071A22] border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.6),0_0_20px_rgba(0,166,166,0.15)] text-white",
+        "group flex flex-col rounded-2xl overflow-hidden border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1",
+        "bg-white dark:bg-[var(--trishanti-color-bg-dark)] border-[var(--trishanti-neutral-200)] dark:border-white/10 shadow-sm dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] text-[var(--trishanti-neutral-900)] dark:text-white dark:glass-panel",
         className,
       )}
     >
@@ -78,7 +76,7 @@ export function ContentCard({
       </div>
 
       {/* Body */}
-      <div className="flex-1 flex flex-col p-6">
+      <div className="flex-1 flex flex-col p-8">
         <div className="flex items-center gap-3 text-xs mb-3">
           <span className="px-2.5 py-0.5 rounded-full bg-[#00A6A6]/15 text-[#00A6A6] font-semibold uppercase tracking-wider text-[10px]">
             {tag}
@@ -90,7 +88,7 @@ export function ContentCard({
 
         <h3
           className={cn(
-            "text-lg sm:text-xl font-serif font-bold leading-snug mb-3 group-hover:text-[#00A6A6] transition-colors line-clamp-2",
+            "text-lg sm:text-xl font-heading font-bold leading-snug mb-3 group-hover:text-[#00A6A6] transition-colors line-clamp-2",
             isLight ? "text-[#071A22]" : "text-white",
           )}
         >
@@ -142,7 +140,7 @@ export function FeatureCard({
     <Link
       href={href}
       className={cn(
-        "group relative flex flex-col justify-end min-h-[380px] sm:min-h-[440px] rounded-2xl overflow-hidden p-6 sm:p-8 border border-white/15 transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.6),0_0_25px_rgba(0,166,166,0.25)]",
+        "group relative flex flex-col justify-end min-h-[380px] sm:min-h-[440px] rounded-2xl overflow-hidden p-8 sm:p-10 border border-[var(--trishanti-neutral-200)] dark:border-white/10 transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.6),0_0_25px_rgba(0,166,166,0.25)]",
         className,
       )}
     >
@@ -162,7 +160,7 @@ export function FeatureCard({
           <span className="inline-block px-3 py-1 rounded-full bg-[#00A6A6]/20 border border-[#00A6A6]/30 text-[#00A6A6] text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm">
             {badge}
           </span>
-          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white group-hover:text-[#00A6A6] transition-colors leading-tight">
+          <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white group-hover:text-[#00A6A6] transition-colors leading-tight">
             {title}
           </h3>
           <p className="text-xs sm:text-sm text-[#cbd5e1] font-light leading-relaxed line-clamp-2">
@@ -171,7 +169,7 @@ export function FeatureCard({
         </div>
 
         {/* Circular Cyan Arrow Button */}
-        <div className="shrink-0 w-11 h-11 rounded-full bg-[#00A6A6] group-hover:bg-[#008f8f] group-hover:scale-110 text-white flex items-center justify-center shadow-lg transition-all duration-300">
+        <div className="shrink-0 w-11 h-11 rounded-full border border-white/20 text-white group-hover:bg-[#00A6A6] group-hover:border-[#00A6A6] group-hover:scale-110 flex items-center justify-center transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]">
           <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
         </div>
       </div>
@@ -208,10 +206,8 @@ export function CardWithTags({
   return (
     <article
       className={cn(
-        "group flex flex-col rounded-2xl overflow-hidden border transition-all duration-300 hover:-translate-y-1",
-        isLight
-          ? "bg-white border-[#E1E4E2] shadow-[0_4px_16px_rgba(23,28,27,0.06)] hover:shadow-[0_8px_24px_rgba(23,28,27,0.12)] text-[#071A22]"
-          : "bg-[#071A22] border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.6),0_0_20px_rgba(0,166,166,0.15)] text-white",
+        "group flex flex-col rounded-2xl overflow-hidden border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1",
+        "bg-white dark:bg-[var(--trishanti-color-bg-dark)] border-[var(--trishanti-neutral-200)] dark:border-white/10 shadow-sm dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] text-[var(--trishanti-neutral-900)] dark:text-white dark:glass-panel",
         className,
       )}
     >
@@ -226,7 +222,7 @@ export function CardWithTags({
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </div>
 
-      <div className="p-6 flex-1 flex flex-col">
+      <div className="p-8 flex-1 flex flex-col">
         <div className="flex flex-wrap items-center gap-2 mb-3">
           {tags.map((tag) => (
             <span
@@ -243,7 +239,7 @@ export function CardWithTags({
 
         <h3
           className={cn(
-            "text-lg sm:text-xl font-serif font-bold leading-snug mb-2 group-hover:text-[#00A6A6] transition-colors line-clamp-2",
+            "text-lg sm:text-xl font-heading font-bold leading-snug mb-2 group-hover:text-[#00A6A6] transition-colors line-clamp-2",
             isLight ? "text-[#071A22]" : "text-white",
           )}
         >
@@ -302,10 +298,8 @@ export function CompactCardList({
           key={item.id}
           href={item.href}
           className={cn(
-            "group flex items-center gap-4 p-3 rounded-xl border transition-all duration-200",
-            isLight
-              ? "bg-white border-[#E1E4E2] hover:border-[#00A6A6] hover:shadow-md text-[#071A22]"
-              : "bg-[#071A22] border-white/10 hover:border-[#00A6A6]/50 hover:shadow-lg text-white",
+            "group flex items-center gap-4 p-3 rounded-xl border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
+            "bg-white dark:bg-[var(--trishanti-color-bg-dark)] border-[var(--trishanti-neutral-200)] dark:border-white/10 text-[var(--trishanti-neutral-900)] dark:text-white hover:border-[#00A6A6]",
           )}
         >
           <div className="relative w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-slate-800">
@@ -371,12 +365,12 @@ export function Accordion({ items, defaultOpenId, className }: AccordionProps) {
               type="button"
               onClick={() => toggle(item.id)}
               aria-expanded={isOpen}
-              className="w-full flex items-center justify-between text-left py-2 text-base sm:text-lg font-serif font-bold text-white hover:text-[#00A6A6] transition-colors"
+              className="w-full flex items-center justify-between text-left py-2 text-base sm:text-lg font-heading font-bold text-white hover:text-[#00A6A6] transition-colors"
             >
               <span>{item.title}</span>
               <ChevronDown
                 className={cn(
-                  "w-5 h-5 text-[#00A6A6] transition-transform duration-300 shrink-0 ml-4",
+                  "w-5 h-5 text-[#00A6A6] transition-transform duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] shrink-0 ml-4",
                   isOpen && "rotate-180",
                 )}
               />
@@ -426,7 +420,7 @@ export function ContentTabs({ tabs, defaultTabId, className }: ContentTabsProps)
               type="button"
               onClick={() => setActiveTab(tab.id)}
               className={cn(
-                "px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200",
+                "px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
                 isActive
                   ? "bg-[#00A6A6] text-white shadow-[0_4px_16px_rgba(0,166,166,0.35)]"
                   : "text-[#94a3b8] hover:text-white hover:bg-white/5",
@@ -519,7 +513,7 @@ export function Divider({ text, className }: DividerProps) {
       <div className="absolute inset-0 flex items-center" aria-hidden="true">
         <div className="w-full border-t border-[#00A6A6]/30" />
       </div>
-      <div className="relative px-6 bg-[#071A22] text-xs font-serif italic text-[#DEE3E1] tracking-widest uppercase">
+      <div className="relative px-6 bg-[#071A22] text-xs font-heading italic text-[#DEE3E1] tracking-widest uppercase">
         — {text} —
       </div>
     </div>

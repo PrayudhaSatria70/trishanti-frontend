@@ -90,9 +90,9 @@ export default async function AboutPage({ params }: AboutPageProps) {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#FFFFFF] text-[#171C1B]">
+    <div className="flex flex-col w-full transition-colors duration-300">
       {/* 1. HERO: People Build Progress (Matching Board A.3.4 Item 2) */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 border-b border-[#E1E4E2] bg-white">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 border-b border-[var(--trishanti-neutral-200)] dark:border-white/10 bg-white dark:bg-[var(--trishanti-color-bg-dark)] transition-colors duration-300">
         <PageContainer>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Column: Typography */}
@@ -101,10 +101,10 @@ export default async function AboutPage({ params }: AboutPageProps) {
                 <span className="w-2 h-2 rounded-full bg-[#00A6A6]" />
                 {isId ? "TENTANG TRISHANTI" : "ABOUT TRISHANTI"}
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#171C1B] leading-[1.15] tracking-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white leading-[1.15] tracking-tight">
                 {isId ? "Manusia Membangun Kemajuan." : "People Build Progress."}
               </h1>
-              <p className="text-lg sm:text-xl text-[#5E6663] leading-relaxed font-light max-w-xl">
+              <p className="text-lg sm:text-xl text-[var(--trishanti-neutral-600)] dark:text-white/70 leading-relaxed font-light max-w-xl">
                 {isId
                   ? "Kami adalah perusahaan multi-sektor dengan satu tujuan bersama — menciptakan nilai jangka panjang bagi manusia dan hari esok yang lebih cerah."
                   : "We are a multi-sector enterprise with a shared purpose — to create long-term value for people and a brighter tomorrow."}
@@ -119,7 +119,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
                 </Link>
                 <Link
                   href={getPath("/contact")}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#C8CDCA] text-[#414946] font-medium hover:bg-[#EFF1F0] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[var(--trishanti-neutral-300)] dark:border-white/20 text-[var(--trishanti-neutral-700)] dark:text-white/80 font-medium hover:bg-[var(--trishanti-neutral-100)] dark:hover:bg-white/10 transition-colors"
                 >
                   {isId ? "Mulai Percakapan" : "Start a Conversation"}
                 </Link>
@@ -127,7 +127,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
             </div>
 
             {/* Right Column: Hero Image */}
-            <div className="lg:col-span-6 relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#DEE3E1]">
+            <div className="lg:col-span-6 relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[var(--trishanti-neutral-200)] dark:border-white/10">
               <Image
                 src="/images/about/hero-engineers-hd.jpg"
                 alt="Trishanti Engineers on Project Site"
@@ -142,17 +142,17 @@ export default async function AboutPage({ params }: AboutPageProps) {
       </section>
 
       {/* 2. SECTION: ECOSYSTEM VISUALIZATION DIAGRAM (Image 2 Alignment) */}
-      <section className="py-20 lg:py-28 bg-[#F7F8F7] border-b border-[#E1E4E2]">
+      <section className="py-20 lg:py-28 bg-[var(--trishanti-color-surface-light)] dark:bg-[var(--trishanti-color-bg-dark)] border-b border-[var(--trishanti-neutral-200)] dark:border-white/10 transition-colors duration-300">
         <PageContainer>
           <div className="max-w-3xl mx-auto text-center mb-12">
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-[#00A6A6] uppercase mb-2">
               <span className="w-2 h-2 rounded-full bg-[#00A6A6]" />
               {isId ? "STRUKTUR. PERGERAKAN. KEMUNGKINAN." : "STRUCTURE. MOVEMENT. POSSIBILITY."}
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B]">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white">
               {isId ? "Ekosistem Terintegrasi Trishanti" : "Our Connected Ecosystem"}
             </h2>
-            <p className="text-sm text-[#5E6663] mt-2">
+            <p className="text-sm text-[var(--trishanti-neutral-600)] dark:text-white/70 mt-2">
               {isId
                 ? "Bahasa visual terpadu yang menghubungkan insan, industri, dan masa depan berkelanjutan."
                 : "A unified visual language connecting people, industries, innovation, and our environment."}
@@ -164,13 +164,13 @@ export default async function AboutPage({ params }: AboutPageProps) {
       </section>
 
       {/* 3. SECTION: Our Journey (Panoramic Landscape with Timeline) */}
-      <section className="py-20 lg:py-28 bg-white border-b border-[#E1E4E2]">
+      <section className="py-20 lg:py-28 bg-white dark:bg-[var(--trishanti-color-bg-dark)] border-b border-[var(--trishanti-neutral-200)] dark:border-white/10 transition-colors duration-300">
         <PageContainer>
           <div className="mb-8">
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B]">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white">
               {isId ? "Perjalanan Kami" : "Our Journey"}
             </h2>
-            <p className="text-sm text-[#7C8581] mt-2">
+            <p className="text-sm text-[var(--trishanti-neutral-600)] dark:text-white/70 mt-2">
               {isId
                 ? "Tonggak pencapaian historis menuju konglomerasi berkelanjutan."
                 : "Historical milestones shaping an enduring multi-sector institution."}
@@ -200,15 +200,15 @@ export default async function AboutPage({ params }: AboutPageProps) {
                   <div className="w-9 h-9 rounded-full bg-[#00A6A6] text-white font-bold flex items-center justify-center text-sm shadow-sm group-hover:scale-110 transition-transform">
                     {idx + 1}
                   </div>
-                  <span className="text-2xl font-serif font-bold text-[#171C1B]">
+                  <span className="text-2xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white">
                     {item.year}
                   </span>
                 </div>
-                <div className="h-0.5 w-full bg-[#DEE3E1] group-hover:bg-[#00A6A6] transition-colors" />
-                <h3 className="text-base font-semibold text-[#171C1B]">
+                <div className="h-0.5 w-full bg-[var(--trishanti-neutral-200)] dark:bg-white/20 group-hover:bg-[#00A6A6] dark:group-hover:bg-[#00A6A6] transition-colors" />
+                <h3 className="text-base font-semibold text-[var(--trishanti-neutral-900)] dark:text-white">
                   {isId ? item.titleId : item.titleEn}
                 </h3>
-                <p className="text-sm text-[#5E6663] leading-relaxed">
+                <p className="text-sm text-[var(--trishanti-neutral-600)] dark:text-white/70 leading-relaxed">
                   {isId ? item.descId : item.descEn}
                 </p>
               </div>
@@ -218,14 +218,14 @@ export default async function AboutPage({ params }: AboutPageProps) {
       </section>
 
       {/* 4. SECTION: COMPARISON BLOCK (Image 3 A.5.21 Item 04) */}
-      <section className="py-20 lg:py-28 bg-[#F7F8F7] border-b border-[#E1E4E2]">
+      <section className="py-20 lg:py-28 bg-[var(--trishanti-color-surface-light)] dark:bg-[var(--trishanti-color-bg-dark)] border-b border-[var(--trishanti-neutral-200)] dark:border-white/10 transition-colors duration-300">
         <PageContainer>
           <div className="max-w-3xl mb-12">
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-[#00A6A6] uppercase mb-2">
               <span className="w-2 h-2 rounded-full bg-[#00A6A6]" />
               {isId ? "TRANSFORMASI & PERTUMBUHAN" : "TRANSFORMATION & GROWTH"}
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B]">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white">
               {isId ? "Membangun Fondasi, Membuka Peluang Baru" : "Building Foundations, Opening New Possibilities"}
             </h2>
           </div>
@@ -235,17 +235,17 @@ export default async function AboutPage({ params }: AboutPageProps) {
       </section>
 
       {/* 5. SECTION: FINANCIAL STEWARDSHIP (Image 3 A.5.21 Item 08) */}
-      <section className="py-20 lg:py-28 bg-white border-b border-[#E1E4E2]">
+      <section className="py-20 lg:py-28 bg-white dark:bg-[var(--trishanti-color-bg-dark)] border-b border-[var(--trishanti-neutral-200)] dark:border-white/10 transition-colors duration-300">
         <PageContainer>
           <div className="max-w-3xl mb-10">
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-[#00A6A6] uppercase mb-2">
               <span className="w-2 h-2 rounded-full bg-[#00A6A6]" />
               {isId ? "DISIPLIN KEUANGAN" : "FINANCIAL STEWARDSHIP"}
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B]">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white">
               {isId ? "Kinerja Keuangan Multi-Tahun" : "Multi-Year Financial Track Record"}
             </h2>
-            <p className="text-sm text-[#7C8581] mt-2">
+            <p className="text-sm text-[var(--trishanti-neutral-600)] dark:text-white/70 mt-2">
               {isId
                 ? "Pertumbuhan neraca yang konsisten didukung alokasi modal terdisiplin di seluruh unit usaha."
                 : "Consistent balance sheet expansion backed by disciplined capital allocation across business units."}
@@ -257,14 +257,14 @@ export default async function AboutPage({ params }: AboutPageProps) {
       </section>
 
       {/* 6. SECTION: Leadership (4 Executive Studio Portraits) */}
-      <section className="py-20 lg:py-28 bg-[#F7F8F7] border-b border-[#E1E4E2]">
+      <section className="py-20 lg:py-28 bg-[var(--trishanti-color-surface-light)] dark:bg-[var(--trishanti-color-bg-dark)] border-b border-[var(--trishanti-neutral-200)] dark:border-white/10 transition-colors duration-300">
         <PageContainer>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B]">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white">
                 {isId ? "Kepemimpinan" : "Leadership"}
               </h2>
-              <p className="text-sm text-[#7C8581] mt-2">
+              <p className="text-sm text-[var(--trishanti-neutral-600)] dark:text-white/70 mt-2">
                 {isId
                   ? "Dewan eksekutif berintegritas tinggi dengan pengalaman industri lintas dekade."
                   : "Seasoned executive leadership guiding disciplined long-term stewardship."}
@@ -284,9 +284,9 @@ export default async function AboutPage({ params }: AboutPageProps) {
             {LEADERS.map((leader) => (
               <div
                 key={leader.name}
-                className="group rounded-xl overflow-hidden bg-white border border-[#DEE3E1] hover:border-[#00A6A6]/40 transition-all duration-300 shadow-sm hover:shadow-md"
+                className="group rounded-xl overflow-hidden bg-white dark:bg-white/5 border border-[var(--trishanti-neutral-200)] dark:border-white/10 hover:border-[#00A6A6]/40 dark:hover:border-[#00A6A6]/40 transition-all duration-300 shadow-sm hover:shadow-md dark:glass-panel"
               >
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#EFF1F0]">
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-[var(--trishanti-neutral-100)] dark:bg-slate-800">
                   <Image
                     src={leader.image}
                     alt={leader.name}
@@ -295,11 +295,11 @@ export default async function AboutPage({ params }: AboutPageProps) {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                 </div>
-                <div className="p-5 text-center">
-                  <h3 className="text-lg font-serif font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors">
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white group-hover:text-[#00A6A6] transition-colors">
                     {leader.name}
                   </h3>
-                  <p className="text-xs uppercase tracking-wider text-[#7C8581] mt-1 font-medium">
+                  <p className="text-xs uppercase tracking-wider text-[var(--trishanti-neutral-500)] dark:text-white/60 mt-1 font-medium">
                     {isId ? leader.roleId : leader.roleEn}
                   </p>
                 </div>
@@ -310,17 +310,17 @@ export default async function AboutPage({ params }: AboutPageProps) {
       </section>
 
       {/* 7. SECTION: Our Culture (Split Meeting Room + Philosophy) */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-white dark:bg-[var(--trishanti-color-bg-dark)] transition-colors duration-300">
         <PageContainer>
           <div className="mb-8">
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B]">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white">
               {isId ? "Budaya Kami" : "Our Culture"}
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center bg-[#F7F8F7] p-8 lg:p-12 rounded-2xl border border-[#DEE3E1] shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center bg-[var(--trishanti-color-surface-light)] dark:bg-white/5 p-8 lg:p-12 rounded-2xl border border-[var(--trishanti-neutral-200)] dark:border-white/10 shadow-sm dark:glass-panel">
             {/* Left: Meeting Image */}
-            <div className="lg:col-span-7 relative aspect-[16/10] rounded-xl overflow-hidden border border-[#DEE3E1] shadow-sm">
+            <div className="lg:col-span-7 relative aspect-[16/10] rounded-xl overflow-hidden border border-[var(--trishanti-neutral-200)] dark:border-white/10 shadow-sm">
               <Image
                 src="/images/about/our-culture.jpg"
                 alt="Trishanti Collaborative Team Discussion"
@@ -336,12 +336,12 @@ export default async function AboutPage({ params }: AboutPageProps) {
                 <span className="w-2 h-2 rounded-full bg-[#00A6A6]" />
                 {isId ? "NILAI KORPORASI" : "CORPORATE VALUES"}
               </div>
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#171C1B] leading-snug">
+              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white leading-snug">
                 {isId
                   ? "Budaya kolaborasi, rasa ingin tahu, dan pertumbuhan berkelanjutan."
                   : "A culture of collaboration, curiosity, and continuous growth."}
               </h3>
-              <p className="text-base text-[#5E6663] leading-relaxed">
+              <p className="text-base text-[var(--trishanti-neutral-600)] dark:text-white/70 leading-relaxed">
                 {isId
                   ? "Kami percaya bahwa pertumbuhan sejati berakar dari pemberdayaan talenta terbaik, keterbukaan ide, dan komitmen moral untuk menghadirkan dampak positif di setiap lini bisnis."
                   : "We believe enduring growth takes root when talented people are empowered with shared purpose, intellectual rigor, and an uncompromising standard of execution."}
@@ -367,7 +367,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
             <span className="text-xs font-semibold uppercase tracking-wider text-[#00A6A6] block mb-2">
               — {isId ? "TATA KELOLA & LAPORAN" : "CORPORATE DISCLOSURES"}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white">
               {isId ? "Laporan & Dokumen Resmi" : "Official Reports & Governance"}
             </h2>
             <p className="text-sm text-[#94a3b8] mt-2">

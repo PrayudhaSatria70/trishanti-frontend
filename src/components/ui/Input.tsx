@@ -112,7 +112,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 : undefined
             }
             className={cn(
-              "w-full px-4 py-3 rounded-lg text-sm transition-all duration-200 outline-none",
+              "w-full px-4 py-3 rounded-lg text-sm transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] outline-none",
               icon ? "pl-11" : "pl-4",
               (status !== "default" || showFilledCheck) ? "pr-10" : "pr-4",
               isLight
@@ -252,7 +252,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
                 : undefined
             }
             className={cn(
-              "w-full px-4 py-3 rounded-lg text-sm transition-all duration-200 outline-none min-h-[120px] resize-y",
+              "w-full px-4 py-3 rounded-lg text-sm transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] outline-none min-h-[120px] resize-y",
               showCounter ? "pb-7" : "pb-3",
               isLight
                 ? "bg-white border border-[#E1E4E2] text-[#071A22] placeholder-[#7C8581] hover:border-[#00A6A6]/50 focus:border-[#00A6A6] focus:ring-2 focus:ring-[#00A6A6]/20"
@@ -350,7 +350,7 @@ export function Checkbox({
         />
         <div
           className={cn(
-            "w-5 h-5 rounded-md border flex items-center justify-center transition-all duration-200",
+            "w-5 h-5 rounded-md border flex items-center justify-center transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
             checked || indeterminate
               ? "bg-[#00A6A6] border-[#00A6A6] text-white shadow-[0_0_10px_rgba(0,166,166,0.3)]"
               : isLight
@@ -431,7 +431,7 @@ export function RadioButton({
         />
         <div
           className={cn(
-            "w-5 h-5 rounded-full border flex items-center justify-center transition-all duration-200",
+            "w-5 h-5 rounded-full border flex items-center justify-center transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
             checked
               ? "border-[#00A6A6] bg-[#00A6A6]/10"
               : isLight
@@ -504,13 +504,13 @@ export function ToggleSwitch({
         />
         <div
           className={cn(
-            "w-11 h-6 rounded-full transition-colors duration-200 p-0.5",
+            "w-11 h-6 rounded-full transition-colors duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] p-0.5",
             checked ? "bg-[#00A6A6]" : "bg-white/20 dark:bg-white/15",
           )}
         >
           <div
             className={cn(
-              "w-5 h-5 rounded-full bg-white shadow-md transition-transform duration-200",
+              "w-5 h-5 rounded-full bg-white shadow-md transition-transform duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
               checked ? "translate-x-5" : "translate-x-0",
             )}
           />
@@ -596,7 +596,7 @@ export function FileUpload({
           handleFiles(e.dataTransfer.files);
         }}
         className={cn(
-          "relative rounded-xl border-2 border-dashed p-6 text-center transition-all duration-200 cursor-pointer",
+          "relative rounded-xl border-2 border-dashed p-6 text-center transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] cursor-pointer",
           dragOver
             ? "border-[#00A6A6] bg-[#00A6A6]/10"
             : isLight

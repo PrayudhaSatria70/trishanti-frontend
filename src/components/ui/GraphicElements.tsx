@@ -268,7 +268,7 @@ export function EcosystemDiagram({
 
       {/* Center Brand Node */}
       <div
-        className={`absolute z-10 w-44 h-44 rounded-full flex flex-col items-center justify-center text-center p-4 shadow-xl border transition-all duration-300 ${
+        className={`absolute z-10 w-44 h-44 rounded-full flex flex-col items-center justify-center text-center p-4 shadow-xl border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] ${
           isDark
             ? "bg-[#071A22] border-[#00A6A6]/40 text-white shadow-[#00A6A6]/10"
             : "bg-white border-[#DEE3E1] text-[#171C1B] shadow-[#171C1B]/5"
@@ -306,7 +306,7 @@ export function EcosystemDiagram({
           >
             {/* Circular Icon Node */}
             <div
-              className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 group-hover:scale-110 ${
+              className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] group-hover:scale-110 ${
                 isDark
                   ? "bg-[#0E2833] border-[#00A6A6] text-[#00A6A6] shadow-lg shadow-[#00A6A6]/20"
                   : "bg-white border-[#00A6A6] text-[#00A6A6] shadow-md"
@@ -318,7 +318,7 @@ export function EcosystemDiagram({
             {/* Label & Description */}
             <div className="text-center mt-2 pointer-events-none">
               <span
-                className={`block text-xs font-serif font-bold ${
+                className={`block text-xs font-heading font-bold ${
                   isDark ? "text-white" : "text-[#171C1B]"
                 }`}
               >

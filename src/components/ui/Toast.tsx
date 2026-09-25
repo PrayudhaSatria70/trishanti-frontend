@@ -83,7 +83,7 @@ export function Toast({ toast, onDismiss }: ToastProps) {
       role="status"
       aria-live="polite"
       className={cn(
-        "flex items-start gap-3.5 p-4 rounded-xl border backdrop-blur-xl shadow-xl transition-all duration-300 w-full max-w-sm pointer-events-auto",
+        "flex items-start gap-3.5 p-4 rounded-xl border backdrop-blur-xl shadow-xl transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] w-full max-w-sm pointer-events-auto",
         style.container,
       )}
     >

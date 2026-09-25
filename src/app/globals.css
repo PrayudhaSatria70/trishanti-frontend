@@ -9,16 +9,53 @@
  * no magic values in components.
  */
 /* ============================================================
-   GOOGLE FONTS — A.5.3 Typography
-   Inter (corporate clarity) + Playfair Display (editorial authority)
+   GOOGLE FONTS — Design System v1.0 2024
+   Display: Space Grotesk
+   Heading: Sora
+   Body/Caption: IBM Plex Sans
    ============================================================ */
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Sora:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-heading: "Sora", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+
+  --color-primary: #00A6A6;
+  --color-primary-dark: #008f8f;
+  --color-primary-light: #20b8b8;
+  --color-bg-dark: #071A22;
+  --color-surface-dark: #0d222c;
+  --color-surface-charcoal: #292F2D;
+  --color-text-dark: #FFFFFF;
+  --color-text-dark-muted: #94a3b8;
+  
+  --color-neutral-50: #E6E8E6;
+  --color-neutral-100: #EFF1F0;
+  --color-neutral-200: #E1E4E2;
+  --color-neutral-300: #C8CDCA;
+  --color-neutral-400: #A6ADAA;
+  --color-neutral-500: #7C8581;
+  --color-neutral-600: #5E6663;
+  --color-neutral-700: #414946;
+  --color-neutral-800: #292F2D;
+  --color-neutral-900: #171C1B;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-sm: var(--trishanti-elevation-1);
+  --shadow-md: var(--trishanti-elevation-2);
+  --shadow-lg: var(--trishanti-elevation-3);
+  --shadow-glow: var(--trishanti-shadow-glow);
 }
 
 /* ============================================================
@@ -42,13 +79,13 @@
   --trishanti-color-ocean: #2F5F73;         /* Infrastructure */
   --trishanti-color-forest: #4B6B57;        /* Agriculture */
   --trishanti-color-copper: #A66A3F;        /* Industry */
-  --trishanti-color-sand: #D6CB85;          /* People */
+  --trishanti-color-sand: #DBC6B5;          /* People */
 
-  /* --- Neutral Color System (Image 3 Board: Neutral 50 to 900) --- */
-  --trishanti-neutral-50: #F2F4F3;          /* Page background */
-  --trishanti-neutral-100: #E8E8E9;         /* Section background */
-  --trishanti-neutral-200: #D9DDDA;         /* Borders / Dividers */
-  --trishanti-neutral-300: #C8CDCA;         /* Subtle borders */
+  /* --- Neutral Color System (Design System v1.0 2024) --- */
+  --trishanti-neutral-50: #E6E8E6;          /* Page background */
+  --trishanti-neutral-100: #EFF1F0;         /* Section background */
+  --trishanti-neutral-200: #E1E4E2;         /* Borders / Dividers */
+  --trishanti-neutral-300: #C8CDCA;         /* Strong borders */
   --trishanti-neutral-400: #A6ADAA;         /* Disabled / Muted */
   --trishanti-neutral-500: #7C8581;         /* Metadata */
   --trishanti-neutral-600: #5E6663;         /* Secondary text */
@@ -57,11 +94,11 @@
   --trishanti-neutral-900: #171C1B;         /* Maximum contrast */
 
   /* --- Brand Light / Cards --- */
-  --trishanti-color-bg-light: #F2F4F3;
+  --trishanti-color-bg-light: #E6E8E6;
   --trishanti-color-surface-light: #FFFFFF; /* Architectural White — Cards */
   --trishanti-color-text-light: #171C1B;
   --trishanti-color-text-light-muted: #5E6663;
-  --trishanti-color-border-light: #D9DDDA;
+  --trishanti-color-border-light: #E1E4E2;
 
   /* --- Color: Semantic UI Colors --- */
   --trishanti-color-success: #16A34A;
@@ -71,8 +108,9 @@
 
 
   /* --- Typography: Font Families --- */
-  --trishanti-font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --trishanti-font-serif: "Playfair Display", Georgia, serif;
+  --trishanti-font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --trishanti-font-heading: "Sora", system-ui, -apple-system, sans-serif;
+  --trishanti-font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
 
   /* --- Typography: Scale (A.5.3) --- */
   --trishanti-text-xs: 0.75rem;     /* 12px */
@@ -169,8 +207,8 @@
   --trishanti-bp-xl: 1280px;
   --trishanti-bp-2xl: 1536px;
 
-  /* --- Container: max-width --- */
-  --trishanti-container-max: 1280px;
+  /* --- Container: max-width (Image 6: 1920px+) --- */
+  --trishanti-container-max: 1920px;
   --trishanti-container-padding: var(--trishanti-space-6);
 
   /* --- Z-index layer stack (Modal & Overlay System Item 11) --- */
@@ -189,6 +227,33 @@
   --trishanti-z-raised: var(--trishanti-z-navigation);
   --trishanti-z-sticky: var(--trishanti-z-navigation);
   --trishanti-z-modal-backdrop: 55;
+
+  /* --- Animations --- */
+  --animate-fade-in: fade-in 1.5s var(--trishanti-ease-entrance) forwards;
+  --animate-fade-in-up: fade-in-up 1s var(--trishanti-ease-entrance) forwards;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
 /* ============================================================
@@ -199,8 +264,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -219,6 +282,11 @@ body {
   background-color: var(--trishanti-color-bg-light);
   min-height: 100dvh;
   overflow-x: hidden;
+}
+
+.dark body {
+  color: var(--trishanti-color-text-dark);
+  background-color: var(--trishanti-color-bg-dark);
 }
 
 /* Focus visible — WCAG 2.2 AA compliance */
@@ -271,8 +339,12 @@ body {
   font-family: var(--trishanti-font-sans);
 }
 
-.font-serif {
-  font-family: var(--trishanti-font-serif);
+.font-heading {
+  font-family: var(--trishanti-font-heading);
+}
+
+.font-display {
+  font-family: var(--trishanti-font-display);
 }
 
 /* Eyebrow label — small uppercase tracked label */
@@ -285,9 +357,9 @@ body {
   color: var(--trishanti-color-primary);
 }
 
-/* Display headline — large serif */
+/* Display headline — large display font */
 .text-display {
-  font-family: var(--trishanti-font-serif);
+  font-family: var(--trishanti-font-display);
   font-size: clamp(var(--trishanti-text-4xl), 6vw, var(--trishanti-text-7xl));
   font-weight: 700;
   line-height: var(--trishanti-leading-tight);
@@ -296,7 +368,7 @@ body {
 
 /* Section headline */
 .text-headline {
-  font-family: var(--trishanti-font-serif);
+  font-family: var(--trishanti-font-heading);
   font-size: clamp(var(--trishanti-text-3xl), 4vw, var(--trishanti-text-5xl));
   font-weight: 600;
   line-height: var(--trishanti-leading-tight);
@@ -476,18 +548,32 @@ body {
 }
 
 .container-adaptive {
-  padding-inline: 1.25rem; /* 20px mobile */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--trishanti-container-max);
+  padding-left: 24px; /* Mobile: 24px Margin */
+  padding-right: 24px;
 }
 
 @media (min-width: 768px) {
   .container-adaptive {
-    padding-inline: 1.5rem; /* 24px tablet */
+    padding-left: 32px; /* Tablet: 32px Margin */
+    padding-right: 32px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .container-adaptive {
-    padding-inline: 2rem; /* 32px desktop */
+    padding-left: 48px; /* Laptop: 48px Margin */
+    padding-right: 48px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container-adaptive {
+    padding-left: 64px; /* Desktop: 64px Margin */
+    padding-right: 64px;
   }
 }
 

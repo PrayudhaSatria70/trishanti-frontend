@@ -66,19 +66,19 @@ export default async function NewsPage({ params }: NewsPageProps) {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-white text-[#171C1B]">
+    <div className="flex flex-col w-full bg-[var(--trishanti-neutral-50)] dark:bg-[var(--trishanti-color-bg-dark)] transition-colors duration-300">
       {/* 1. HEADER: Insights for a Brighter Tomorrow (Board A.3.4 Item 6) */}
-      <section className="pt-32 pb-12 sm:pt-40 sm:pb-16 border-b border-[#E1E4E2] bg-white">
+      <section className="pt-32 pb-12 sm:pt-40 sm:pb-16 border-b border-[var(--trishanti-neutral-200)] dark:border-white/10 bg-[var(--trishanti-neutral-50)] dark:bg-[#071A22] transition-colors duration-300">
         <PageContainer>
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-[#00A6A6] uppercase">
               <span className="w-2 h-2 rounded-full bg-[#00A6A6]" />
               {isId ? "KABAR & WAWASAN" : "NEWS & INSIGHTS"}
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#171C1B] leading-[1.15] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white leading-[1.15] tracking-tight transition-colors">
               {isId ? "Wawasan untuk Hari Esok yang Lebih Cerah." : "Insights for a Brighter Tomorrow."}
             </h1>
-            <p className="text-base sm:text-lg text-[#5E6663] font-light max-w-xl">
+            <p className="text-lg sm:text-xl text-[var(--trishanti-neutral-600)] dark:text-white/70 font-light max-w-xl transition-colors">
               {isId
                 ? "Pemikiran strategis, pembaruan korporasi, dan narasi kemajuan dari ekosistem Trishanti."
                 : "Strategic perspectives, corporate milestones, and stories of progress from across our ecosystem."}
@@ -88,7 +88,7 @@ export default async function NewsPage({ params }: NewsPageProps) {
       </section>
 
       {/* 2. SECTION: Interactive News Discovery (Board A.5.22 Alignment) */}
-      <section className="py-16 lg:py-24 bg-[#F7F8F7]">
+      <section className="py-16 lg:py-24 bg-white dark:bg-[#0d222c] transition-colors duration-300">
         <PageContainer>
           <NewsDiscovery articles={ARTICLES} locale={locale} />
         </PageContainer>

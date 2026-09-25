@@ -142,7 +142,7 @@ export function Modal({
               <h3
                 id="modal-title"
                 className={cn(
-                  "text-2xl sm:text-3xl font-serif font-bold tracking-tight",
+                  "text-2xl sm:text-3xl font-heading font-bold tracking-tight",
                   isLight ? "text-[#071A22]" : "text-white",
                 )}
               >

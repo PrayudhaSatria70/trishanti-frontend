@@ -21,12 +21,12 @@ export default function NotFound() {
 
       <PageContainer size="narrow" className="relative z-10 text-center px-4 py-24">
         {/* Large Serif 404 Display */}
-        <h1 className="text-7xl sm:text-9xl font-serif font-bold text-white tracking-tight mb-4 select-none">
+        <h1 className="text-7xl sm:text-9xl font-heading font-bold text-white tracking-tight mb-4 select-none">
           404
         </h1>
 
         {/* Board Headline & Subtitle */}
-        <h2 className="text-2xl sm:text-3xl font-serif font-medium text-white mb-2 leading-snug">
+        <h2 className="text-2xl sm:text-3xl font-heading font-medium text-white mb-2 leading-snug">
           This path leads somewhere we haven&apos;t built yet.
         </h2>
         <p className="text-base text-[#A6ADAA] mb-8 font-light">

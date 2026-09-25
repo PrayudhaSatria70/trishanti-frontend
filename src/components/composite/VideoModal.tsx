@@ -64,7 +64,7 @@ export function VideoModal({ isOpen, onClose, title = "Trishanti Corporate Overv
           {/* Working high quality ambient corporate loop or video fallback */}
           <iframe
             className="w-full h-full"
-            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1&rel=0"
+            src="https://www.youtube-nocookie.com/embed/LXb3EKWsInQ?autoplay=1&controls=1&rel=0&modestbranding=1"
             title={title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

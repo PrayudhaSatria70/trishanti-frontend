@@ -218,7 +218,7 @@ export function LaunchMonitoringWidget({
 
           {/* Floating Tooltip at activePoint */}
           <div
-            className="absolute -translate-x-1/2 -translate-y-12 px-3 py-1.5 rounded-lg bg-[#071A22] border border-[#00A6A6] text-white text-[11px] font-mono shadow-xl pointer-events-none transition-all duration-300"
+            className="absolute -translate-x-1/2 -translate-y-12 px-3 py-1.5 rounded-lg bg-[#071A22] border border-[#00A6A6] text-white text-[11px] font-mono shadow-xl pointer-events-none transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]"
             style={{
               left: `${(activePoint.x / 700) * 100}%`,
               top: `${(activePoint.y / 200) * 100}%`,

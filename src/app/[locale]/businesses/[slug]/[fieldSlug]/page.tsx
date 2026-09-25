@@ -68,7 +68,7 @@ export default async function BusinessFieldPage({
     : null;
 
   return (
-    <div className="flex flex-col w-full bg-[#F2F4F3] text-[#171C1B]">
+    <div className="flex flex-col w-full transition-colors duration-300">
       {/* 1. CINEMATIC HERO (Matching Level 04 Board) */}
       <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-32 overflow-hidden bg-[#071A22] text-white">
         <div className="absolute inset-0 z-0">
@@ -104,7 +104,7 @@ export default async function BusinessFieldPage({
               <span>{isId ? "BIDANG BISNIS" : "BUSINESS FIELD"}</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.12] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.12] tracking-tight">
               {isId ? field.titleId : field.titleEn}
             </h1>
 
@@ -148,7 +148,7 @@ export default async function BusinessFieldPage({
                 {isId ? "FONDASI EKOSISTEM" : "ECOSYSTEM FOUNDATION"}
               </span>
 
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B] leading-snug">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[#171C1B] leading-snug">
                 {isId
                   ? `Energi & Peluang untuk Masa Depan yang Lebih Baik`
                   : `Powering Opportunities for a Better Future`}
@@ -196,7 +196,7 @@ export default async function BusinessFieldPage({
                       className="group flex items-center justify-between p-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 transition-all"
                     >
                       <div>
-                        <p className="font-serif font-bold text-white text-base group-hover:text-[#00A6A6] transition-colors">
+                        <p className="font-heading font-bold text-white text-base group-hover:text-[#00A6A6] transition-colors">
                           {portfolioItem.name}
                         </p>
                         <p className="text-xs text-[#DEE3E1] italic">
@@ -223,7 +223,7 @@ export default async function BusinessFieldPage({
                 <TrendingUp className="w-4 h-4" />
                 <span>{isId ? "KONTEKS INDUSTRI" : "INDUSTRY CONTEXT"}</span>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-[#171C1B]">
+              <h3 className="text-2xl font-heading font-bold text-[#171C1B]">
                 {isId ? "Dinamika & Peluang Sektor" : "Sector Dynamics & Macro Outlook"}
               </h3>
               <p className="text-sm text-[#5E6663] leading-relaxed">
@@ -237,7 +237,7 @@ export default async function BusinessFieldPage({
                 <Sparkles className="w-4 h-4" />
                 <span>{isId ? "ARAH STRATEGIS KAMI" : "OUR STRATEGIC DIRECTION"}</span>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-[#171C1B]">
+              <h3 className="text-2xl font-heading font-bold text-[#171C1B]">
                 {isId ? "Pendekatan Operasional Trishanti" : "Trishanti's Operational Approach"}
               </h3>
               <p className="text-sm text-[#5E6663] leading-relaxed">
@@ -255,7 +255,7 @@ export default async function BusinessFieldPage({
             <span className="text-xs font-bold uppercase tracking-wider text-[#00A6A6]">
               {isId ? "PELUANG INVESTASI & USAHA" : "VENTURE & INVESTMENT OPPORTUNITIES"}
             </span>
-            <h2 className="text-3xl font-serif font-bold text-[#171C1B]">
+            <h2 className="text-3xl font-heading font-bold text-[#171C1B]">
               {isId ? "Area Fokus Pengembangan" : "Key Growth Focus Areas"}
             </h2>
             <p className="text-sm text-[#5E6663]">
@@ -290,7 +290,7 @@ export default async function BusinessFieldPage({
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A6A6] block mb-1">
                   {isId ? "SINERGI EKOSISTEM" : "ECOSYSTEM SYNERGIES"}
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#171C1B]">
+                <h2 className="text-2xl sm:text-3xl font-heading font-bold text-[#171C1B]">
                   {isId ? "Bidang Bisnis Terkait" : "Related Business Fields"}
                 </h2>
               </div>

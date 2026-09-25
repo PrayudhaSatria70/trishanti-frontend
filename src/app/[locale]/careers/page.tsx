@@ -131,7 +131,7 @@ export default async function CareersPage({ params }: CareersPageProps) {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#0b1120] text-white">
+    <div className="flex flex-col w-full bg-transparent transition-colors duration-300">
       {/* Editorial Hero */}
       <section className="relative pt-36 pb-20 sm:pt-44 sm:pb-28 overflow-hidden border-b border-[#1e293b]">
         <div className="absolute inset-0 z-0">
@@ -143,7 +143,7 @@ export default async function CareersPage({ params }: CareersPageProps) {
             className="object-cover object-center opacity-25"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0b1120] via-[#0b1120]/90 to-[#0b1120]/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--trishanti-neutral-50)] dark:from-[var(--trishanti-color-bg-dark)] via-[var(--trishanti-neutral-50)]/90 dark:via-[var(--trishanti-color-bg-dark)]/90 to-transparent dark:to-[var(--trishanti-color-bg-dark)]/70 transition-colors duration-300" />
         </div>
 
         <PageContainer className="relative z-10">
@@ -151,10 +151,10 @@ export default async function CareersPage({ params }: CareersPageProps) {
             <Badge variant="accent" className="mb-4">
               {tCareers("hero.eyebrow")}
             </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-bold tracking-tight text-[var(--trishanti-neutral-900)] dark:text-white mb-6 leading-tight transition-colors">
               {tCareers("hero.headline")}
             </h1>
-            <p className="text-lg sm:text-xl text-[#94a3b8] leading-relaxed font-light">
+            <p className="text-lg sm:text-xl text-[var(--trishanti-neutral-700)] dark:text-[#94a3b8] leading-relaxed font-light transition-colors">
               {tCareers("hero.body")}
             </p>
           </div>
@@ -162,18 +162,18 @@ export default async function CareersPage({ params }: CareersPageProps) {
       </section>
 
       {/* Culture Pillars */}
-      <SectionWrapper variant="midnight">
+      <SectionWrapper variant="card">
         <PageContainer>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <Badge variant="accent" className="mb-3">
               {isId ? "Budaya Kerja" : "Our Culture"}
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
+            <h2 className="text-4xl sm:text-5xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white mb-6 transition-colors">
               {isId
                 ? "Tumbuh Bersama Komunitas Profesional Berdedikasi"
                 : "Grow Alongside Purpose-Driven Professionals"}
             </h2>
-            <p className="text-sm sm:text-base text-[#94a3b8]">
+            <p className="text-base sm:text-lg text-[var(--trishanti-neutral-700)] dark:text-[#94a3b8] transition-colors">
               {isId
                 ? "Kami membangun lingkungan kerja yang mengutamakan integritas, kejelasan arah, dan saling mendukung."
                 : "We foster an environment of high autonomy, intellectual rigor, and collective progress."}
@@ -186,15 +186,15 @@ export default async function CareersPage({ params }: CareersPageProps) {
               return (
                 <div
                   key={idx}
-                  className="p-8 rounded-2xl bg-[#111827] border border-[#1e293b] hover:border-[#06b6d4]/40 transition-all duration-300"
+                  className="p-10 rounded-2xl bg-white dark:bg-[var(--trishanti-color-bg-dark)] border border-[var(--trishanti-neutral-200)] dark:border-white/10 hover:border-[#00A6A6] dark:hover:border-[#00A6A6] shadow-sm hover:shadow-lg transition-all duration-300 dark:glass-panel"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#06b6d4]/10 text-[#06b6d4] flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-16 h-16 rounded-xl bg-[#00A6A6]/10 text-[#00A6A6] flex items-center justify-center mb-8">
+                    <Icon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-lg font-bold font-serif text-white mb-3">
+                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-[var(--trishanti-neutral-900)] dark:text-white mb-4 transition-colors">
                     {isId ? cult.titleId : cult.titleEn}
                   </h3>
-                  <p className="text-sm text-[#94a3b8] leading-relaxed">
+                  <p className="text-base sm:text-lg text-[var(--trishanti-neutral-700)] dark:text-[#94a3b8] leading-relaxed transition-colors">
                     {isId ? cult.descId : cult.descEn}
                   </p>
                 </div>
@@ -205,60 +205,61 @@ export default async function CareersPage({ params }: CareersPageProps) {
       </SectionWrapper>
 
       {/* Open Positions List */}
-      <SectionWrapper variant="dark" className="border-y border-[#1e293b]">
+      <SectionWrapper variant="neutral600" className="border-y border-[var(--trishanti-neutral-200)] dark:border-[#1e293b] transition-colors">
         <PageContainer>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <Badge variant="accent" className="mb-3">
+              <Badge variant="accent" className="mb-4">
                 {isId ? "Peluang Karir" : "Opportunities"}
               </Badge>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
+              <h2 className="text-4xl sm:text-5xl font-heading font-bold text-white transition-colors">
                 {tCareers("openPositions")}
               </h2>
             </div>
-            <p className="text-sm text-[#94a3b8]">
+            <p className="text-base sm:text-lg text-white/80 max-w-md text-right">
               {isId
                 ? "Posisi terbuka di berbagai sektor operasional dan holding korporasi."
                 : "Active openings across operational divisions and corporate holding."}
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             {POSITIONS.map((pos) => (
               <div
                 key={pos.id}
-                className="p-6 sm:p-8 rounded-2xl bg-[#111827] border border-[#1e293b] hover:border-[#06b6d4]/40 transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-6 group"
+                className="p-8 sm:p-10 rounded-2xl bg-white/10 dark:bg-[var(--trishanti-color-bg-dark)] border border-white/20 dark:border-white/10 hover:border-white/50 dark:hover:border-[#00A6A6] transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-8 group backdrop-blur-md dark:glass-panel"
               >
-                <div className="space-y-2 max-w-xl">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Badge variant="accent" size="sm">
+                <div className="space-y-4 max-w-2xl">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Badge variant="accent">
                       {isId ? pos.departmentId : pos.departmentEn}
                     </Badge>
-                    <span className="text-xs text-[#64748b] flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5" />
+                    <span className="text-sm font-medium text-white/80 dark:text-[#64748b] flex items-center gap-1.5">
+                      <MapPin className="w-4 h-4" />
                       {pos.location}
                     </span>
-                    <span className="text-xs text-[#64748b] flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5" />
+                    <span className="text-sm font-medium text-white/80 dark:text-[#64748b] flex items-center gap-1.5">
+                      <Clock className="w-4 h-4" />
                       {isId ? pos.typeId : pos.typeEn}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold font-serif text-white group-hover:text-[#06b6d4] transition-colors">
+                  <h3 className="text-2xl sm:text-3xl font-bold font-heading text-white group-hover:text-[#00A6A6] transition-colors">
                     {isId ? pos.titleId : pos.titleEn}
                   </h3>
 
-                  <p className="text-sm text-[#94a3b8] leading-relaxed">
+                  <p className="text-base sm:text-lg text-white/70 dark:text-[#94a3b8] leading-relaxed transition-colors">
                     {isId ? pos.descId : pos.descEn}
                   </p>
                 </div>
 
-                <div className="shrink-0">
+                <div className="shrink-0 mt-4 md:mt-0">
                   <Link href={getPath("/contact")}>
                     <Button
                       variant="primary"
-                      size="sm"
-                      rightIcon={<ArrowRight className="w-4 h-4" />}
+                      size="lg"
+                      rightIcon={<ArrowRight className="w-5 h-5" />}
+                      className="w-full sm:w-auto"
                     >
                       {tCareers("apply")}
                     </Button>
@@ -269,19 +270,19 @@ export default async function CareersPage({ params }: CareersPageProps) {
           </div>
 
           {/* General Inquiries */}
-          <div className="mt-12 p-8 rounded-2xl bg-white/5 border border-white/10 text-center">
-            <h3 className="text-lg font-bold text-white mb-2">
+          <div className="mt-16 p-10 sm:p-12 rounded-2xl bg-white/5 border border-white/10 text-center glass-panel">
+            <h3 className="text-2xl sm:text-3xl font-bold font-heading text-white mb-4">
               {isId
                 ? "Tidak menemukan posisi yang sesuai?"
                 : "Don't See an Exact Match for Your Background?"}
             </h3>
-            <p className="text-sm text-[#94a3b8] max-w-lg mx-auto mb-6">
+            <p className="text-base sm:text-lg text-[#94a3b8] max-w-2xl mx-auto mb-8">
               {isId
                 ? "Kami selalu mencari talenta berintegritas tinggi. Kirimkan CV dan profil Anda ke direktorat sumber daya manusia kami."
                 : "We are always keen to connect with disciplined, ambitious professionals. Submit your portfolio to our talent acquisition team."}
             </p>
             <Link href={getPath("/contact")}>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="lg">
                 {isId ? "Kirim Lamaran Umum" : "Submit Open Application"}
               </Button>
             </Link>

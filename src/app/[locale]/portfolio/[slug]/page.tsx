@@ -70,7 +70,7 @@ export default async function PortfolioDetailPage({
   };
 
   return (
-    <div className="flex flex-col w-full bg-[#F2F4F3] text-[#171C1B]">
+    <div className="flex flex-col w-full bg-[var(--trishanti-neutral-50)] dark:bg-[var(--trishanti-color-bg-dark)] transition-colors duration-300">
       {/* 1. CINEMATIC HERO (Matching Level 05 Board) */}
       <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-32 overflow-hidden bg-[#071A22] text-white">
         <div className="absolute inset-0 z-0">
@@ -109,10 +109,10 @@ export default async function PortfolioDetailPage({
 
             {/* Title & Tagline */}
             <div>
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-black text-white leading-tight tracking-tight mb-3">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-black text-white leading-tight tracking-tight mb-3">
                 {item.name}
               </h1>
-              <p className="text-xl sm:text-2xl font-serif italic text-[#00A6A6]">
+              <p className="text-xl sm:text-2xl font-heading italic text-[#00A6A6]">
                 &ldquo;{isId ? item.taglineId : item.taglineEn}&rdquo;
               </p>
             </div>
@@ -168,16 +168,16 @@ export default async function PortfolioDetailPage({
       </div>
 
       {/* 3. PHILOSOPHY & THREE FEATURE PILLARS (Matching Level 05 Board) */}
-      <section id="overview" className="py-20 lg:py-28 bg-white border-b border-[#D9DDDA]">
+      <section id="overview" className="py-20 lg:py-28 bg-white dark:bg-[#0d222c] border-b border-[var(--trishanti-neutral-200)] dark:border-[#1e293b] transition-colors duration-300">
         <PageContainer>
           <div className="max-w-4xl mx-auto text-center space-y-6 mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-[#00A6A6]">
               {isId ? "FILOSOFI PRODUK" : "PRODUCT PHILOSOPHY"}
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#171C1B] leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white leading-tight transition-colors">
               {isId ? "Hidangan Berkualitas untuk Setiap Hari." : "Quality Food for a Better Everyday."}
             </h2>
-            <p className="text-base sm:text-lg text-[#5E6663] leading-relaxed font-light">
+            <p className="text-base sm:text-lg text-[var(--trishanti-neutral-600)] dark:text-[#94a3b8] leading-relaxed font-light transition-colors">
               {isId
                 ? "Kami percaya makanan berkualitas menciptakan momen bermakna. SteakMary dirancang untuk menyatukan banyak orang melalui santapan yang lezat, mudah diakses, dan bermutu tinggi."
                 : "We believe great food creates meaningful moments. SteakMary is built to bring people together through delicious, accessible, and high-quality meals."}
@@ -192,15 +192,15 @@ export default async function PortfolioDetailPage({
               return (
                 <div
                   key={idx}
-                  className="p-8 rounded-2xl bg-[#F2F4F3] border border-[#D9DDDA] hover:border-[#00A6A6] transition-all duration-300 flex flex-col items-center text-center group"
+                  className="p-8 rounded-2xl bg-[var(--trishanti-neutral-50)] dark:bg-[#111827] border border-[var(--trishanti-neutral-200)] dark:border-[#1e293b] hover:border-[#00A6A6] transition-all duration-300 flex flex-col items-center text-center group dark:glass-panel"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-white border border-[#D9DDDA] text-[#00A6A6] group-hover:bg-[#00A6A6] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm mb-6">
-                    <IconComp className="w-7 h-7 stroke-[1.5]" />
+                  <div className="w-16 h-16 rounded-2xl bg-white dark:bg-[#0d222c] border border-[var(--trishanti-neutral-200)] dark:border-[#1e293b] text-[#00A6A6] group-hover:bg-[#00A6A6] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm mb-6">
+                    <IconComp className="w-8 h-8 stroke-[1.5]" />
                   </div>
-                  <h3 className="text-xl font-serif font-bold text-[#171C1B] mb-2">
+                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white mb-3 transition-colors">
                     {isId ? feat.titleId : feat.titleEn}
                   </h3>
-                  <p className="text-sm text-[#5E6663] leading-relaxed">
+                  <p className="text-base text-[var(--trishanti-neutral-600)] dark:text-[#94a3b8] leading-relaxed transition-colors">
                     {isId ? feat.descId : feat.descEn}
                   </p>
                 </div>
@@ -212,7 +212,7 @@ export default async function PortfolioDetailPage({
 
       {/* 4. PRODUCTS & MENU HIGHLIGHTS */}
       {item.products && item.products.length > 0 && (
-        <section id="products" className="py-20 lg:py-28 bg-[#F2F4F3]">
+        <section id="products" className="py-20 lg:py-28 bg-[var(--trishanti-neutral-50)] dark:bg-[var(--trishanti-color-bg-dark)] transition-colors duration-300">
           <PageContainer>
             <div className="space-y-12">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#D9DDDA] pb-6">
@@ -220,11 +220,11 @@ export default async function PortfolioDetailPage({
                   <span className="text-xs font-bold uppercase tracking-wider text-[#00A6A6] block mb-1">
                     {isId ? "MENU PILIHAN" : "SIGNATURE SELECTIONS"}
                   </span>
-                  <h2 className="text-3xl font-serif font-bold text-[#171C1B]">
+                  <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white transition-colors">
                     {isId ? "Hidangan Unggulan SteakMary" : "Signature Offerings"}
                   </h2>
                 </div>
-                <p className="text-sm text-[#5E6663] max-w-md">
+                <p className="text-base text-[var(--trishanti-neutral-600)] dark:text-[#94a3b8] max-w-md transition-colors">
                   {isId
                     ? "Dipersiapkan dari potongan daging segar berkualitas tinggi dengan teknik pemanggangan presisi."
                     : "Prepared using prime cuts, signature reductions, and chef-curated seasonings."}
@@ -235,9 +235,9 @@ export default async function PortfolioDetailPage({
                 {item.products.map((prod, idx) => (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl border border-[#D9DDDA] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group"
+                    className="bg-white dark:bg-[#111827] rounded-2xl border border-[var(--trishanti-neutral-200)] dark:border-[#1e293b] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group dark:glass-panel"
                   >
-                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
                       <Image
                         src={prod.image}
                         alt={prod.nameEn}
@@ -246,16 +246,16 @@ export default async function PortfolioDetailPage({
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />
                     </div>
-                    <div className="p-6 flex flex-col flex-1 justify-between">
+                    <div className="p-8 flex flex-col flex-1 justify-between">
                       <div>
-                        <h3 className="text-xl font-serif font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors mb-2">
+                        <h3 className="text-2xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white group-hover:text-[#00A6A6] transition-colors mb-3">
                           {isId ? prod.nameId : prod.nameEn}
                         </h3>
-                        <p className="text-sm text-[#5E6663] leading-relaxed">
+                        <p className="text-base text-[var(--trishanti-neutral-600)] dark:text-[#94a3b8] leading-relaxed transition-colors">
                           {isId ? prod.descId : prod.descEn}
                         </p>
                       </div>
-                      <div className="mt-6 pt-4 border-t border-[#D9DDDA] flex items-center justify-between text-xs font-semibold text-[#00A6A6]">
+                      <div className="mt-8 pt-4 border-t border-[var(--trishanti-neutral-200)] dark:border-[#1e293b] flex items-center justify-between text-sm font-semibold text-[#00A6A6] transition-colors">
                         <span>{isId ? "Tersedia Setiap Hari" : "Available Daily"}</span>
                         <Utensils className="w-4 h-4" />
                       </div>
@@ -269,7 +269,7 @@ export default async function PortfolioDetailPage({
       )}
 
       {/* 5. OUR STORY NARRATIVE */}
-      <section id="our-story" className="py-20 lg:py-28 bg-white border-y border-[#D9DDDA]">
+      <section id="our-story" className="py-20 lg:py-28 bg-white dark:bg-[#0d222c] border-y border-[var(--trishanti-neutral-200)] dark:border-[#1e293b] transition-colors duration-300">
         <PageContainer>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 space-y-6">
@@ -278,22 +278,22 @@ export default async function PortfolioDetailPage({
                 <span>{isId ? "KEMITRAAN & INTEGRITAS" : "INTEGRITY & SOURCING"}</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#171C1B] leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white leading-tight transition-colors">
                 {isId ? "Kisah di Balik SteakMary" : "The Journey Behind SteakMary"}
               </h2>
 
-              <p className="text-base text-[#5E6663] leading-relaxed">
+              <p className="text-lg text-[var(--trishanti-neutral-600)] dark:text-[#94a3b8] leading-relaxed transition-colors">
                 {isId ? item.storyId : item.storyEn}
               </p>
 
               {pillar && (
                 <div className="pt-4">
-                  <div className="p-4 rounded-xl bg-[#F2F4F3] border border-[#D9DDDA] flex items-center justify-between">
+                  <div className="p-6 rounded-xl bg-[var(--trishanti-neutral-50)] dark:bg-[#111827] border border-[var(--trishanti-neutral-200)] dark:border-[#1e293b] flex items-center justify-between transition-colors dark:glass-panel">
                     <div>
-                      <span className="text-xs text-[#7C8581] font-semibold uppercase block">
+                      <span className="text-xs text-[var(--trishanti-neutral-500)] dark:text-[#64748b] font-semibold uppercase block transition-colors">
                         {isId ? "Bagian dari Pilar Bisnis" : "Part of Business Pillar"}
                       </span>
-                      <p className="font-serif font-bold text-[#171C1B]">
+                      <p className="text-lg font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white transition-colors">
                         {isId ? pillar.titleId : pillar.titleEn}
                       </p>
                     </div>
@@ -325,12 +325,12 @@ export default async function PortfolioDetailPage({
       <Divider text={isId ? "Masa Depan Lebih Cerah" : "A Brighter Tomorrow"} />
 
       {/* 6. BOTTOM BACK LINK */}
-      <section className="py-12 bg-[#F2F4F3]">
+      <section className="py-12 bg-[var(--trishanti-neutral-50)] dark:bg-[var(--trishanti-color-bg-dark)] transition-colors duration-300">
         <PageContainer>
           <div className="flex items-center justify-between">
             <Link
               href={getPath("/portfolio")}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#5E6663] hover:text-[#00A6A6] transition-colors"
+              className="inline-flex items-center gap-2 text-base font-semibold text-[var(--trishanti-neutral-600)] dark:text-white/70 hover:text-[#00A6A6] transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>{isId ? "Kembali ke Semua Portofolio" : "Back to Portfolio"}</span>

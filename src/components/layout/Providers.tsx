@@ -1,6 +1,7 @@
 "use client";
 
 import { NextIntlClientProvider, type AbstractIntlMessages } from "next-intl";
+import { ThemeProvider } from "next-themes";
 
 interface ProvidersProps {
   locale: string;
@@ -17,8 +18,10 @@ interface ProvidersProps {
  */
 export default function Providers({ locale, messages, children }: ProvidersProps) {
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      {children}
-    </NextIntlClientProvider>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        {children}
+      </NextIntlClientProvider>
+    </ThemeProvider>
   );
 }

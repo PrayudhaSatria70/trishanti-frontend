@@ -68,7 +68,7 @@ export function SignatureGradientButton({
   const content = (
     <span
       className={cn(
-        "inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-sm tracking-wide shadow-[0_4px_20px_rgba(0,166,166,0.35)] hover:shadow-[0_6px_25px_rgba(0,166,166,0.5)] transition-all duration-200 group bg-gradient-to-r from-[#22B8C7] via-[#00A6A6] to-[#087C8C] hover:brightness-105 active:scale-[0.98]",
+        "inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-sm tracking-wide shadow-[0_4px_20px_rgba(0,166,166,0.35)] hover:shadow-[0_6px_25px_rgba(0,166,166,0.5)] transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] group bg-gradient-to-r from-[#22B8C7] via-[#00A6A6] to-[#087C8C] hover:brightness-105 active:scale-[0.98]",
         className
       )}
     >
@@ -106,12 +106,12 @@ export function FrostedGlassCard({
   return (
     <div
       className={cn(
-        "rounded-2xl p-6 sm:p-8 bg-white/72 backdrop-blur-[20px] border border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-between group",
+        "rounded-2xl p-6 sm:p-8 bg-white/72 backdrop-blur-[20px] border border-white/40 shadow-lg hover:shadow-xl transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] flex flex-col justify-between group",
         className
       )}
     >
       <div>
-        <h3 className="text-xl font-serif font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors mb-2">
+        <h3 className="text-xl font-heading font-bold text-[#171C1B] group-hover:text-[#00A6A6] transition-colors mb-2">
           {title}
         </h3>
         <p className="text-sm text-[#5E6663] leading-relaxed">
@@ -170,7 +170,7 @@ export function ContextualGradientCard({
         {pillar}
       </span>
       <div>
-        <h4 className="font-serif font-bold text-lg text-white mb-1">{title}</h4>
+        <h4 className="font-heading font-bold text-lg text-white mb-1">{title}</h4>
         <p className="text-xs text-white/85 font-light">{subtitle}</p>
       </div>
     </div>
