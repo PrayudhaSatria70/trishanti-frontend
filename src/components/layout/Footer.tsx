@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
 import { BUSINESS_PILLARS } from "@/lib/data";
-import { CTASection } from "@/components/home/CTASection";
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -52,24 +51,19 @@ export default async function Footer() {
       aria-label="Site footer"
     >
       {/* ============================================================
-          GLOBAL CTA SECTION (Curtain Reveal Starts Here)
-          ============================================================ */}
-      <CTASection locale={locale} isId={isId} />
-
-      {/* ============================================================
           FOUNDATIONAL QUOTE
-          Seamless transition into the Deep Midnight Footer.
+          First section unveiled as the sliding curtain lifts.
           ============================================================ */}
-      <div className="w-full relative overflow-hidden py-10 sm:py-12 border-t border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,166,166,0.12),transparent_70%)] pointer-events-none" />
+      <div className="w-full relative overflow-hidden py-14 sm:py-16 border-b border-white/10 bg-gradient-to-b from-[#030B0F] to-[var(--trishanti-color-bg-dark)]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,166,166,0.18),transparent_70%)] pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <span className="w-8 h-1 bg-[var(--trishanti-color-primary)] mx-auto block mb-6 rounded-[var(--trishanti-radius-full)]" />
+          <span className="w-10 h-1 bg-gradient-to-r from-[#00A6A6] to-[#20b8b8] mx-auto block mb-6 rounded-full shadow-[0_0_14px_rgba(0,166,166,0.6)]" />
           <blockquote className="font-heading italic text-xl sm:text-2xl lg:text-3xl text-white/95 leading-relaxed mb-4">
             {isId
               ? "“Fondasi yang kokoh menciptakan pengalaman yang mulus. Pengalaman yang konsisten membangun keterhubungan yang lebih kuat.”"
               : "“A strong foundation creates seamless experiences. Consistent experiences create stronger connections.”"}
           </blockquote>
-          <cite className="not-italic text-xs font-semibold uppercase tracking-[0.25em] text-[var(--trishanti-color-primary)]">
+          <cite className="not-italic text-xs font-semibold uppercase tracking-[0.25em] text-[#00A6A6]">
             — PT. Trishanti Sinergi Indocorp
           </cite>
         </div>

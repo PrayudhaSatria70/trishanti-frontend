@@ -929,6 +929,23 @@ The frontend strictly implements the approved visual boards and guidance text fr
 - Dynamic footer reveal clearance in `FooterReveal.tsx` and `Footer.tsx` (`pb-[calc(2rem+var(--trishanti-bottom-nav-offset))] lg:pb-14`).
 - Mobile toast positioning elevated above the fixed bottom navigation (`bottom-[calc(var(--trishanti-bottom-nav-offset)+1rem)] lg:bottom-6`).
 
+### 6.34 Curtain Reveal Architecture (Parallax Uncurtain for Quote & Footer)
+
+- **Structural Layering**:
+  - **Upper Sliding Layer (`curtainRef`)**: Houses all page routes (`{children}`) and the terminal `CTASection` ("Connect With Trishanti"). Structured as an elevated curtain with `z-10`, `rounded-b-[2rem] sm:rounded-b-[2.5rem]`, bottom border `border-black/10 dark:border-white/10`, a cyan laser accent line (`bg-gradient-to-r from-transparent via-[#00A6A6]/60 to-transparent`), and deep physical elevation shadow (`shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] dark:shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95)]`).
+  - **Lower Revealed Layer (`footerRef`)**: Houses the Foundational Quote (`blockquote` with radial atmospheric cyan glow and accent bar) followed by the deep midnight 4-column footer and copyright bar with `z-0` and `fixed bottom-0`.
+- **Dynamic Parallax Translation**:
+  - When `footerHeight <= availableVh`: Pinned fixed reveal (`translate3d(0, 0, 0)`). As the user scrolls past "Connect With Trishanti", the curtain lifts up, progressively unveiling the quote and footer underneath.
+  - When `footerHeight > availableVh`: Parallax translation formula:
+    - $\Delta = H_f - H_v$ (excess height beyond available viewport).
+    - Progress $p = \text{clamp}(0, 1, d / H_f)$ where $d = H_v - \text{rect.bottom}$.
+    - $\text{translateY} = (1 - p) \cdot \Delta$.
+    - At $p = 0$ (reveal begins), $\text{translateY} = \Delta$, aligning the top of the footer (the Foundational Quote) right at the top of the viewport.
+    - At $p = 1$ (reveal ends), $\text{translateY} = 0$, aligning the bottom copyright bar cleanly above the mobile bottom nav and bottom screen edge.
+- **Accessibility & Motion Compliance**:
+  - Detects `prefers-reduced-motion: reduce` and sets `transform: none` to prevent vestibular disorientation for motion-sensitive users.
+  - Full keyboard focusability and screen reader accessibility preserved across both layers.
+
 ---
 
 ## 7. Operations & Deployment
@@ -936,7 +953,7 @@ The frontend strictly implements the approved visual boards and guidance text fr
 - **Version Control**: Git on `develop` branch.
 - **Build Engine**: Next.js 16.3.6 with Turbopack and React 19.
 - **Production Build**: Verified with 60 static/prerendered routes generated (`npm run build`).
-- **Automated Testing**: Playwright E2E suite (`tests/homepage.spec.ts`) with multi-device configurations (`playwright.config.ts`).
+- **Automated Testing**: Playwright E2E suite (`tests/homepage.spec.ts`) with multi-device configurations (`playwright.config.ts`), verified 10/10 tests passed.
 - **Linting & Typechecking**: Clean execution with zero errors across ESLint (`eslint.config.mjs`) and TypeScript (`tsc --noEmit`).
 
 ---

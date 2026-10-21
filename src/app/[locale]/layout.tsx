@@ -9,6 +9,7 @@ import Footer from "@/components/layout/Footer";
 import Providers from "@/components/layout/Providers";
 import { FooterReveal } from "@/components/layout/FooterReveal";
 import MobileBottomNav from "@/components/layout/MobileBottomNav";
+import { CTASection } from "@/components/home/CTASection";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -91,6 +92,7 @@ export default async function LocaleLayout({
               {children}
             </NextIntlClientProvider>
           </main>
+          <CTASection locale={locale} isId={locale === "id"} />
         </FooterReveal>
 
           <MobileBottomNav />

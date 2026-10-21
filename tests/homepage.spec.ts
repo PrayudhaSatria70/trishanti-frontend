@@ -137,4 +137,26 @@ test.describe("Trishanti Enterprise Homepage E2E Suite", () => {
       expect(box.width).toBeGreaterThanOrEqual(200);
     }
   });
+
+  test("Curtain Reveal: Scrolling past Connect with Trishanti unveils foundational quote and footer", async ({ page }) => {
+    await page.goto("/en");
+
+    // Locate Connect with Trishanti section
+    const ctaSection = page.getByText(/CONNECT WITH TRISHANTI/i).first();
+    await expect(ctaSection).toBeAttached();
+
+    // Scroll to the bottom of the page past Connect with Trishanti
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await page.waitForTimeout(500);
+
+    // Verify foundational quote is unveiled and visible
+    const quote = page.locator("blockquote").first();
+    await expect(quote).toBeVisible();
+    await expect(quote).toContainText(/strong foundation creates seamless experiences|Fondasi yang kokoh/i);
+
+    // Verify footer copyright and branding are visible
+    const footer = page.locator("footer");
+    await expect(footer).toBeVisible();
+    await expect(footer.getByText(/All rights reserved/i).first()).toBeVisible();
+  });
 });
