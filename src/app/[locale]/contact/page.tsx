@@ -80,7 +80,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
 
             {/* Office Info Column */}
             <div className="lg:col-span-5 space-y-8">
-              <div className="p-8 rounded-2xl bg-white/10 dark:bg-[var(--trishanti-color-bg-dark)] border border-white/20 dark:border-white/10 space-y-6 shadow-xl dark:glass-panel">
+              <div className="p-8 rounded-2xl space-y-6 shadow-xl glass-panel">
                 <h3 className="text-xl font-heading font-bold text-white">
                   {isId ? "Kantor Pusat" : "Headquarters"}
                 </h3>
@@ -149,7 +149,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
               </div>
 
               {/* Institutional Notice */}
-              <div className="p-6 rounded-2xl bg-white/5 dark:bg-[var(--trishanti-neutral-900)] border border-white/20 dark:border-white/10 shadow-lg dark:glass-panel">
+              <div className="p-6 rounded-2xl shadow-lg glass-panel">
                 <div className="flex items-center gap-2 text-xs font-semibold text-[#00A6A6] uppercase tracking-wider mb-2">
                   <Globe className="w-4 h-4" />
                   <span>{isId ? "Hubungan Investor & Media" : "Investor & Media Inquiries"}</span>

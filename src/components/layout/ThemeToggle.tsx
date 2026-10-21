@@ -18,7 +18,7 @@ export function ThemeToggle({ isScrolled = false }: { isScrolled?: boolean }) {
   }, []);
 
   if (!mounted) {
-    return <div className="w-8 h-8 rounded-full" />;
+    return <div className="touch-target-min rounded-full" aria-hidden="true" />;
   }
 
   const toggleTheme = () => {
@@ -31,9 +31,10 @@ export function ThemeToggle({ isScrolled = false }: { isScrolled?: boolean }) {
 
   return (
     <button
+      type="button"
       onClick={toggleTheme}
       className={cn(
-        "p-2 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--trishanti-color-primary)] active:scale-95",
+        "inline-flex items-center justify-center touch-target-min rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--trishanti-color-primary)] active:scale-95",
         isScrolled
           ? "text-white/80 hover:text-white hover:bg-white/10"
           : "text-[var(--trishanti-neutral-700)] hover:text-[var(--trishanti-neutral-900)] hover:bg-black/5 dark:text-white/80 dark:hover:text-white dark:hover:bg-white/10"
@@ -42,9 +43,9 @@ export function ThemeToggle({ isScrolled = false }: { isScrolled?: boolean }) {
       title={isId ? "Ganti Tema" : "Toggle Theme"}
     >
       {resolvedTheme === "light" ? (
-        <Moon className="w-4 h-4" />
+        <Moon className="w-5 h-5" />
       ) : (
-        <Sun className="w-4 h-4" />
+        <Sun className="w-5 h-5" />
       )}
     </button>
   );

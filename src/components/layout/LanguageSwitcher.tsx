@@ -40,7 +40,7 @@ export default function LanguageSwitcher({ compact = false, isScrolled = false }
             key={lang}
             href={getAlternatePath(lang)}
             className={cn(
-              "text-xs font-semibold uppercase tracking-wider px-1 py-0.5",
+              "inline-flex items-center justify-center touch-target-min text-xs font-semibold uppercase tracking-wider",
               "transition-colors duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
               locale === lang
                 ? isScrolled ? "text-[#00A6A6]" : "text-[var(--trishanti-color-primary)]"
@@ -60,17 +60,17 @@ export default function LanguageSwitcher({ compact = false, isScrolled = false }
   }
 
   return (
-    <div className={cn("flex items-center gap-1 rounded-full px-3 py-1.5", isScrolled ? "bg-white/5" : "bg-black/5 dark:bg-white/5")} role="group" aria-label="Language selection">
+    <div className={cn("flex items-center rounded-full pl-3 pr-1", isScrolled ? "bg-white/5" : "bg-black/5 dark:bg-white/5")} role="group" aria-label="Language selection">
       <Globe className="w-3.5 h-3.5 text-[#94a3b8]" aria-hidden="true" />
       {(["en", "id"] as const).map((lang, index) => (
         <span key={lang} className="flex items-center">
           {index > 0 && (
-            <span className="text-[#1e293b] text-xs mx-1" aria-hidden="true">|</span>
+            <span className="text-[#1e293b] text-xs" aria-hidden="true">|</span>
           )}
           <Link
             href={getAlternatePath(lang)}
             className={cn(
-              "text-xs font-semibold uppercase tracking-wider px-1",
+              "inline-flex items-center justify-center touch-target-min text-xs font-semibold uppercase tracking-wider",
               "transition-colors duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]",
               locale === lang
                 ? isScrolled ? "text-[#00A6A6]" : "text-[var(--trishanti-color-primary)]"

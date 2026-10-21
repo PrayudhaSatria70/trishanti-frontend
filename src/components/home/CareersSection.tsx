@@ -99,10 +99,10 @@ export function CareersSection({ locale, isId = false }: CareersSectionProps) {
                 return (
                   <FadeIn key={idx} delay={idx * 150} direction="up">
                     <div
-                      className="p-8 rounded-[var(--trishanti-radius-md)] bg-[var(--trishanti-neutral-50)] dark:bg-white/5 dark:backdrop-blur-xl border border-[var(--trishanti-neutral-200)] dark:border-white/10 dark:hover:bg-white/10 dark:hover:border-white/30 space-y-4 transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] group hover:-translate-y-1 hover:shadow-lg hover:shadow-[#00A6A6]/10 h-full dark:glass-panel"
+                      className="p-8 rounded-[var(--trishanti-radius-md)] space-y-4 transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] group hover:-translate-y-1 h-full glass-card-interactive"
                     >
                       <div
-                        className="w-12 h-12 rounded-lg bg-white dark:bg-[#071A22] text-[var(--trishanti-color-primary)] flex items-center justify-center transition-colors duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]"
+                        className="w-12 h-12 rounded-lg bg-white/90 dark:bg-[#071A22] text-[var(--trishanti-color-primary)] flex items-center justify-center transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] group-hover:bg-gradient-to-br group-hover:from-[#00A6A6] group-hover:to-[#20B8B8] group-hover:text-white group-hover:shadow-[0_4px_12px_rgba(0,166,166,0.3)]"
                         style={{ boxShadow: `var(--trishanti-elevation-1)` }}
                       >
                         <IconComp className="w-6 h-6 stroke-[2] group-hover:scale-110 transition-transform duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]" />
@@ -119,11 +119,11 @@ export function CareersSection({ locale, isId = false }: CareersSectionProps) {
               })}
             </div>
 
-            {/* CTA Link */}
+            {/* CTA Link with Gradient Effect */}
             <FadeIn className="pt-2" delay={450}>
               <Link
                 href={getPath("/careers")}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[var(--trishanti-radius-full)] bg-[var(--trishanti-neutral-900)] dark:bg-white/10 dark:border dark:border-white/20 hover:bg-[var(--trishanti-color-bg-dark)] dark:hover:bg-white/15 dark:hover:border-white/40 text-white font-semibold text-xs tracking-wider uppercase group active:scale-95 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[var(--trishanti-radius-full)] bg-gradient-to-r from-[var(--trishanti-neutral-900)] to-[#203642] dark:from-white/15 dark:to-white/5 dark:border dark:border-white/20 hover:from-[#00A6A6] hover:to-[#20B8B8] hover:border-transparent text-white font-semibold text-xs tracking-wider uppercase group active:scale-95 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(0,166,166,0.35)]"
                 style={{ transition: `all var(--trishanti-duration-normal) var(--trishanti-ease-standard)` }}
               >
                 <span>{isId ? "Lihat Peluang Karir" : "Explore Careers"}</span>

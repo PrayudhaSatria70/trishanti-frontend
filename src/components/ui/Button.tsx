@@ -51,20 +51,20 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary: isSuccess
-        ? "bg-[var(--trishanti-color-success)] hover:brightness-110 text-white font-semibold shadow-[0_0_20px_rgba(22,163,74,0.35)]"
-        : "bg-[var(--trishanti-color-primary)] hover:bg-[var(--trishanti-color-primary-dark)] text-white font-semibold shadow-[var(--trishanti-elevation-1)] hover:shadow-[0_0_20px_rgba(0,166,166,0.35)] border border-transparent",
+        ? "bg-gradient-to-r from-[#16A34A] to-[#15803D] hover:brightness-110 text-white font-semibold shadow-[0_0_20px_rgba(22,163,74,0.35)]"
+        : "bg-gradient-to-r from-[#00A6A6] via-[#00B4B4] to-[#087C8C] hover:from-[#00B4B4] hover:to-[#008f8f] active:from-[#008f8f] active:to-[#06636f] text-white font-semibold shadow-[0_4px_16px_rgba(0,166,166,0.3)] hover:shadow-[0_6px_24px_rgba(0,166,166,0.45)] border border-transparent hover:brightness-105",
       secondary:
-        "bg-[var(--trishanti-color-surface-light)] hover:bg-[var(--trishanti-color-bg-light)] text-[var(--trishanti-color-text-light)] border border-[var(--trishanti-neutral-200)] hover:border-[var(--trishanti-neutral-400)] shadow-[var(--trishanti-elevation-1)]",
+        "bg-gradient-to-b from-white via-slate-50 to-[var(--trishanti-neutral-100)] dark:from-white/10 dark:via-white/5 dark:to-white/[0.02] hover:from-[var(--trishanti-neutral-100)] hover:to-[var(--trishanti-neutral-200)] dark:hover:from-white/15 dark:hover:to-white/10 text-[var(--trishanti-color-text-light)] dark:text-white border border-[var(--trishanti-neutral-200)] dark:border-white/15 hover:border-[var(--trishanti-color-primary)] shadow-[var(--trishanti-elevation-1)]",
       "secondary-dark":
-        "bg-[var(--trishanti-color-bg-dark)] hover:bg-[var(--trishanti-color-surface-dark)] text-white border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.24)] backdrop-blur-sm shadow-[var(--trishanti-elevation-dark-1)]",
+        "bg-gradient-to-b from-[#13333f] via-[#0d222c] to-[#071A22] hover:from-[#1a4454] hover:to-[#102b35] text-white border border-white/15 hover:border-[#00A6A6]/40 backdrop-blur-sm shadow-[var(--trishanti-elevation-dark-1)]",
       outline:
-        "bg-transparent hover:bg-white/10 text-white border border-[rgba(255,255,255,0.2)] hover:border-white/40",
+        "bg-gradient-to-r from-white/[0.04] via-transparent to-white/[0.04] hover:from-white/15 hover:via-white/20 hover:to-white/15 text-white border border-white/25 hover:border-[#00A6A6] backdrop-blur-sm",
       ghost:
-        "bg-transparent hover:bg-white/5 text-[var(--trishanti-neutral-200)] hover:text-white border border-[rgba(255,255,255,0.2)] hover:border-[rgba(255,255,255,0.4)]",
+        "bg-gradient-to-r from-transparent to-transparent hover:from-white/10 hover:to-white/5 text-[var(--trishanti-neutral-200)] hover:text-white border border-[rgba(255,255,255,0.15)] hover:border-[#00A6A6]/50",
       link:
-        "bg-transparent text-[var(--trishanti-color-primary)] hover:text-[var(--trishanti-color-primary-dark)] hover:underline p-0 h-auto rounded-none focus-visible:ring-offset-0 border border-transparent",
+        "bg-transparent bg-gradient-to-r from-[var(--trishanti-color-primary)] to-[var(--trishanti-color-primary-light)] bg-clip-text text-transparent hover:brightness-125 hover:underline p-0 h-auto rounded-none focus-visible:ring-offset-0 border border-transparent",
       gradient:
-        "bg-[var(--trishanti-gradient-signature)] text-white font-semibold shadow-[0_4px_20px_rgba(0,166,166,0.35)] hover:shadow-[0_6px_25px_rgba(0,166,166,0.5)] hover:brightness-105 border border-transparent",
+        "bg-[var(--trishanti-gradient-signature)] text-white font-semibold shadow-[0_4px_20px_rgba(0,166,166,0.35)] hover:shadow-[0_6px_25px_rgba(0,166,166,0.5)] hover:brightness-110 border border-transparent",
     }[variant];
 
     return (

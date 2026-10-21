@@ -58,8 +58,8 @@ export function ContentCard({
   return (
     <article
       className={cn(
-        "group flex flex-col rounded-2xl overflow-hidden border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1",
-        "bg-white dark:bg-[var(--trishanti-color-bg-dark)] border-[var(--trishanti-neutral-200)] dark:border-white/10 shadow-sm dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] text-[var(--trishanti-neutral-900)] dark:text-white dark:glass-panel",
+        "group flex flex-col rounded-2xl overflow-hidden border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1.5",
+        "bg-white/85 dark:bg-[#071A22]/80 backdrop-blur-xl border-[var(--trishanti-neutral-200)] dark:border-white/10 shadow-sm hover:border-[#00A6A6]/60 dark:hover:border-[#00A6A6]/60 hover:shadow-[0_16px_40px_rgba(0,0,0,0.18),0_0_28px_rgba(0,166,166,0.22)] dark:hover:shadow-[0_20px_48px_rgba(0,0,0,0.6),0_0_32px_rgba(0,166,166,0.28)] text-[var(--trishanti-neutral-900)] dark:text-white",
         className,
       )}
     >
@@ -140,7 +140,7 @@ export function FeatureCard({
     <Link
       href={href}
       className={cn(
-        "group relative flex flex-col justify-end min-h-[380px] sm:min-h-[440px] rounded-2xl overflow-hidden p-8 sm:p-10 border border-[var(--trishanti-neutral-200)] dark:border-white/10 transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.6),0_0_25px_rgba(0,166,166,0.25)]",
+        "group relative flex flex-col justify-end min-h-[380px] sm:min-h-[440px] rounded-2xl overflow-hidden p-8 sm:p-10 border border-[var(--trishanti-neutral-200)] dark:border-white/15 backdrop-blur-xl transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:border-[#00A6A6]/70 hover:shadow-[0_16px_45px_rgba(0,0,0,0.7),0_0_32px_rgba(0,166,166,0.3)] hover:-translate-y-1.5",
         className,
       )}
     >
@@ -206,8 +206,8 @@ export function CardWithTags({
   return (
     <article
       className={cn(
-        "group flex flex-col rounded-2xl overflow-hidden border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1",
-        "bg-white dark:bg-[var(--trishanti-color-bg-dark)] border-[var(--trishanti-neutral-200)] dark:border-white/10 shadow-sm dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] text-[var(--trishanti-neutral-900)] dark:text-white dark:glass-panel",
+        "group flex flex-col rounded-2xl overflow-hidden border transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] hover:-translate-y-1.5",
+        "bg-white/85 dark:bg-[#071A22]/80 backdrop-blur-xl border-[var(--trishanti-neutral-200)] dark:border-white/10 shadow-sm hover:border-[#00A6A6]/60 dark:hover:border-[#00A6A6]/60 hover:shadow-[0_16px_40px_rgba(0,0,0,0.18),0_0_28px_rgba(0,166,166,0.22)] dark:hover:shadow-[0_20px_48px_rgba(0,0,0,0.6),0_0_32px_rgba(0,166,166,0.28)] text-[var(--trishanti-neutral-900)] dark:text-white",
         className,
       )}
     >

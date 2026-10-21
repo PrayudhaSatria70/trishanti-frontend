@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
+import { MOBILE_BOTTOM_NAV_ID } from "./MobileBottomNav";
 
 interface FooterRevealProps {
   children: React.ReactNode;
@@ -17,8 +18,11 @@ export function FooterReveal({ children, footer }: FooterRevealProps) {
     const updateHeight = () => {
       if (footerRef.current) {
         const height = footerRef.current.offsetHeight;
+        // Mobile bottom nav occupies the bottom edge (< lg); 0 when hidden.
+        const bottomNavHeight =
+          document.getElementById(MOBILE_BOTTOM_NAV_ID)?.offsetHeight ?? 0;
         setFooterHeight(height);
-        setIsTall(height >= window.innerHeight);
+        setIsTall(height >= window.innerHeight - bottomNavHeight);
       }
     };
 
@@ -57,7 +61,9 @@ export function FooterReveal({ children, footer }: FooterRevealProps) {
         ref={footerRef}
         className={cn(
           "left-0 right-0 z-0 pointer-events-auto",
-          isTall ? "relative bottom-auto" : "fixed bottom-0"
+          isTall
+            ? "relative bottom-auto"
+            : "fixed bottom-[var(--trishanti-bottom-nav-offset)] lg:bottom-0"
         )}
       >
         {footer}

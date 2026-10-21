@@ -76,7 +76,7 @@ export default async function Footer() {
       </div>
 
       {/* Main footer grid */}
-      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 py-12 sm:py-14">
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 pt-12 sm:pt-14 pb-[calc(2rem+var(--trishanti-bottom-nav-offset))] lg:pb-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           {/* Column 1 — Brand (4 cols) */}
           <div className="lg:col-span-4">

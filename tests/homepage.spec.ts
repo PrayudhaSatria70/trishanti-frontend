@@ -25,7 +25,7 @@ test.describe("Trishanti Enterprise Homepage E2E Suite", () => {
 
   test("main navigation renders all core links", async ({ page }) => {
     await page.goto("/en");
-    const nav = page.locator("nav");
+    const nav = page.getByRole("navigation", { name: "Main navigation" });
     await expect(nav).toBeVisible();
 
     // Verify presence of primary navigation items
@@ -96,10 +96,45 @@ test.describe("Trishanti Enterprise Homepage E2E Suite", () => {
     // Check brand logo is visible
     await expect(page.getByText(/TRISHANTI/i).first()).toBeVisible();
 
-    // Mobile menu toggle button
+    // Mobile menu toggle button in header
     const menuToggle = page.getByRole("button", { name: /menu|navigation/i });
     if (await menuToggle.count() > 0) {
       await expect(menuToggle.first()).toBeVisible();
+    }
+  });
+
+  test("Hick's Law: Mobile bottom navigation displays exactly 4 core menus with accessible touch targets", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/en");
+
+    const bottomNav = page.locator("#mobile-bottom-nav");
+    await expect(bottomNav).toBeVisible();
+
+    // Verify exactly 4 primary navigation choices (Hick's Law cognitive simplification)
+    const navItems = bottomNav.locator("a");
+    await expect(navItems).toHaveCount(4);
+
+    // Verify touch target size meets or exceeds 44x44px (Fitts's Law touch target rule)
+    const firstItem = navItems.first();
+    const box = await firstItem.boundingBox();
+    expect(box).not.toBeNull();
+    if (box) {
+      expect(box.height).toBeGreaterThanOrEqual(44);
+    }
+  });
+
+  test("Fitts's Law: Contact form submit button is wide and easy to target", async ({ page }) => {
+    await page.goto("/en/contact");
+
+    const submitBtn = page.locator('button[type="submit"]');
+    await expect(submitBtn).toBeVisible();
+
+    // Verify button is prominent and easily clickable
+    const box = await submitBtn.boundingBox();
+    expect(box).not.toBeNull();
+    if (box) {
+      expect(box.height).toBeGreaterThanOrEqual(44);
+      expect(box.width).toBeGreaterThanOrEqual(200);
     }
   });
 });

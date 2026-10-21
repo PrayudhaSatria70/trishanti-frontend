@@ -81,7 +81,7 @@ export function PurposeSection({
             <div className="relative z-10">
               <Link
                 href={getPath("/about")}
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-[var(--trishanti-radius-full)] bg-[var(--trishanti-color-primary)] hover:bg-[var(--trishanti-color-primary-dark)] text-white font-semibold text-xs tracking-wider uppercase group active:scale-95 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[var(--trishanti-radius-full)] bg-gradient-to-r from-[#00A6A6] via-[#00BFBF] to-[#20B8B8] hover:shadow-[0_8px_20px_rgba(0,166,166,0.45)] text-white font-semibold text-xs tracking-wider uppercase group active:scale-95 hover:-translate-y-0.5"
                 style={{ transition: `all var(--trishanti-duration-normal) var(--trishanti-ease-standard)` }}
               >
                 <span>{cta}</span>
@@ -91,7 +91,7 @@ export function PurposeSection({
           </div>
 
           {/* Right 5 cols: 4 Metric Cards in 2x2 Grid (Matching Visual Example Board Image 3) */}
-          <div className="lg:col-span-5 bg-white dark:bg-white/5 dark:backdrop-blur-xl grid grid-cols-2 divide-x divide-y divide-[var(--trishanti-neutral-200)] dark:divide-white/10 dark:glass-panel">
+          <div className="lg:col-span-5 grid grid-cols-2 divide-x divide-y divide-[var(--trishanti-neutral-200)] dark:divide-white/10 glass-panel">
             {/* Stat 1 */}
             <div className="p-8 sm:p-10 flex flex-col justify-center bg-white dark:bg-transparent transition-colors hover:bg-[var(--trishanti-neutral-50)] dark:hover:bg-white/5">
               <span className="font-sans font-extrabold text-4xl sm:text-5xl text-[var(--trishanti-neutral-900)] dark:text-white tracking-tight leading-none mb-3 drop-shadow-sm">

@@ -59,7 +59,7 @@ export function NewsSection({
               <FadeIn key={article.slug} delay={index * 200} duration={800} direction="up" className="flex">
                 <Link
                   href={getPath(`/news#${article.slug}`)}
-                  className="w-full bg-white dark:bg-white/5 dark:backdrop-blur-xl rounded-[var(--trishanti-radius-lg)] overflow-hidden border border-[var(--trishanti-neutral-200)] dark:border-white/10 dark:hover:border-white/30 dark:hover:bg-white/10 flex flex-col group hover:shadow-2xl hover:shadow-[#00A6A6]/20 hover:-translate-y-2 transition-all duration-500 dark:glass-panel"
+                  className="w-full rounded-[var(--trishanti-radius-lg)] overflow-hidden flex flex-col group glass-card-interactive"
                 >
                   {/* Image */}
                   <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
@@ -74,7 +74,7 @@ export function NewsSection({
                   </div>
 
                   {/* Content */}
-                  <div className="p-8 flex flex-col flex-1 justify-between bg-white dark:bg-transparent text-[var(--trishanti-neutral-900)]">
+                  <div className="p-8 flex flex-col flex-1 justify-between bg-transparent text-[var(--trishanti-neutral-900)]">
                     <div>
                       {/* Date */}
                       <span className="text-sm text-[var(--trishanti-neutral-500)] font-medium block mb-3">
@@ -87,12 +87,12 @@ export function NewsSection({
                       </h3>
                     </div>
 
-                    {/* Bottom: Tag badge pill (rounded-full 9999px) + Cyan Arrow */}
+                    {/* Bottom: Tag badge pill (rounded-full 9999px) + Cyan Arrow with Gradient */}
                     <div className="pt-5 border-t border-[var(--trishanti-neutral-200)] dark:border-white/10 flex items-center justify-between mt-auto">
                       <span className="inline-block px-4 py-1.5 rounded-[var(--trishanti-radius-full)] border border-[var(--trishanti-neutral-200)] dark:border-white/10 bg-[var(--trishanti-neutral-50)] dark:bg-black/20 text-xs font-semibold text-[var(--trishanti-neutral-700)] dark:text-[var(--trishanti-neutral-300)]">
                         {article.category}
                       </span>
-                      <span className="w-8 h-8 rounded-full bg-[var(--trishanti-neutral-100)] dark:bg-white/10 flex items-center justify-center text-[var(--trishanti-color-primary)] group-hover:bg-[var(--trishanti-color-primary)] group-hover:text-white transition-all shadow-sm">
+                      <span className="w-8 h-8 rounded-full bg-[var(--trishanti-neutral-100)] dark:bg-white/10 flex items-center justify-center text-[var(--trishanti-color-primary)] group-hover:bg-gradient-to-r group-hover:from-[#00A6A6] group-hover:to-[#20B8B8] group-hover:text-white group-hover:shadow-[0_4px_12px_rgba(0,166,166,0.35)] transition-all shadow-sm">
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>

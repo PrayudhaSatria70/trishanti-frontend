@@ -229,7 +229,7 @@ export default function Navbar() {
           className={cn(
             "transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] pointer-events-auto",
             isHeroState
-              ? "w-full max-w-[1920px] mx-auto px-5 sm:px-6 lg:px-12 xl:px-24 border border-transparent"
+              ? "w-full max-w-[1920px] mx-auto rounded-full glass-nav-hero px-5 sm:px-6 lg:px-12 xl:px-24 py-2"
               : "w-full max-w-[1920px] mx-auto rounded-full glass-nav-floating px-5 sm:px-6 lg:px-12 xl:px-24 py-2",
           )}
         >
@@ -339,7 +339,7 @@ export default function Navbar() {
                   type="button"
                   onClick={() => setIsSearchOpen(true)}
                   className={cn(
-                    "p-1.5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#00A6A6]",
+                    "inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#00A6A6]",
                     isScrolled
                       ? "text-white/70 hover:text-white hover:bg-white/10"
                       : "text-[var(--trishanti-neutral-700)] hover:text-[var(--trishanti-neutral-900)] hover:bg-black/5 dark:text-white/70 dark:hover:text-white dark:hover:bg-white/10"
@@ -357,21 +357,20 @@ export default function Navbar() {
               <LanguageSwitcher isScrolled={isScrolled} />
               <Link
                 href={getPath("/contact")}
-                className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[var(--trishanti-color-primary)] hover:bg-[var(--trishanti-color-primary-dark)] text-white font-semibold text-xs tracking-wider hover:-translate-y-0.5 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[var(--trishanti-color-primary)]"
-                style={{ transition: `all var(--trishanti-duration-normal) var(--trishanti-ease-standard)` }}
+                className="inline-flex items-center justify-center min-h-11 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#00A6A6] via-[#00B4B4] to-[#087C8C] hover:from-[#00B4B4] hover:to-[#008f8f] active:from-[#008f8f] active:to-[#06636f] text-white font-semibold text-xs tracking-wider shadow-[0_4px_16px_rgba(0,166,166,0.35)] hover:shadow-[0_6px_22px_rgba(0,166,166,0.5)] hover:-translate-y-0.5 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[var(--trishanti-color-primary)] transition-all duration-300"
               >
                 {isId ? "Hubungi Kami" : "Contact Us"}
               </Link>
             </div>
 
-            {/* Mobile: Search + Theme + Hamburger */}
-            <div className="flex items-center gap-1 lg:hidden">
+            {/* Mobile: Search + Theme + Hamburger — 44px targets, 8px apart (Fitts's Law) */}
+            <div className="flex items-center gap-2 lg:hidden">
               <ThemeToggle isScrolled={isScrolled} />
               <button
                 type="button"
                 onClick={() => setIsSearchOpen(true)}
                 className={cn(
-                  "p-2 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--trishanti-color-primary)] active:scale-95",
+                  "inline-flex items-center justify-center touch-target-min rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--trishanti-color-primary)] active:scale-95",
                   isScrolled
                     ? "text-white/80 hover:text-white hover:bg-white/10"
                     : "text-[var(--trishanti-neutral-800)] hover:text-[var(--trishanti-neutral-900)] hover:bg-black/5 dark:text-white/80 dark:hover:text-white dark:hover:bg-white/10"
@@ -386,7 +385,7 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setIsMobileOpen((prev) => !prev)}
                 className={cn(
-                  "p-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#00A6A6]",
+                  "inline-flex items-center justify-center touch-target-min rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#00A6A6]",
                   isScrolled
                     ? "text-white hover:text-[#00A6A6] hover:bg-white/10"
                     : "text-[var(--trishanti-neutral-900)] hover:text-[#00A6A6] hover:bg-black/5 dark:text-white dark:hover:text-[#00A6A6] dark:hover:bg-white/10"
@@ -531,7 +530,7 @@ export default function Navbar() {
                             e.stopPropagation();
                             handlePrevPillar();
                           }}
-                          className="w-7 h-7 rounded-full bg-black/50 hover:bg-[#00A6A6] border border-white/15 text-white flex items-center justify-center transition-colors"
+                          className="w-9 h-9 rounded-full bg-black/50 hover:bg-[#00A6A6] border border-white/15 text-white flex items-center justify-center transition-colors"
                           aria-label="Previous pillar"
                         >
                           <ChevronLeft className="w-4 h-4" />
@@ -543,7 +542,7 @@ export default function Navbar() {
                             e.stopPropagation();
                             handleNextPillar();
                           }}
-                          className="w-7 h-7 rounded-full bg-black/50 hover:bg-[#00A6A6] border border-white/15 text-white flex items-center justify-center transition-colors"
+                          className="w-9 h-9 rounded-full bg-black/50 hover:bg-[#00A6A6] border border-white/15 text-white flex items-center justify-center transition-colors"
                           aria-label="Next pillar"
                         >
                           <ChevronRight className="w-4 h-4" />
@@ -592,7 +591,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setIsMobileOpen(false)}
-              className="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+              className="inline-flex items-center justify-center touch-target-min rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors"
               aria-label="Close navigation"
             >
               <X className="w-6 h-6" />
@@ -626,39 +625,39 @@ export default function Navbar() {
               </button>
 
               {mobileAboutExpanded && (
-                <div className="pl-4 pb-2 space-y-3 animate-fade-in border-l-2 border-[#00A6A6]/40 ml-2">
+                <div className="pl-4 pb-2 space-y-1 animate-fade-in border-l-2 border-[#00A6A6]/40 ml-2">
                   <Link
                     href={getPath("/about")}
                     onClick={() => setIsMobileOpen(false)}
-                    className="block text-sm text-[#cbd5e1] hover:text-[#00A6A6] py-1"
+                    className="flex items-center min-h-11 text-sm text-[#cbd5e1] hover:text-[#00A6A6]"
                   >
                     {isId ? "Tentang Trishanti" : "About Trishanti"}
                   </Link>
                   <Link
                     href={getPath("/about#purpose")}
                     onClick={() => setIsMobileOpen(false)}
-                    className="block text-sm text-[#cbd5e1] hover:text-[#00A6A6] py-1"
+                    className="flex items-center min-h-11 text-sm text-[#cbd5e1] hover:text-[#00A6A6]"
                   >
                     {isId ? "Tujuan Kami" : "Our Purpose"}
                   </Link>
                   <Link
                     href={getPath("/about#vision")}
                     onClick={() => setIsMobileOpen(false)}
-                    className="block text-sm text-[#cbd5e1] hover:text-[#00A6A6] py-1"
+                    className="flex items-center min-h-11 text-sm text-[#cbd5e1] hover:text-[#00A6A6]"
                   >
                     {isId ? "Visi & Arah" : "Vision & Direction"}
                   </Link>
                   <Link
                     href={getPath("/about#leadership")}
                     onClick={() => setIsMobileOpen(false)}
-                    className="block text-sm text-[#cbd5e1] hover:text-[#00A6A6] py-1"
+                    className="flex items-center min-h-11 text-sm text-[#cbd5e1] hover:text-[#00A6A6]"
                   >
                     {isId ? "Kepemimpinan" : "Leadership"}
                   </Link>
                   <Link
                     href={getPath("/about/technology")}
                     onClick={() => setIsMobileOpen(false)}
-                    className="block text-sm text-[#cbd5e1] hover:text-[#00A6A6] py-1"
+                    className="flex items-center min-h-11 text-sm text-[#cbd5e1] hover:text-[#00A6A6]"
                   >
                     {isId ? "Teknologi & Inovasi" : "Technology & Innovation"}
                   </Link>
@@ -830,8 +829,7 @@ export default function Navbar() {
               <Link
                 href={getPath("/contact")}
                 onClick={() => setIsMobileOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-[var(--trishanti-color-primary)] hover:bg-[var(--trishanti-color-primary-dark)] text-white font-semibold text-xs uppercase tracking-wider hover:-translate-y-0.5 active:scale-95"
-                style={{ transition: `all var(--trishanti-duration-normal) var(--trishanti-ease-standard)` }}
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-gradient-to-r from-[#00A6A6] via-[#00B4B4] to-[#087C8C] hover:from-[#00B4B4] hover:to-[#008f8f] text-white font-semibold text-xs uppercase tracking-wider shadow-[0_4px_16px_rgba(0,166,166,0.35)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
               >
                 <span>{isId ? "Hubungi Kami" : "Contact Us"}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -848,7 +846,7 @@ export default function Navbar() {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-white/5 hover:text-[#00A6A6] transition-colors"
+                    className="inline-flex items-center justify-center touch-target-min rounded-full bg-white/5 hover:text-[#00A6A6] transition-colors"
                     aria-label="LinkedIn"
                   >
                     <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
@@ -859,7 +857,7 @@ export default function Navbar() {
                     href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-white/5 hover:text-[#00A6A6] transition-colors"
+                    className="inline-flex items-center justify-center touch-target-min rounded-full bg-white/5 hover:text-[#00A6A6] transition-colors"
                     aria-label="Instagram"
                   >
                     <svg
@@ -875,7 +873,7 @@ export default function Navbar() {
                     href="https://youtube.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-white/5 hover:text-[#00A6A6] transition-colors"
+                    className="inline-flex items-center justify-center touch-target-min rounded-full bg-white/5 hover:text-[#00A6A6] transition-colors"
                     aria-label="YouTube"
                   >
                     <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">

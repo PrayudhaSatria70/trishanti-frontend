@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { Input, Textarea, Checkbox, FileUpload } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
-import { ContactModal, NewsletterModal } from "@/components/ui/Modal";
 import { ToastContainer, ToastItem } from "@/components/ui/Toast";
 
 interface FormState {
@@ -47,10 +46,6 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmittedSuccess, setIsSubmittedSuccess] = useState(false);
   const [showFullSuccessScreen, setShowFullSuccessScreen] = useState(false);
-
-  // Modal demo states
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [isNewsletterModalOpen, setIsNewsletterModalOpen] = useState(false);
 
   // Toast notifications state
   const [toasts, setToasts] = useState<ToastItem[]>([]);
@@ -334,7 +329,7 @@ export default function ContactForm() {
               {isId ? (
                 <>
                   Saya menyetujui{" "}
-                  <Link href={`/${locale}/privacy`} className="text-[#00A6A6] hover:underline">
+                  <Link href={`/${locale}/privacy-policy`} className="text-[#00A6A6] hover:underline">
                     Kebijakan Privasi
                   </Link>{" "}
                   dan pemrosesan data saya.
@@ -342,7 +337,7 @@ export default function ContactForm() {
               ) : (
                 <>
                   I agree to the{" "}
-                  <Link href={`/${locale}/privacy`} className="text-[#00A6A6] hover:underline">
+                  <Link href={`/${locale}/privacy-policy`} className="text-[#00A6A6] hover:underline">
                     Privacy Policy
                   </Link>{" "}
                   and processing of my inquiry details.
@@ -352,59 +347,26 @@ export default function ContactForm() {
           }
         />
 
-        {/* Submit Button */}
-        <Button
-          type="submit"
-          fullWidth
-          size="lg"
-          isLoading={isSubmitting}
-          isSuccess={isSubmittedSuccess}
-          loadingText={isId ? "Mengirimkan..." : "Sending..."}
-          successText={isId ? "✓ Terkirim!" : "✓ Sent!"}
-          rightIcon={<ArrowRight className="w-4 h-4 ml-1" />}
-        >
-          {isId ? "Kirim Pesan" : "Send Enquiry"}
-        </Button>
-
-        {/* Modal Overlay System Demo Controls (Image 1 Item 01 & 02) */}
-        <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
-          <span className="text-[#94a3b8]">Interactive Modal Overlays:</span>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setIsContactModalOpen(true)}
-              className="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition-colors"
-            >
-              Light Modal
-            </button>
-            <button
-              type="button"
-              onClick={() => setIsNewsletterModalOpen(true)}
-              className="px-3 py-1.5 rounded-full bg-[#00A6A6]/20 hover:bg-[#00A6A6]/30 text-[#00A6A6] font-medium border border-[#00A6A6]/30 transition-colors"
-            >
-              Dark Newsletter Modal
-            </button>
-          </div>
+        {/* Submit Button — Fitts's Law: full-width, >= 56px tall, and the final
+            element of the form so it sits exactly where the eye and thumb land
+            after the last field. No secondary actions compete with it. */}
+        <div className="pt-2">
+          <Button
+            type="submit"
+            id="contact-form-submit"
+            fullWidth
+            size="lg"
+            className="min-h-14 text-base"
+            isLoading={isSubmitting}
+            isSuccess={isSubmittedSuccess}
+            loadingText={isId ? "Mengirimkan..." : "Sending..."}
+            successText={isId ? "✓ Terkirim!" : "✓ Sent!"}
+            rightIcon={<ArrowRight className="w-5 h-5 ml-1" />}
+          >
+            {isId ? "Kirim Pesan" : "Send Enquiry"}
+          </Button>
         </div>
       </form>
-
-      {/* Light Mode Contact Modal (Image 1 Item 01) */}
-      <ContactModal
-        isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
-        onSubmitSuccess={() => {
-          addToast("success", "Message Sent!", "Thank you for reaching out to Trishanti.");
-        }}
-      />
-
-      {/* Dark Mode Newsletter Modal (Image 1 Item 02) */}
-      <NewsletterModal
-        isOpen={isNewsletterModalOpen}
-        onClose={() => setIsNewsletterModalOpen(false)}
-        onSubscribeSuccess={() => {
-          addToast("success", "Subscribed!", "You are now subscribed to Trishanti updates.");
-        }}
-      />
 
       {/* Semantic Toast Stack Container (Image 1 Item 08) */}
       <ToastContainer toasts={toasts} onDismiss={dismissToast} />

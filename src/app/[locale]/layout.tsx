@@ -8,6 +8,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Providers from "@/components/layout/Providers";
 import { FooterReveal } from "@/components/layout/FooterReveal";
+import MobileBottomNav from "@/components/layout/MobileBottomNav";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -57,6 +58,8 @@ export function generateStaticParams() {
  * - Skip-to-content link (keyboard accessibility)
  * - Providers (next-intl)
  * - Navbar + Footer (B.4 shell)
+ * - MobileBottomNav (< lg): 4-item thumb-zone navigation (Fitts's + Hick's Law).
+ *   The body reserves `--trishanti-bottom-nav-offset` so content is never covered.
  */
 export default async function LocaleLayout({
   children,
@@ -73,7 +76,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className="antialiased font-sans text-[var(--trishanti-neutral-900)] bg-[var(--trishanti-neutral-50)] dark:text-white dark:bg-[var(--trishanti-color-bg-dark)] transition-colors duration-300" suppressHydrationWarning>
+      <body className="antialiased font-sans text-[var(--trishanti-neutral-900)] bg-[var(--trishanti-neutral-50)] dark:text-white dark:bg-[var(--trishanti-color-bg-dark)] transition-colors duration-300 pb-[var(--trishanti-bottom-nav-offset)] lg:pb-0" suppressHydrationWarning>
         <Providers locale={locale} messages={messages}>
           {/* Skip-to-content — WCAG 2.2 AA keyboard accessibility */}
           <a href="#main-content" className="skip-to-content">
@@ -89,6 +92,8 @@ export default async function LocaleLayout({
             </NextIntlClientProvider>
           </main>
         </FooterReveal>
+
+          <MobileBottomNav />
         </Providers>
       </body>
     </html>

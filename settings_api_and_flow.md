@@ -883,7 +883,51 @@ The frontend strictly implements the approved visual boards and guidance text fr
   - `LAUNCH & GROW`: A.7 Testing & QA $\rightarrow$ A.8 Launch & Handover $\rightarrow$ A.9 Growth & Evolution.
   - `EVOLVE & CREATE MORE VALUE`: A.10 Future Opportunities $\rightarrow$ A.11 Final Conclusion $\rightarrow$ A.12 Governance & Continuous Value.
 - **The Road Ahead (6 Execution Vectors)**:
-  - 01 Operate & Maintain | 02 Measure & Learn | 03 Grow & Evolve | 04 Innovate Responsibly | 05 Create Greater Impact | 06 Continue Together.
+### 6.33 Cognitive Ergonomics & Visual Interaction Architecture (Fitts's Law, Hick's Law, Glassmorphism & Gradient Effects)
+
+#### A. Penerapan Fitts's Law (Target Accessibility & Acquisition Efficiency)
+- **Mathematical Principle**: Movement time $T = a + b \log_2(1 + D/W)$. Interacting effort is minimized by reducing distance $D$ and expanding clickable boundary $W$.
+- **Thumb-Zone Placement & Primary Action Geometry**:
+  - Primary conversion and submission buttons are enlarged and located within immediate ergonomic reach.
+  - Mobile Bottom Navigation (`src/components/layout/MobileBottomNav.tsx`) anchors primary navigation at the bottom edge of mobile viewports ($< \text{lg}$ breakpoint), directly within the natural thumb sweep zone.
+  - Form Terminal Action: Contact form submit button (`src/components/composite/ContactForm.tsx`) spans 100% width (`w-full`), minimum height of 56px (`min-h-14`), prominent typography (`text-base font-semibold`), positioned unambiguously at the end of the input hierarchy.
+- **Minimum Hit Target Standard**:
+  - Enforced touch target CSS variable `--trishanti-touch-target: 44px`.
+  - All navigation toggles, theme switcher buttons (`src/components/layout/ThemeToggle.tsx`), language switchers (`src/components/layout/LanguageSwitcher.tsx`), search triggers, and drawer elements are guaranteed $\ge 44 \times 44\text{px}$ hit areas with comfortable separation.
+
+#### B. Penerapan Hick's Law (Cognitive Load Reduction & Accelerated Decision-Making)
+- **Mathematical Principle**: Decision time $T = b \log_2(n + 1)$. Minimizing visible simultaneous options $n$ directly accelerates comprehension and user action.
+- **Mobile Bottom Navigation Menu**:
+  - Curated strictly to 4 core menus: `Home` (`/`), `Businesses` (`/businesses`), `News` (`/news`), and `Contact` (`/contact`).
+  - Active visual indicators and clear semantic icons (`House`, `Building2`, `Newspaper`, `MessageCircle`) provide immediate orientation.
+- **Conglomerate 6-Pillar Categorization**:
+  - Business taxonomy restricted to 6 balanced, strategic conglomerate sectors: `Infrastructure`, `Industrial Trading`, `Agriculture & Food`, `Technology & Digital`, `Consumer & Lifestyle`, and `Experiences & Ventures`.
+- **Card-Based Information Architecture**:
+  - Information across all pages is grouped into distinct, modular content cards (`Card.tsx`, `ContentCards.tsx`, `StatCard.tsx`), preventing wall-of-text fatigue and supporting rapid visual scanning.
+
+#### C. Glassmorphism Design Tokens
+- `.glass-nav-hero`: Frosted glass header in un-scrolled hero state (`backdrop-filter: blur(20px) saturate(170%)`, border translucent 60%).
+- `.glass-nav-floating`: Scrolled sticky navigation with deep midnight translucency (`rgba(7, 26, 34, 0.82)`, `blur(24px) saturate(180%)`, cyan edge rim lighting).
+- `.glass-panel` & `.glass-card-interactive`: Translucent surfaces across all content cards (`backdrop-filter: blur(18px) saturate(160%)`, `border-radius: var(--trishanti-radius-lg)`).
+- **Interactive Top Accent Line**: Luminous cyan-teal gradient beam (`linear-gradient(90deg, transparent, #00A6A6, #20b8b8, transparent)`) revealed on hover and focus via `::after`.
+
+#### D. Directional Gradient Effects System
+- **Button Tokens**:
+  - `primary`: Cyan-to-teal directional gradient (`from-[#00A6A6] via-[#00B4B4] to-[#087C8C]`) with radiant cyan drop shadow.
+  - `secondary` / `outline`: Micro-gradient surfaces with border glow transitions on hover.
+  - `gradient`: Signature brand gradient (`var(--trishanti-gradient-signature)`).
+- **Card Micro-Interactions**:
+  - Hover / highlight state smoothly transitions the card background into an ambient gradient sheen:
+    - Light Mode: `linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 253, 250, 0.9) 100%)`.
+    - Dark Mode: `linear-gradient(135deg, rgba(13, 34, 44, 0.92) 0%, rgba(7, 26, 34, 0.82) 100%)`.
+  - Border transitions to `rgba(0, 166, 166, 0.65)` with an ambient `box-shadow: 0 0 28px rgba(0, 166, 166, 0.25)`.
+
+#### E. Responsive Geometry & Safe-Area Offsets
+- `--trishanti-bottom-nav-height: 4.5rem`.
+- `--trishanti-bottom-nav-offset: calc(var(--trishanti-bottom-nav-height) + env(safe-area-inset-bottom, 0px))`.
+- Global layout body clearance: `pb-[var(--trishanti-bottom-nav-offset)] lg:pb-0`.
+- Dynamic footer reveal clearance in `FooterReveal.tsx` and `Footer.tsx` (`pb-[calc(2rem+var(--trishanti-bottom-nav-offset))] lg:pb-14`).
+- Mobile toast positioning elevated above the fixed bottom navigation (`bottom-[calc(var(--trishanti-bottom-nav-offset)+1rem)] lg:bottom-6`).
 
 ---
 

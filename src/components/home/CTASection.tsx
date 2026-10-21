@@ -38,11 +38,11 @@ export function CTASection({ locale, isId = false }: CTASectionProps) {
               : "Whether partnering with our strategic subsidiaries, exploring multi-sector investment avenues, or initiating corporate collaboration, our team is ready to connect."}
           </p>
 
-          {/* Dual Action Buttons */}
+          {/* Dual Action Buttons with Gradient Effects */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Link
               href={getPath("/contact")}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[var(--trishanti-radius-full)] bg-[var(--trishanti-color-primary)] hover:bg-[var(--trishanti-color-primary-dark)] text-white font-semibold text-xs tracking-wider uppercase group active:scale-95 hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[var(--trishanti-radius-full)] bg-gradient-to-r from-[#00A6A6] via-[#00BFBF] to-[#20B8B8] hover:shadow-[0_10px_25px_-5px_rgba(0,166,166,0.5)] text-white font-semibold text-xs tracking-wider uppercase group active:scale-95 hover:-translate-y-0.5"
               style={{ transition: `all var(--trishanti-duration-normal) var(--trishanti-ease-standard)` }}
             >
               <span>{isId ? "Hubungi Tim Kami" : "Contact Our Team"}</span>
@@ -51,7 +51,7 @@ export function CTASection({ locale, isId = false }: CTASectionProps) {
 
             <Link
               href={getPath("/businesses")}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[var(--trishanti-radius-full)] bg-white/10 hover:bg-white/15 text-white border border-white/20 hover:border-white/40 font-semibold text-xs tracking-wider uppercase active:scale-95 hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[var(--trishanti-radius-full)] bg-gradient-to-r from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 text-white border border-white/25 hover:border-[#00A6A6]/60 hover:shadow-[0_8px_20px_rgba(0,166,166,0.2)] font-semibold text-xs tracking-wider uppercase active:scale-95 hover:-translate-y-0.5 backdrop-blur-md"
               style={{ transition: `all var(--trishanti-duration-normal) var(--trishanti-ease-standard)` }}
             >
               <span>{isId ? "Jelajahi Pilar Bisnis" : "Explore Our Businesses"}</span>

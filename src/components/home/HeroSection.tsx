@@ -137,7 +137,7 @@ export function HeroSection({
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Link
                   href={getPath("/businesses")}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#00A6A6] hover:bg-[#008f8f] text-white font-medium text-sm transition-all group"
+                  className="inline-flex items-center justify-center gap-2 min-h-14 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00A6A6] via-[#00B4B4] to-[#087C8C] hover:from-[#00B4B4] hover:to-[#008f8f] text-white font-semibold text-base transition-all group shadow-[0_6px_24px_rgba(0,166,166,0.4)] hover:shadow-[0_8px_32px_rgba(0,166,166,0.55)] hover:-translate-y-0.5 active:scale-95"
                   style={{ transition: `all var(--trishanti-duration-normal) var(--trishanti-ease-standard)` }}
                 >
                   <span>{ctaPrimary}</span>
@@ -147,7 +147,7 @@ export function HeroSection({
                 <button
                   type="button"
                   onClick={() => setIsVideoOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-transparent hover:bg-black/5 dark:hover:bg-white/10 border border-[var(--trishanti-neutral-800)] dark:border-white text-[var(--trishanti-neutral-900)] dark:text-white font-medium text-sm transition-all group"
+                  className="inline-flex items-center justify-center gap-2 min-h-14 px-8 py-3.5 rounded-full bg-gradient-to-r from-black/5 via-black/[0.02] to-black/5 dark:from-white/10 dark:via-white/[0.05] dark:to-white/10 hover:from-black/10 hover:to-black/15 dark:hover:from-white/20 dark:hover:to-white/15 border border-[var(--trishanti-neutral-800)] dark:border-white/30 text-[var(--trishanti-neutral-900)] dark:text-white font-medium text-base transition-all group active:scale-95 backdrop-blur-md hover:border-[#00A6A6]/60 dark:hover:border-[#00A6A6]/60"
                   style={{ transition: `all var(--trishanti-duration-normal) var(--trishanti-ease-standard)` }}
                   aria-label="Watch Trishanti corporate video presentation"
                 >
@@ -179,7 +179,7 @@ export function HeroSection({
                   <Link
                     key={p.slug}
                     href={getPath(`/businesses/${p.slug}`)}
-                    className="flex items-center gap-2.5 px-3 py-2 text-white/85 hover:text-white transition-colors group"
+                    className="flex items-center gap-2.5 min-h-11 px-3 py-2 text-white/85 hover:text-white transition-colors group"
                     style={{ transition: `all var(--trishanti-duration-fast) var(--trishanti-ease-standard)` }}
                   >
                     <div className="w-6 h-6 rounded-md bg-white/10 group-hover:bg-[var(--trishanti-color-primary)]/20 flex items-center justify-center shrink-0" style={{ transition: `background-color var(--trishanti-duration-fast) var(--trishanti-ease-standard)` }}>

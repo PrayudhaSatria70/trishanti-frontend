@@ -186,17 +186,19 @@ export default async function CareersPage({ params }: CareersPageProps) {
               return (
                 <div
                   key={idx}
-                  className="p-10 rounded-2xl bg-white dark:bg-[var(--trishanti-color-bg-dark)] border border-[var(--trishanti-neutral-200)] dark:border-white/10 hover:border-[#00A6A6] dark:hover:border-[#00A6A6] shadow-sm hover:shadow-lg transition-all duration-300 dark:glass-panel"
+                  className="p-10 rounded-2xl shadow-sm justify-between flex flex-col glass-card-interactive"
                 >
-                  <div className="w-16 h-16 rounded-xl bg-[#00A6A6]/10 text-[#00A6A6] flex items-center justify-center mb-8">
-                    <Icon className="w-8 h-8" />
+                  <div>
+                    <div className="w-16 h-16 rounded-xl bg-[#00A6A6]/10 text-[#00A6A6] flex items-center justify-center mb-8">
+                      <Icon className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold font-heading text-[var(--trishanti-neutral-900)] dark:text-white mb-4 transition-colors">
+                      {isId ? cult.titleId : cult.titleEn}
+                    </h3>
+                    <p className="text-base sm:text-lg text-[var(--trishanti-neutral-700)] dark:text-[#94a3b8] leading-relaxed transition-colors">
+                      {isId ? cult.descId : cult.descEn}
+                    </p>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-[var(--trishanti-neutral-900)] dark:text-white mb-4 transition-colors">
-                    {isId ? cult.titleId : cult.titleEn}
-                  </h3>
-                  <p className="text-base sm:text-lg text-[var(--trishanti-neutral-700)] dark:text-[#94a3b8] leading-relaxed transition-colors">
-                    {isId ? cult.descId : cult.descEn}
-                  </p>
                 </div>
               );
             })}
@@ -227,7 +229,7 @@ export default async function CareersPage({ params }: CareersPageProps) {
             {POSITIONS.map((pos) => (
               <div
                 key={pos.id}
-                className="p-8 sm:p-10 rounded-2xl bg-white/10 dark:bg-[var(--trishanti-color-bg-dark)] border border-white/20 dark:border-white/10 hover:border-white/50 dark:hover:border-[#00A6A6] transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-8 group backdrop-blur-md dark:glass-panel"
+                className="p-8 sm:p-10 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-8 group glass-card-interactive"
               >
                 <div className="space-y-4 max-w-2xl">
                   <div className="flex flex-wrap items-center gap-3">

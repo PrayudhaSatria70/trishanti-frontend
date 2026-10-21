@@ -129,7 +129,7 @@ export function NewsDiscovery({ articles, locale }: NewsDiscoveryProps) {
             <Link
               key={article.slug}
               href={getPath(`/news/${article.slug}`)}
-              className="group bg-white dark:bg-[var(--trishanti-color-bg-dark)] rounded-xl border border-[var(--trishanti-neutral-200)] dark:border-white/10 overflow-hidden hover:border-[#00A6A6] dark:hover:border-[#00A6A6] transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] shadow-sm hover:shadow-md grid grid-cols-1 md:grid-cols-12 items-center dark:glass-panel"
+              className="group rounded-xl overflow-hidden shadow-sm grid grid-cols-1 md:grid-cols-12 items-center glass-card-interactive"
             >
               {/* Image Column */}
               <div className="md:col-span-5 relative aspect-[16/10] w-full overflow-hidden bg-[var(--trishanti-neutral-100)] dark:bg-slate-800">
@@ -186,7 +186,7 @@ export function NewsDiscovery({ articles, locale }: NewsDiscoveryProps) {
             <Link
               key={article.slug}
               href={getPath(`/news/${article.slug}`)}
-              className="group flex flex-col bg-white dark:bg-[var(--trishanti-color-bg-dark)] rounded-xl border border-[var(--trishanti-neutral-200)] dark:border-white/10 overflow-hidden hover:border-[#00A6A6] transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)] shadow-sm hover:shadow-md justify-between dark:glass-panel"
+              className="group flex flex-col rounded-xl overflow-hidden shadow-sm justify-between glass-card-interactive"
             >
               <div>
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-[var(--trishanti-neutral-100)] dark:bg-slate-800">
@@ -260,12 +260,12 @@ export function NewsDiscovery({ articles, locale }: NewsDiscoveryProps) {
           </button>
         </div>
 
-        {/* Load More Stories Button */}
+        {/* Load More Stories Button with Gradient */}
         <button
           type="button"
           onClick={handleLoadMore}
           disabled={isLoadingMore}
-          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[var(--trishanti-neutral-200)] dark:border-white/10 bg-white dark:bg-white/5 text-xs font-semibold text-[var(--trishanti-neutral-900)] dark:text-white hover:border-[#00A6A6] dark:hover:border-[#00A6A6] hover:text-[#00A6A6] transition-all shadow-xs active:scale-98"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--trishanti-neutral-200)] dark:border-white/10 bg-gradient-to-r from-white/90 to-white/70 dark:from-white/10 dark:to-white/5 hover:from-[#00A6A6] hover:to-[#20B8B8] text-xs font-semibold text-[var(--trishanti-neutral-900)] dark:text-white hover:text-white transition-all shadow-xs hover:shadow-[0_6px_18px_rgba(0,166,166,0.35)] active:scale-98 hover:-translate-y-0.5"
         >
           <RotateCw className={`w-3.5 h-3.5 ${isLoadingMore ? "animate-spin text-[#00A6A6]" : ""}`} />
           <span>{isId ? "Muat Lebih Banyak Artikel" : "Load More Stories"}</span>

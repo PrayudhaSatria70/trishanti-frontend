@@ -135,7 +135,7 @@ export default async function SustainabilityPage({
             {SUSTAINABILITY_PILLARS.map((pillar) => (
               <div
                 key={pillar.titleEn}
-                className="group flex flex-col bg-white dark:bg-[var(--trishanti-color-bg-dark)] rounded-xl border border-[var(--trishanti-neutral-200)] dark:border-white/10 overflow-hidden hover:border-[#00A6A6] dark:hover:border-[#00A6A6] transition-all duration-300 shadow-sm hover:shadow-md justify-between dark:glass-panel"
+                className="group flex flex-col rounded-xl overflow-hidden justify-between glass-card-interactive"
               >
                 <div>
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-[var(--trishanti-neutral-100)] dark:bg-slate-800">
@@ -245,10 +245,10 @@ export default async function SustainabilityPage({
             <div className="pt-4">
               <Link
                 href={getPath("/contact")}
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#00A6A6] text-white font-medium hover:bg-[#008f8f] transition-all duration-200 shadow-sm active:scale-98"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#00A6A6] via-[#00BFBF] to-[#20B8B8] text-white font-medium hover:shadow-[0_8px_25px_rgba(0,166,166,0.45)] transition-all duration-200 active:scale-98 hover:-translate-y-0.5"
               >
-                {isId ? "Temukan Komitmen Kami →" : "Discover Our Commitment →"}
-                <ArrowRight className="w-4 h-4" />
+                <span>{isId ? "Temukan Komitmen Kami" : "Discover Our Commitment"}</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>

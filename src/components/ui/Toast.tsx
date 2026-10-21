@@ -126,7 +126,7 @@ export function ToastContainer({ toasts, onDismiss }: ToastContainerProps) {
 
   return (
     <div
-      className="fixed bottom-6 right-6 flex flex-col gap-2.5 z-[var(--trishanti-z-toast)] pointer-events-none"
+      className="fixed bottom-[calc(var(--trishanti-bottom-nav-offset)+1rem)] right-4 sm:right-6 lg:bottom-6 flex flex-col gap-2.5 z-[var(--trishanti-z-toast)] pointer-events-none"
       aria-label="Notifications"
     >
       {toasts.map((toast) => (

@@ -103,7 +103,7 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
                 return (
                   <div
                     key={item.id}
-                    className="bg-white dark:bg-[var(--trishanti-color-bg-dark)] rounded-2xl border border-[var(--trishanti-neutral-200)] dark:border-white/10 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#00A6A6] dark:hover:border-[#00A6A6] transition-all duration-300 flex flex-col group dark:glass-panel"
+                    className="rounded-2xl overflow-hidden shadow-sm flex flex-col group glass-card-interactive"
                   >
                     {/* Image Top */}
                     <div className="relative aspect-[16/10] w-full overflow-hidden bg-[var(--trishanti-neutral-100)] dark:bg-slate-800">

@@ -149,7 +149,7 @@ export function PillarsSection({
               <FadeIn key={pillar.id} delay={index * 100} duration={800} direction="up" className="flex">
                 <Link
                   href={getPath(`/businesses#${pillar.slug}`)}
-                  className="w-full relative z-10 bg-white dark:bg-white/5 dark:backdrop-blur-xl rounded-[var(--trishanti-radius-lg)] overflow-hidden border border-[var(--trishanti-neutral-200)] dark:border-white/10 hover:border-[var(--trishanti-color-primary)] dark:hover:border-white/30 dark:hover:bg-white/10 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#00A6A6]/20 flex flex-col group transition-all duration-500 dark:glass-panel"
+                  className="w-full relative z-10 rounded-[var(--trishanti-radius-lg)] overflow-hidden flex flex-col group glass-card-interactive"
                 >
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-black/20">
                     <Image
@@ -163,7 +163,7 @@ export function PillarsSection({
                   </div>
 
                   {/* Card Body Bottom */}
-                  <div className="p-8 flex flex-col flex-1 justify-between bg-white dark:bg-transparent">
+                  <div className="p-8 flex flex-col flex-1 justify-between bg-transparent">
                     <div>
                       {/* Cyan Outlined Icon */}
                       <div className="text-[var(--trishanti-color-primary)] mb-5">
@@ -181,9 +181,9 @@ export function PillarsSection({
                       </p>
                     </div>
 
-                    {/* Circular Icon Button from Visual Board 1 (03) */}
+                    {/* Circular Icon Button with Gradient Effect */}
                     <div className="mt-6">
-                      <span className="w-10 h-10 rounded-full border border-[var(--trishanti-neutral-300)] dark:border-white/20 text-[var(--trishanti-color-primary)] flex items-center justify-center group-hover:bg-[var(--trishanti-color-primary)] group-hover:text-white group-hover:border-[var(--trishanti-color-primary)] transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]">
+                      <span className="w-10 h-10 rounded-full border border-[var(--trishanti-neutral-300)] dark:border-white/20 text-[var(--trishanti-color-primary)] flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-[#00A6A6] group-hover:to-[#20B8B8] group-hover:text-white group-hover:border-transparent group-hover:shadow-[0_4px_14px_rgba(0,166,166,0.35)] transition-all duration-[var(--trishanti-duration-normal)] ease-[var(--trishanti-ease-standard)]">
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
                       </span>
                     </div>

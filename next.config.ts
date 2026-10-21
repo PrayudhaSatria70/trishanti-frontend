@@ -41,6 +41,7 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https://images.unsplash.com https://source.unsplash.com",
+              "media-src 'self' https://assets.mixkit.co",
               "connect-src 'self'",
               "frame-ancestors 'none'",
               "base-uri 'self'",

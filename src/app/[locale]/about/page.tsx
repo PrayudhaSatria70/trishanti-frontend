@@ -109,17 +109,17 @@ export default async function AboutPage({ params }: AboutPageProps) {
                   ? "Kami adalah perusahaan multi-sektor dengan satu tujuan bersama — menciptakan nilai jangka panjang bagi manusia dan hari esok yang lebih cerah."
                   : "We are a multi-sector enterprise with a shared purpose — to create long-term value for people and a brighter tomorrow."}
               </p>
-              <div className="pt-4 flex items-center gap-4">
+              <div className="pt-4 flex flex-wrap items-center gap-4">
                 <Link
                   href={getPath("/businesses")}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#00A6A6] text-white font-medium hover:bg-[#008f8f] transition-all duration-200 shadow-sm active:scale-98"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#00A6A6] via-[#00BFBF] to-[#20B8B8] text-white font-medium hover:shadow-[0_8px_20px_rgba(0,166,166,0.45)] transition-all duration-200 active:scale-98 hover:-translate-y-0.5"
                 >
                   {isId ? "Jelajahi Bisnis Kami" : "Explore Our Businesses"}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href={getPath("/contact")}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[var(--trishanti-neutral-300)] dark:border-white/20 text-[var(--trishanti-neutral-700)] dark:text-white/80 font-medium hover:bg-[var(--trishanti-neutral-100)] dark:hover:bg-white/10 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 border border-[var(--trishanti-neutral-300)] dark:border-white/20 text-[var(--trishanti-neutral-700)] dark:text-white/80 font-medium hover:border-[#00A6A6]/60 transition-all backdrop-blur-md active:scale-98 hover:-translate-y-0.5"
                 >
                   {isId ? "Mulai Percakapan" : "Start a Conversation"}
                 </Link>
@@ -284,7 +284,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
             {LEADERS.map((leader) => (
               <div
                 key={leader.name}
-                className="group rounded-xl overflow-hidden bg-white dark:bg-white/5 border border-[var(--trishanti-neutral-200)] dark:border-white/10 hover:border-[#00A6A6]/40 dark:hover:border-[#00A6A6]/40 transition-all duration-300 shadow-sm hover:shadow-md dark:glass-panel"
+                className="group rounded-xl overflow-hidden glass-card-interactive"
               >
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-[var(--trishanti-neutral-100)] dark:bg-slate-800">
                   <Image
@@ -318,7 +318,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center bg-[var(--trishanti-color-surface-light)] dark:bg-white/5 p-8 lg:p-12 rounded-2xl border border-[var(--trishanti-neutral-200)] dark:border-white/10 shadow-sm dark:glass-panel">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center p-8 lg:p-12 rounded-2xl glass-panel">
             {/* Left: Meeting Image */}
             <div className="lg:col-span-7 relative aspect-[16/10] rounded-xl overflow-hidden border border-[var(--trishanti-neutral-200)] dark:border-white/10 shadow-sm">
               <Image

@@ -166,9 +166,9 @@ export default async function BusinessesPage({
               <Link
                 key={focus.titleEn}
                 href={getPath(focus.href)}
-                className="group flex flex-col bg-white dark:bg-[var(--trishanti-color-bg-dark)] rounded-xl border border-[var(--trishanti-neutral-200)] dark:border-white/10 overflow-hidden hover:border-[#00A6A6] dark:hover:border-[#00A6A6] transition-all duration-300 shadow-sm hover:shadow-md dark:glass-panel"
+                className="group flex flex-col rounded-xl overflow-hidden glass-card-interactive"
               >
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EFF1F0]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EFF1F0] dark:bg-slate-800">
                   <Image
                     src={focus.image}
                     alt={isId ? focus.titleId : focus.titleEn}
@@ -186,7 +186,7 @@ export default async function BusinessesPage({
                       {isId ? focus.descId : focus.descEn}
                     </p>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-[var(--trishanti-neutral-100)] dark:bg-white/10 group-hover:bg-[#00A6A6] text-[#00A6A6] group-hover:text-white flex items-center justify-center transition-colors flex-shrink-0 ml-4">
+                  <div className="w-10 h-10 rounded-full bg-[var(--trishanti-neutral-100)] dark:bg-white/10 group-hover:bg-gradient-to-r group-hover:from-[#00A6A6] group-hover:to-[#20B8B8] text-[#00A6A6] group-hover:text-white flex items-center justify-center transition-all flex-shrink-0 ml-4 group-hover:shadow-[0_4px_12px_rgba(0,166,166,0.35)]">
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -293,7 +293,7 @@ export default async function BusinessesPage({
             {PORTFOLIO_ITEMS.map((item) => (
               <div
                 key={item.name}
-                className="group rounded-xl overflow-hidden bg-white dark:bg-[var(--trishanti-color-bg-dark)] border border-[var(--trishanti-neutral-200)] dark:border-white/10 hover:border-[#00A6A6] dark:hover:border-[#00A6A6] transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between dark:glass-panel"
+                className="group rounded-xl overflow-hidden flex flex-col justify-between glass-card-interactive"
               >
                 <div>
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-[var(--trishanti-neutral-100)] dark:bg-slate-800">
@@ -318,7 +318,7 @@ export default async function BusinessesPage({
                   </div>
                 </div>
                 <div className="p-6 pt-0 flex justify-end">
-                  <div className="w-10 h-10 rounded-full bg-[var(--trishanti-neutral-100)] dark:bg-white/10 group-hover:bg-[#00A6A6] text-[#00A6A6] group-hover:text-white flex items-center justify-center transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-[var(--trishanti-neutral-100)] dark:bg-white/10 group-hover:bg-gradient-to-r group-hover:from-[#00A6A6] group-hover:to-[#20B8B8] text-[#00A6A6] group-hover:text-white flex items-center justify-center transition-all group-hover:shadow-[0_4px_12px_rgba(0,166,166,0.35)]">
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -376,10 +376,10 @@ export default async function BusinessesPage({
               <Link
                 key={pillar.id}
                 href={getPath(`/businesses/${pillar.slug}`)}
-                className="group p-8 rounded-xl bg-white dark:bg-[var(--trishanti-color-bg-dark)] border border-[var(--trishanti-neutral-200)] dark:border-white/10 hover:border-[#00A6A6] dark:hover:border-[#00A6A6] transition-all duration-300 hover:shadow-md flex flex-col justify-between dark:glass-panel"
+                className="group p-8 rounded-xl flex flex-col justify-between glass-card-interactive"
               >
                 <div>
-                  <div className="w-14 h-14 rounded-xl bg-[var(--trishanti-neutral-100)] dark:bg-white/5 group-hover:bg-[#00A6A6] text-[#00A6A6] group-hover:text-white flex items-center justify-center transition-colors mb-5 font-bold text-xl">
+                  <div className="w-14 h-14 rounded-xl bg-[var(--trishanti-neutral-100)] dark:bg-white/5 group-hover:bg-gradient-to-br group-hover:from-[#00A6A6] group-hover:to-[#20B8B8] text-[#00A6A6] group-hover:text-white flex items-center justify-center transition-all mb-5 font-bold text-xl group-hover:shadow-[0_4px_12px_rgba(0,166,166,0.3)]">
                     {pillar.id}
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-[var(--trishanti-neutral-900)] dark:text-white group-hover:text-[#00A6A6] transition-colors">
@@ -421,8 +421,7 @@ export default async function BusinessesPage({
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Active Field Card */}
-            {/* Active Field Card */}
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10 space-y-5 dark:glass-panel">
+            <div className="p-8 rounded-2xl space-y-5 glass-panel">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-wider text-white">
                   Transportation Systems
@@ -442,7 +441,7 @@ export default async function BusinessesPage({
             </div>
 
             {/* In Development Field Card */}
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10 space-y-5 dark:glass-panel">
+            <div className="p-8 rounded-2xl space-y-5 glass-panel">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-wider text-white">
                   Renewable Energy Grids
@@ -462,7 +461,7 @@ export default async function BusinessesPage({
             </div>
 
             {/* Future Opportunity Field Card */}
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10 space-y-5 dark:glass-panel">
+            <div className="p-8 rounded-2xl space-y-5 glass-panel">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-wider text-white">
                   Smart Port Automation
